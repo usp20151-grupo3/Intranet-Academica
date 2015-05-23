@@ -24,9 +24,15 @@ $nr = mysql_num_rows($rs);
 
 
 if($nr == 1){ 
-    
-header("Location:index.html"); 
+    ?>
+<script language="javascript">
+alert("Ingreso Correctamente");
+location.href = "index.html";
+</script>
 
+<?php 
+//
+    
 }
 
 
