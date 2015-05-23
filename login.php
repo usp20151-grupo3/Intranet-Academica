@@ -16,7 +16,9 @@ $nombre=$_POST["txtuser"];
 $password=$_POST["txtpass"];
 
 
-$query="SELECT `usuario`,`password` FROM `usuario` WHERE `usuario`='$nombre' and `password`='$password' ";
+
+$query="SELECT `usuario`,`password` FROM `usuario` WHERE `usuario`='$nombre' and `password`='$password' "
+        . "and estado='1'";
 $rs=mysql_query($query); 
 $row=mysql_fetch_object($rs); 
 $nr = mysql_num_rows($rs); 
@@ -39,11 +41,15 @@ location.href = "index.html";
 else if($nr <= 0) { 
 ?>
 <script language="javascript">
-alert("Los Datos Ingresados No coinciden");
+alert("Los Datos Ingresados No coinciden o El usuario ha sido bloqueado");
 location.href = "login.html";
 </script>
 
 <?php 
- //
+ if (isset($_COOKIE['access_error']) && $_COOKIE['access_error'] >= 3){
+ $query="update usuario set estado = 0 where usuario ='$nombre'";
+ $rs=  mysql_query($query);
+ $row=mysql_fetch_object($rs);
+}
 }   
 ?>
