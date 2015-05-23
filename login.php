@@ -25,13 +25,13 @@ $nr = mysql_num_rows($rs);
 
 if($nr == 1){ 
     
-("Location:index.html"); 
+header("Location:index.html"); 
 
 }
 
 
 else if($nr <= 0) { 
-    
+   
   header("Location:login.html"); 
 }   
 ?>
