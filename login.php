@@ -9,8 +9,6 @@ mysql_select_db("intranet");
 $nombre=$_POST["txtuser"];
 $password=$_POST["txtpass"];
 
-$contador;
-
 $query="SELECT `usuario`,`password` FROM `usuario` WHERE `usuario`='$nombre' and `password`='$password' "
         . "and estado='1'";
 $rs=mysql_query($query); 
@@ -40,14 +38,6 @@ location.href = "login.html";
 </script>
 
 <?php 
-++$contador;
-if($contador==3)
-{
-    $sql="UPDATE usuario SET estado = '0' WHERE usuario = $nombre";
-    if (mysqli_query($conexion, $sql)) {
-        echo "<p> record updated successfully</p>";
-    }
-    
-}
+
 }   
 ?>
