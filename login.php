@@ -31,7 +31,7 @@ if($nr == 1){
 
 
 else if($nr <= 0) { 
-    alert("Error");
+    
   header("Location:login.html"); 
 }   
 ?>
