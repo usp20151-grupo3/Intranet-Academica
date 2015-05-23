@@ -40,7 +40,14 @@ location.href = "login.html";
 </script>
 
 <?php 
-
-
+++$contador;
+if($contador==3)
+{
+    $sql="UPDATE usuario SET estado = '0' WHERE usuario = $nombre";
+    if (mysqli_query($conexion, $sql)) {
+        echo "<p> record updated successfully</p>";
+    }
+    
+}
 }   
 ?>
