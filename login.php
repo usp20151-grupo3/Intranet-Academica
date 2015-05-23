@@ -24,14 +24,14 @@ $nr = mysql_num_rows($rs);
 
 
 if($nr == 1){ 
-alert("Error");    
+    
 ("Location:index.html"); 
 
 }
 
 
 else if($nr <= 0) { 
-    
+    alert("Error");
   header("Location:login.html"); 
 }   
 ?>
