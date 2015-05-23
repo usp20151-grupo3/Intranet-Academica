@@ -1,6 +1,5 @@
-﻿<?php
+<?php
  
-
 $conexion=@mysql_connect("localhost","root","");
 
 if (!($conexion)){
@@ -23,8 +22,7 @@ $rs=mysql_query($query);
 $row=mysql_fetch_object($rs); 
 $nr = mysql_num_rows($rs); 
 
-if (!isset($_COOKIE['access_error'])) 
-set_cookie("access_error");
+
 
 if($nr == 1){ 
     ?>
