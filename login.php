@@ -1,6 +1,6 @@
 ﻿<?php
  
-//Conexion con la base de datos.
+
 $conexion=@mysql_connect("localhost","root","");
 
 if (!($conexion)){
