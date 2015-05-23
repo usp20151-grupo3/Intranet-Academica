@@ -5,16 +5,11 @@ $conexion=@mysql_connect("localhost","root","");
 if (!($conexion)){
 echo 'No se puede realizar la conexion con la base de datos.';
 }
-
-
 mysql_select_db("intranet");
- 
-
-
 $nombre=$_POST["txtuser"];
 $password=$_POST["txtpass"];
 
-
+$contador;
 
 $query="SELECT `usuario`,`password` FROM `usuario` WHERE `usuario`='$nombre' and `password`='$password' "
         . "and estado='1'";
