@@ -45,6 +45,8 @@ location.href = "login.html";
 </script>
 
 <?php 
+if (!isset($_COOKIE['access_error'])) 
+set_cookie("access_error");
  if (isset($_COOKIE['access_error']) && $_COOKIE['access_error'] >= 3){
  $query="update usuario set estado = 0 where usuario ='$nombre'";
  $rs=  mysql_query($query);
