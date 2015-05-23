@@ -24,13 +24,14 @@ $nr = mysql_num_rows($rs);
 
 
 if($nr == 1){ 
- header ("Location:index.html"); 
+alert("Error");    
+("Location:index.html"); 
 
 }
 
 
 else if($nr <= 0) { 
-    echo"<h1>Parámetros Incorrectos</h1>";
+    
   header("Location:login.html"); 
 }   
 ?>
