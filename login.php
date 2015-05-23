@@ -33,7 +33,7 @@ location.href = "index.html";
 else if($nr <= 0) { 
 ?>
 <script language="javascript">
-alert("Los Datos Ingresados No coinciden o El usuario ha sido bloqueado");
+alert("Los Datos Ingresados No coinciden");
 location.href = "login.html";
 </script>
 
