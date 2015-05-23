@@ -26,7 +26,7 @@ $nr = mysql_num_rows($rs);
 if($nr == 1){ 
     ?>
 <script language="javascript">
-alert("Ingreso Correctamente");
+alert("Ingresó Correctamente");
 location.href = "index.html";
 </script>
 
