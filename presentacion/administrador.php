@@ -12,13 +12,13 @@ session_start();
                 $usuarionombre = $_SESSION['nombre'];
                 $usuarioapellido = $_SESSION['apellido'];
                 $rol = $_SESSION['rol'];
-                if ($rol='D'){
+                if ($rol=='D'){
                     $rol = 'Director';
                 }
-                if ($rol='P'){
+                if ($rol=='P'){
                     $rol = 'Docente';
                 }
-                if ($rol='A'){
+                if ($rol=='A'){
                     $rol = 'Alumno';
                 }
 	}
