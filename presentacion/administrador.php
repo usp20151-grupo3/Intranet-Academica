@@ -88,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>
                       <?php echo $usuarionombre.' '.$usuarioapellido;?>
                         <small><?php echo $rol; ?></small>
-                      <small>Member since Nov. 2012</small>
+                      <small>Miembro desde <?php echo $rol; ?> </small>
                     </p>
                   </li>
                   <!-- Menu Body -->
