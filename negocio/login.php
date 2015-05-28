@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require('../conexion/conexion.php');
 require('../entidad/usuarioentity.php');
