@@ -6,7 +6,7 @@ require('../entidad/usuarioentity.php');
 require('../data/usuariodata.php');
 
 $con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","","","");
+$objE	= 	new UsuarioE("","","","","","","");
 $objB	= 	new UsuarioD();
 
 switch ($_POST['evento']) {
