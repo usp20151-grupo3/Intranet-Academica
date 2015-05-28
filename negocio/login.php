@@ -28,6 +28,7 @@ switch ($_POST['evento']) {
 				$_SESSION['usuario']        = $datos->usuario;				
                                 $_SESSION['idusuario']      = $datos->idusuario;
 				$_SESSION['rol']            = $datos->rol;
+                                $_SESSION['fechaalta']      = $datos->fechaalta;
                                 $_SESSION['nombre']         = $datonombre->nombre;
                                 $_SESSION['apellido']       = $datonombre->apellido;
 

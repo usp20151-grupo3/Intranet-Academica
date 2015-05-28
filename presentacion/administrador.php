@@ -5,12 +5,14 @@ session_start();
 	$usuarionombre = '';
         $usuarioapellido = '';
         $rol = '';
+        $fechaalta ='';
 
 	if (isset ($_SESSION['idusuario'])){ 
                 $usuarioid = $_SESSION['idusuario'];
 		$usuario = $_SESSION['usuario'];
                 $usuarionombre = $_SESSION['nombre'];
                 $usuarioapellido = $_SESSION['apellido'];
+                $fechaalta = $_SESSION['fechaalta'];
                 $rol = $_SESSION['rol'];
                 if ($rol=='D'){
                     $rol = 'Director';
@@ -88,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>
                       <?php echo $usuarionombre.' '.$usuarioapellido;?>
                         <small><?php echo $rol; ?></small>
-                      <small>Miembro desde <?php echo $rol; ?> </small>
+                      <small>Miembro desde <?php echo $fechaalta; ?> </small>
                     </p>
                   </li>
                   <!-- Menu Body -->
