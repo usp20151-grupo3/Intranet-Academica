@@ -4,12 +4,14 @@ session_start();
 	$usuario = '';	
 	$usuarionombre = '';
         $usuarioapellido = '';
+        $rol = '';
 
 	if (isset ($_SESSION['idusuario'])){ 
                 $usuarioid = $_SESSION['idusuario'];
 		$usuario = $_SESSION['usuario'];
                 $usuarionombre = $_SESSION['nombre'];
                 $usuarioapellido = $_SESSION['apellido'];
+                $rol = $_SESSION['rol'];
 	}
 	else {            header('Location:../index.php');        }        
 ?>
