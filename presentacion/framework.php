@@ -28,10 +28,6 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html>
   <head>
     <meta charset="UTF-8">
@@ -79,14 +75,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="../recursos/img/user1.png" class="user-image" alt="User Image"/>
+                  <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+                  <img src="../recursos/img/admin.png" class="user-image" alt="User Image"/>
+                  <?php } ?>
+                  <?php if ($rol == 'Docente') { ?>
+                  <img src="../recursos/img/teacher.png" class="user-image" alt="User Image"/>
+                  <?php } ?>
+                  <?php if ($rol == 'Alumno') { ?>
+                  <img src="../recursos/img/college.png" class="user-image" alt="User Image"/>
+                  <?php } ?>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs"><?php echo $usuarionombre.' '.$usuarioapellido;?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="../recursos/img/user1.png" class="img-circle" alt="User Image" />
+                      <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+                    <img src="../recursos/img/admin.png" class="img-circle" alt="User Image" />
+                      <?php } ?>
+                    <?php if ($rol == 'Docente') { ?>
+                    <img src="../recursos/img/teacher.png" class="img-circle" alt="User Image" />
+                      <?php } ?>
+                    <?php if ($rol == 'Alumno') { ?>
+                    <img src="../recursos/img/college.png" class="img-circle" alt="User Image" />
+                      <?php } ?>
                     <p>
                       <?php echo $usuarionombre.' '.$usuarioapellido;?>
                         <small><?php echo $rol; ?></small>
@@ -133,12 +145,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="../recursos/img/userwhite.png" class="img-circle" alt="User Image" />
+                <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+              <img src="../recursos/img/adminwhite.png" class="img-circle" alt="User Image" />
+                <?php } ?>
+              <?php if ($rol == 'Docente') { ?>
+              <img src="../recursos/img/teacherwhite.png" class="img-circle" alt="User Image" />
+                <?php } ?>
+              <?php if ($rol == 'Alumno') { ?>
+              <img src="../recursos/img/collegewhite.png" class="img-circle" alt="User Image" />
+                <?php } ?>
             </div>
             <div class="pull-left info">
                 <p><?php echo $usuarionombre ?></p>
               <!-- Status -->
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
 
@@ -225,7 +245,7 @@ asdaasdkahsdvas
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          Gracias por la visita
+          Gracias por tu visita
         </div>
         <!-- Default to the left -->
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
