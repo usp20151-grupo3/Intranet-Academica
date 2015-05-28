@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>Joel Tapia</p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
