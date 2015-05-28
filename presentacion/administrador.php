@@ -2,7 +2,7 @@
 session_start();
         $idusuario = 0;
 	$usuario = '';	
-	$password = '';
+	
 
 	if (isset ($_SESSION['idusuargfio'])){ 
                 $usuarioid = $_SESSION['idusudfgario'];

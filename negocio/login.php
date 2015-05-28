@@ -27,6 +27,7 @@ switch ($_POST['evento']) {
 				$_SESSION['usuario']        = $datos->usuario;				
                                 $_SESSION['idusuario']      = $datos->idusuario;
 				$_SESSION['rol']            = $datos->rol;
+                                
 
 				switch ($_SESSION['rol']) {
 					case 'D':

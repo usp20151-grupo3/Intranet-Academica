@@ -7,6 +7,8 @@ class UsuarioD{
 			$sql = "call verificar_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
 			return $objCn->ejecutar($sql);	
 		}
+                
+                
 }
 ?>
 
