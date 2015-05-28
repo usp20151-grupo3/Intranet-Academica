@@ -147,37 +147,31 @@ session_start();
                 <li><a href="#">Mantenimiento Usuario</a></li>
                 <li><a href="#">Visualizar Usuario</a></li>
               </ul>
-            </li>
-           
+            </li>           
             <?php } if ($rol == 'Docente') { ?>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Grupo</a></li>
-                
+                <li><a href="#">Visualizar Grupo</a></li>                
               </ul>
             </li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Grupo</a></li>
-                
+                <li><a href="#">Visualizar Grupo</a></li>                
               </ul>
             </li>
 		<?php } if ($rol == 'Alumno') { ?>
             <li class="treeview">
             <a href="#"><i class='fa fa-link'></i> <span>Ver Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Calificación</a></li>
-                
+                <li><a href="#">Visualizar Calificación</a></li>                
               </ul>
             </li>
-            <?php }  ?>
-            
+            <?php }  ?>            
           </ul>
         </section>
       </aside>
-
       <div class="content-wrapper">
         <section class="content-header">
           <h1>
@@ -190,8 +184,7 @@ session_start();
           </ol>
         </section>
         <section class="content">
-asdaasdkahsdvas 
-
+        asdaasdkahsdvas 
         </section>
       </div>
       <footer class="main-footer">
