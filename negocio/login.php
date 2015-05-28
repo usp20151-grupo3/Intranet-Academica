@@ -32,15 +32,15 @@ switch ($_POST['evento']) {
                                 $_SESSION['nombre']         = $datonombre->nombre;
                                 $_SESSION['apellido']       = $datonombre->apellido;
 
-				switch ($_SESSION['rol']) {
+				switch ($_SESSION['idusuario']>0) {
 					case 'D':
-						header('Location:../presentacion/administrador.php');
+						header('Location:../presentacion/framework.php');
 						break;
 					case 'A':
-						header('Location:../presentacion/alumno.php');
+						header('Location:../presentacion/framework.php');
 						break;
 					case 'P':
-						header('Location:../presentacion/docente.php');
+						header('Location:../presentacion/framework.php');
 						break;		
 					default:
 						header('Location:../');
