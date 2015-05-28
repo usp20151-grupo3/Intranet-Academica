@@ -79,14 +79,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="../recursos/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <img src="../recursos/img/user1.png" class="user-image" alt="User Image"/>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs"><?php echo $usuarionombre.' '.$usuarioapellido;?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                    <img src="../recursos/img/user1.png" class="img-circle" alt="User Image" />
                     <p>
                       <?php echo $usuarionombre.' '.$usuarioapellido;?>
                         <small><?php echo $rol; ?></small>
@@ -133,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+              <img src="../recursos/img/userwhite.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p><?php echo $usuarionombre ?></p>
