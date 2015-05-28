@@ -1,6 +1,6 @@
 $(document).ready(function(e) {	
 	$('#btnCerrarSesion').click(function(e) {
-		$.post('../conexion/logout.php', {	},
+		$.post('../negocio/logout.php', {	},
 		function() { window.location='../index.php'; });		
 	});	
 });
