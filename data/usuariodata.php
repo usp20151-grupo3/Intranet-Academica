@@ -8,6 +8,11 @@ class UsuarioD{
 			return $objCn->ejecutar($sql);	
 		}
                 
+                function mostrar_nombre_apellido_usuario($obj){
+			$objCn = new Conexion();
+			$sql = "call nombre_persona_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
+			return $objCn->ejecutar($sql);	
+		}
                 
 }
 ?>
