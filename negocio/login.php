@@ -17,17 +17,19 @@ switch ($_POST['evento']) {
 			$objE->setpassword($_POST['password']);
 
 			$res_usuario	=	$objB->verificar_usuario($objE);
+                        $dato_usuario = $objB->mostrar_nombre_apellido_usuario($objE);
                         // AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
 
 			if (count($res_usuario)>0) {
 				
 				$datos = $res_usuario->fetch_object(); // -> AQUI EXTRAES LOS DATOS. se ahce asi por que es 1 dato , pero si fueran un monton de rows
-                                                                     // se usaria un while para recojerlo con una varibla y llenaramos todo en un array. eso sera mas adelante.
+                                $datonombre = $dato_usuario->fetch_object(); // se usaria un while para recojerlo con una varibla y llenaramos todo en un array. eso sera mas adelante.
 
 				$_SESSION['usuario']        = $datos->usuario;				
                                 $_SESSION['idusuario']      = $datos->idusuario;
 				$_SESSION['rol']            = $datos->rol;
-                                
+                                $_SESSION['nombre']         = $datonombre->nombre;
+                                $_SESSION['apellido']       = $datonombre->apellido;
 
 				switch ($_SESSION['rol']) {
 					case 'D':

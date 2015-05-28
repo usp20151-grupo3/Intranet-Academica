@@ -2,16 +2,16 @@
 session_start();
         $idusuario = 0;
 	$usuario = '';	
-	
+	$usuarionombre = '';
+        $usuarioapellido = '';
 
-	if (isset ($_SESSION['idusuargfio'])){ 
-                $usuarioid = $_SESSION['idusudfgario'];
-		$usuario = $_SESSION['usuadfgrio'];
-
+	if (isset ($_SESSION['idusuario'])){ 
+                $usuarioid = $_SESSION['idusuario'];
+		$usuario = $_SESSION['usuario'];
+                $usuarionombre = $_SESSION['nombre'];
+                $usuarioapellido = $_SESSION['apellido'];
 	}
-	else {           // var_dump($_SESSION); 
-
-        }        
+	else {            header('Location:../index.php');        }        
 ?>
 
 <!DOCTYPE html>
@@ -68,14 +68,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- The user image in the navbar-->
                   <img src="../recursos/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"><?php echo $usuarionombre.' '.$usuarioapellido;?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
                     <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Alexander Pierce - Web Developer
+                      <?php echo $usuarionombre.' '.$usuarioapellido;?> - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
