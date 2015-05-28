@@ -189,7 +189,6 @@ session_start();
             <li class="active">Here</li>
           </ol>
         </section>
-asdasdasd
         <section class="content">
 asdaasdkahsdvas 
 
