@@ -75,7 +75,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <li class="user-header">
                     <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      <?php echo $usuarionombre.' '.$usuarioapellido;?> - Web Developer
+                      <?php echo $usuarionombre.' '.$usuarioapellido;?>
+                        <small>Director</small>
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
