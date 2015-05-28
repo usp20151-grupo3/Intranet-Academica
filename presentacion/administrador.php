@@ -12,6 +12,15 @@ session_start();
                 $usuarionombre = $_SESSION['nombre'];
                 $usuarioapellido = $_SESSION['apellido'];
                 $rol = $_SESSION['rol'];
+                if ($rol='D'){
+                    $rol = 'Director';
+                }
+                if ($rol='P'){
+                    $rol = 'Docente';
+                }
+                if ($rol='A'){
+                    $rol = 'Alumno';
+                }
 	}
 	else {            header('Location:../index.php');        }        
 ?>
@@ -78,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
                       <?php echo $usuarionombre.' '.$usuarioapellido;?>
-                        <small>Director</small>
+                        <small><?php echo $rol; ?></small>
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
