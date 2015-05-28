@@ -4,7 +4,7 @@ session_start();
 	$usuario = '';	
 	$password = '';
 
-	if (isset ($_SESSION['idusuargfio'])){ // acaso creaste session idusuario?
+	if (isset ($_SESSION['idusuargfio'])){ 
                 $usuarioid = $_SESSION['idusudfgario'];
 		$usuario = $_SESSION['usuadfgrio'];
 
