@@ -1,9 +1,24 @@
 <?php 
-      
+//session_start();
+//        $idusuario = 0;
+//	$usuario = '';	
+//	$password = '';
+//
+//	if (isset ($_SESSION['idusuargfio'])){ // acaso creaste session idusuario?
+//                $usuarioid = $_SESSION['idusudfgario'];
+//		$usuario = $_SESSION['usuadfgrio'];
+//
+//	}
+//	else {           // var_dump($_SESSION); 
+//
+//        }        
 ?>
 
 <!DOCTYPE html>
-
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
   <head>
     <meta charset="UTF-8">
@@ -82,7 +97,7 @@
                       <a href="#" class="btn btn-default btn-flat">Perfil</a>
                     </div>
                     <div class="pull-right">
-                        <a href="#" class="btn btn-default btn-flat">Salir</a>
+                        <a href="#" class="btn btn-default btn-flat" id="btnCerrarSesion">Salir</a>
                     </div>
                   </li>
                 </ul>
@@ -251,12 +266,8 @@ asdaasdkahsdvas
     <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- AdminLTE App -->
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
+    <script src="../recursos/js/logout.js" type="text/javascript"> </script>
 
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-          Both of these plugins are recommended to enhance the
-          user experience. Slimscroll is required when using the
-          fixed layout. -->
   </body>
 </html>

@@ -7,6 +7,7 @@
         
     </head>
     <body>
+       
 <form id="form" name="form" action="negocio/login.php" method="POST"><!-- ESTE FORMULARIO ENVIA LOS DATOS A LA CAPA DE NEGOCIO PARA QUE ALLI SE VERIFIQUE LOS DATOS SIN 
     SON CORRECTOS O NO, siempre trata de que los inputs o checkbox o cualqueir cosa q uses para ingrear datos , lleven name e id el mismo nombre -->
 	<div id="block">

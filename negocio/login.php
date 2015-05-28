@@ -30,10 +30,10 @@ switch ($_POST['evento']) {
 
 				switch ($_SESSION['rol']) {
 					case 'D':
-						header('Location:../presentacion/administrador.php'); // bueno en este caso te perdono hasta q te familiarices con capas .
+						header('Location:../presentacion/administrador.php');
 						break;
 					case 'A':
-						header('Location:../presentacion/alumno.php'); // jamas rutees a la carpet ade presetnacion xD! jaja ya
+						header('Location:../presentacion/alumno.php');
 						break;
 					case 'P':
 						header('Location:../presentacion/docente.php');
