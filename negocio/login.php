@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require('../data/conexion.php');
+require('../conexion/conexion.php');
 require('../entidad/usuarioentity.php');
 require('../data/usuariodata.php');
 

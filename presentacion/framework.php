@@ -44,7 +44,7 @@ session_start();
       <header class="main-header">
         <a href="#" class="logo">
           <span class="logo-mini">I.A</span>
-          <span class="logo-lg">BIENVENIDO</span>
+          <span class="logo-lg">Bienvenido</span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -96,7 +96,7 @@ session_start();
                   </li>-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                      <a href="#" class="btn btn-default btn-flat" id="btnPerfil">Perfil</a>
                     </div>
                     <div class="pull-right">
                         <a href="#" class="btn btn-default btn-flat" id="btnCerrarSesion">Salir</a>
