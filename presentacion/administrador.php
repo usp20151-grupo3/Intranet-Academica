@@ -1,17 +1,17 @@
 <?php 
-//session_start();
-//        $idusuario = 0;
-//	$usuario = '';	
-//	$password = '';
-//
-//	if (isset ($_SESSION['idusuargfio'])){ // acaso creaste session idusuario?
-//                $usuarioid = $_SESSION['idusudfgario'];
-//		$usuario = $_SESSION['usuadfgrio'];
-//
-//	}
-//	else {           // var_dump($_SESSION); 
-//
-//        }        
+session_start();
+        $idusuario = 0;
+	$usuario = '';	
+	$password = '';
+
+	if (isset ($_SESSION['idusuargfio'])){ // acaso creaste session idusuario?
+                $usuarioid = $_SESSION['idusudfgario'];
+		$usuario = $_SESSION['usuadfgrio'];
+
+	}
+	else {           // var_dump($_SESSION); 
+
+        }        
 ?>
 
 <!DOCTYPE html>
