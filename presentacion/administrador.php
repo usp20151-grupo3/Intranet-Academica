@@ -58,7 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini">I.A</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">Bienvenido</span>
+          <span class="logo-lg">BIENVENIDO</span>
         </a>
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -136,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <img src="../recursos/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+                <p><?php echo $usuarionombre ?></p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -150,7 +150,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Optionally, you can add icons to the links -->
             <!--<li class="active"><a href="#"><i class='fa fa-link'></i> <span>Configurar Grupos</span></a></li>-->
             <!--<li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>-->
-            <li class="treeview">
+            
+            
+            
+                <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+		<li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Mantenimiento Grupo</a></li>
@@ -164,6 +168,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li><a href="#">Visualizar Usuario</a></li>
               </ul>
             </li>
+            
+            <?php } if ($rol == 'Docente') { ?>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Visualizar Grupo</a></li>
+                
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Visualizar Grupo</a></li>
+                
+              </ul>
+            </li>
+		<?php } if ($rol == 'Alumno') { ?>
+            <li class="treeview">
+            <a href="#"><i class='fa fa-link'></i> <span>Ver Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Visualizar Calificación</a></li>
+                
+              </ul>
+            </li>
+            <?php }  ?>
+            
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
