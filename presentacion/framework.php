@@ -45,8 +45,8 @@ session_start();
     <div class="wrapper">
       <header class="main-header">
         <a href="#" class="logo">
-          <span class="logo-mini">I.A</span>
-          <span class="logo-lg">Bienvenido</span>
+          <span class="logo-mini">I-A</span>
+          <span class="logo-lg">Intranet - Academica</span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -134,41 +134,48 @@ session_start();
             </div>
           </div>
           <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+              <li class="header"><span >ITEMS</span></li>
             <!-- Optionally, you can add icons to the links -->
             <!--<li class="active"><a href="#"><i class='fa fa-link'></i> <span>Configurar Grupos</span></a></li>-->
             <!--<li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>-->
                 <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
 		<li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Mantenimiento Grupo</a></li>
                 <li><a href="#">Visualizar Grupo</a></li>
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Mantenimiento Usuario</a></li>
                 <li><a href="#">Visualizar Usuario</a></li>
               </ul>
-            </li>           
+            </li>  
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Regularizar Asistencia</a></li>
+                <li><a href="#">Visualizar Asistencia</a></li>
+              </ul>
+            </li> 
             <?php } if ($rol == 'Docente') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Grupo</a></li>                
+                <li><a href="#">Visualizar Grupo de Estudio</a></li>                
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Mantenimiento Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Grupo</a></li>                
+                <li><a href="#">Visualizar Grupo de Estudio</a></li>                
               </ul>
             </li>
 		<?php } if ($rol == 'Alumno') { ?>
             <li class="treeview">
-            <a href="#"><i class='fa fa-link'></i> <span>Ver Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class='fa fa-link'></i> <span>Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Calificación</a></li>                
               </ul>
@@ -180,20 +187,24 @@ session_start();
       <div class="content-wrapper">
         <section class="content-header">
             <h1>
-            asdasd
-            
-            <small>ASDAS</small>
+                      
+            <small>Bienvenido</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-            <li class="active">Here</li>
+            <li><a><i class="fa fa-dashboard"></i> Level</a></li>
+            <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+            <li class="active">Administración</li>
+            <?php } if ($rol == 'Docente') {?>
+            <li class="active">Docente</li>
+            <?php } if ($rol == 'Alumno') {?>
+            <li class="active">Alumno</li>
+            <?php } ?>
           </ol>
         </section>
         <section class="content">
         asdaasdkahsdvas 
         <?php include 'perfil.php' ?> 
         </section>
-          asdasd
       </div>
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
