@@ -33,7 +33,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Intranet - Academica</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link rel="stylesheet" type="text/css" href="../recursos/css/style.css" />
+    <link href="../recursos/css/stylemodal.css" rel="stylesheet" type="text/css"  />
     <link href="../recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/ionicons.min.css" rel="stylesheet" type="text/css" />
