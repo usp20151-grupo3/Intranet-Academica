@@ -26,25 +26,19 @@ switch ($_POST['evento']) {
 
 				$_SESSION['usuario']        = $datos->usuario;				
                                 $_SESSION['idusuario']      = $datos->idusuario;
-				$_SESSION['rol']            = $datos->rol;
+				$_SESSION['rol']            = $datos->idrol;
                                 $_SESSION['fechaalta']      = $datos->fechaalta;
                                 $_SESSION['nombre']         = $datonombre->nombre;
                                 $_SESSION['apellido']       = $datonombre->apellido;
 
-				switch ($_SESSION['idusuario']>0) {
-					case 'D':
-						header('Location:../presentacion/framework.php');
-						break;
-					case 'A':
-						header('Location:../presentacion/framework.php');
-						break;
-					case 'P':
-						header('Location:../presentacion/framework.php');
-						break;		
-					default:
-						header('Location:../');
-						break;
-				}
+				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
+					
+					header('Location:../presentacion/framework.php');
+					
+					}
+                                        else {
+                                        header('Location:../');}
+										
 
 			}
                         //var_dump($datos); // var_dump imprime el dato sea objeta o lo que sea , temuestra q es lo q contiene.

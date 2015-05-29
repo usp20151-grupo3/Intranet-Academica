@@ -4,7 +4,7 @@ session_start();
 	$usuario = '';	
 	$usuarionombre = '';
         $usuarioapellido = '';
-        $rol = '';
+        $idrol = '';
         $fechaalta ='';
 
 	if (isset ($_SESSION['idusuario'])){ 
@@ -14,13 +14,16 @@ session_start();
                 $usuarioapellido = $_SESSION['apellido'];
                 $fechaalta = $_SESSION['fechaalta'];
                 $rol = $_SESSION['rol'];
-                if ($rol=='D'){
+                if ($rol=='1'){
                     $rol = 'Director';
                 }
-                if ($rol=='P'){
+                if ($rol=='2'){
+                    $rol = 'Secretaria';
+                }
+                if ($rol=='3'){
                     $rol = 'Docente';
                 }
-                if ($rol=='A'){
+                if ($rol=='4'){
                     $rol = 'Alumno';
                 }
 	}
