@@ -1,4 +1,4 @@
-  <link rel="stylesheet" type="text/css" href="recursos/css/style.css" />
+
 <div class="modal fade" id="perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
               <div class="modal-dialog">
@@ -8,7 +8,7 @@
                     <h4 class="modal-title">Perfil</h4>
                   </div>
                   <div class="modal-body">
-                <form id="form" name="form" action="negocio/login.php" method="POST">
+                <form id="form" name="form" action="" method="POST">
                 <div id="block">
 		<label id="user" for="name">p</label>
 		<input type="text" name="user" id="name" placeholder="Usuario" required/>
