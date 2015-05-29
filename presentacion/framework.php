@@ -99,7 +99,7 @@ session_start();
                   <li class="user-footer">
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat" id="btnPerfil" data-toggle="modal" data-target="#myModal">Perfil</a>
-                      <?php include 'perfil.php' ?>                    </div>
+                                          </div>
                     <div class="pull-right">
                         <a href="#" class="btn btn-default btn-flat" id="btnCerrarSesion">Salir</a>
                     </div>
@@ -180,7 +180,7 @@ session_start();
       <div class="content-wrapper">
         <section class="content-header">
           <h1>
-             
+            <?php include 'perfil.php' ?> 
             <small>ASDAS</small>
           </h1>
           <ol class="breadcrumb">
