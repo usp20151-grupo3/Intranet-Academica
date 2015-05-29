@@ -179,7 +179,8 @@ session_start();
       </aside>
       <div class="content-wrapper">
         <section class="content-header">
-          <h1>
+            <h1>
+            asdasd
             
             <small>ASDAS</small>
           </h1>
@@ -192,6 +193,7 @@ session_start();
         asdaasdkahsdvas 
         <?php include 'perfil.php' ?> 
         </section>
+          asdasd
       </div>
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
