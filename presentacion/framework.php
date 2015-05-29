@@ -42,7 +42,8 @@ session_start();
     <link href="../recursos/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/style.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/skin-purple.min.css" rel="stylesheet" type="text/css" />
-   
+    <script src="../recursos/js/showhide.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     
     
     
@@ -224,7 +225,6 @@ session_start();
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
     <script src="../recursos/js/logout.js" type="text/javascript"> </script>
-    <script src="../recursos/js/showhide.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
   </body>
 </html>
