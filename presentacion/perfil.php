@@ -8,12 +8,16 @@
                     <h4 class="modal-title">Perfil</h4>
                   </div>
                   <div class="modal-body">
-                <label id="user" for="name">p</label>
+                <form id="form" name="form" action="negocio/login.php" method="POST">
+                <div id="block">
+		<label id="user" for="name">p</label>
 		<input type="text" name="user" id="name" placeholder="Usuario" required/>
 		<label id="pass" for="password">k</label>
 		<input type="password" name="password" id="password" placeholder="Contraseña" required />
                 <input type="hidden"  value="verificar" name="evento" /> 
 		<input type="submit" id="submit" name="submit" value="a"/>
+                </div>
+                </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
