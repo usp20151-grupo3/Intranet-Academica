@@ -43,6 +43,19 @@ session_start();
     <link href="../recursos/css/style.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/skin-purple.min.css" rel="stylesheet" type="text/css" />
    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document).ready(function(){
+
+$('a').click(function () {
+var divname= this.name;
+$("#"+divname).show("slow").siblings().hide("slow");
+});
+
+});
+</script>
+    
+    
   </head>
     <body class="skin-purple sidebar-mini">
     <div class="wrapper">
@@ -145,14 +158,14 @@ session_start();
 		<li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Mantenimiento Grupo</a></li>
+                <li><a href="#" name="div1">Mantenimiento Grupo</a></li>
                 <li><a href="#">Visualizar Grupo</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Mantenimiento Usuario</a></li>
+                <li><a href="#" name="div2">Mantenimiento Usuario</a></li>
                 <li><a href="#">Visualizar Usuario</a></li>
               </ul>
             </li>  
@@ -194,7 +207,7 @@ session_start();
             <small>Bienvenido</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a><i class="fa fa-dashboard"></i> Level</a></li>
+            <li><a><i class="fa fa-dashboard"></i> Navegación</a></li>
             <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
             <li class="active">Administración</li>
             <?php } if ($rol == 'Docente') {?>
@@ -205,7 +218,8 @@ session_start();
           </ol>
         </section>
         <section class="content">
-        asdaasdkahsdvas 
+        <?php include 'reggrupo.php' ?>    
+        <?php include 'regusuario.php' ?>
         <?php include 'perfil.php' ?> 
         </section>
       </div>
