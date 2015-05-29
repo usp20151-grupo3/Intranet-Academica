@@ -8,8 +8,12 @@
                     <h4 class="modal-title">Perfil</h4>
                   </div>
                   <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                  </div>
+                <label id="nombre" for="name">Nombre</label>
+		<input type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
+		<label id="apellido" for="name">Apellido</label>
+		<input type="text" name="apellido" id="apellido" placeholder="Apellido" required />
+                <input type="hidden"  value="verificar" name="evento" /> 
+		 </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
