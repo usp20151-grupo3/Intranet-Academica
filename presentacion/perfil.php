@@ -1,4 +1,4 @@
-  
+  <link rel="stylesheet" type="text/css" href="recursos/css/style.css" />
 <div class="modal fade" id="perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
               <div class="modal-dialog">
