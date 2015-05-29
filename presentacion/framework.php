@@ -41,10 +41,9 @@ session_start();
     <link href="../recursos/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/style.min.css" rel="stylesheet" type="text/css" />
-    <link href="../recursos/css/skin-purple.min.css" rel="stylesheet" type="text/css" />
-    <script src="../recursos/js/showhide.js"></script>
+    <link href="../recursos/css/skin-purple.min.css" rel="stylesheet" type="text/css" />    
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    
+    <script src="../recursos/js/showhide.js" type="text/javascript"></script>
     
     
   </head>
