@@ -224,7 +224,7 @@ session_start();
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
     <script src="../recursos/js/logout.js" type="text/javascript"> </script>
-    <script src="../recursos/js/showhide.js" type="text/javascript"></script>
+    <script src="../recursos/js/showhide.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
   </body>
 </html>
