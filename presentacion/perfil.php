@@ -8,16 +8,7 @@
                     <h4 class="modal-title">Perfil</h4>
                   </div>
                   <div class="modal-body">
-                <form id="form" name="form" action="" method="POST">
-                <div id="block">
-		<label id="user" for="name">p</label>
-		<input type="text" name="user" id="name" placeholder="Usuario" required/>
-		<label id="pass" for="password">k</label>
-		<input type="password" name="password" id="password" placeholder="Contraseña" required />
-                <input type="hidden"  value="verificar" name="evento" /> 
-		<input type="submit" id="submit" name="submit" value="a"/>
-                </div>
-                </form>
+                a
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
