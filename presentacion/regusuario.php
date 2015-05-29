@@ -4,7 +4,6 @@
                 <div class="box-header">
                   <h3 class="box-title">Registro Usuario</h3>
                 </div>
-
                 <form role="form">
                   <div class="box-body">
                     <div class="form-group">

@@ -43,17 +43,7 @@ session_start();
     <link href="../recursos/css/style.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/skin-purple.min.css" rel="stylesheet" type="text/css" />
    
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
-$(document).ready(function(){
-
-$('a').click(function () {
-var divname= this.name;
-$("#"+divname).show("slow").siblings().hide("slow");
-});
-
-});
-</script>
+    
     
     
   </head>
@@ -229,10 +219,12 @@ $("#"+divname).show("slow").siblings().hide("slow");
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
+        
      <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
     <script src="../recursos/js/logout.js" type="text/javascript"> </script>
-    
+    <script src="../recursos/js/showhide.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
   </body>
 </html>
