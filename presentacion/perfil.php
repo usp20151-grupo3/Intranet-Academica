@@ -8,12 +8,13 @@
                     <h4 class="modal-title">Perfil</h4>
                   </div>
                   <div class="modal-body">
-                <label id="nombre" for="name">Nombre</label>
-		<input type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
-		<label id="apellido" for="name">Apellido</label>
-		<input type="text" name="apellido" id="apellido" placeholder="Apellido" required />
+                <label id="user" for="name">p</label>
+		<input type="text" name="user" id="name" placeholder="Usuario" required/>
+		<label id="pass" for="password">k</label>
+		<input type="password" name="password" id="password" placeholder="Contraseña" required />
                 <input type="hidden"  value="verificar" name="evento" /> 
-		 </div>
+		<input type="submit" id="submit" name="submit" value="a"/>
+                  </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
