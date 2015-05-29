@@ -13,8 +13,8 @@ class UsuarioD{
 			$sql = "call nombre_persona_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
 			return $objCn->ejecutar($sql);	
 		}
-                // registrar_grupo
-                // baja_grupo_de_usuario_ by rol
+                // registrar_grupo_usuario null,descrip, getdate(), fecvig, est
+                // baja grupo_usuario idrol
                 //
                 // registro_usuario idper, rol, usu, pass, preg, res, fec, est
                 // activar usuario by idusuario
