@@ -202,6 +202,6 @@ session_start();
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
     <script src="../recursos/js/logout.js" type="text/javascript"> </script>
-    <script src="../recursos/js/jquery.validate.js" type="text/javascript"> </script>
+    
   </body>
 </html>
