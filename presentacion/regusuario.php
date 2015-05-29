@@ -34,7 +34,7 @@
                   </div>
 
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
                   </div>
                 </form>
               </div>

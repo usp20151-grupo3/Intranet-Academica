@@ -2,6 +2,7 @@
 session_start();
 require('../conexion/conexion.php');
 require('../entidad/usuarioentity.php');
+require('../entidad/historialentity.php');
 require('../data/usuariodata.php');
 
 $con 	= 	new Conexion();
@@ -15,9 +16,10 @@ switch ($_POST['evento']) {
 			$objE->setusuario($_POST['user']);
 			$objE->setpassword($_POST['password']);
 
-			$res_usuario	=	$objB->verificar_usuario($objE);
-                        $dato_usuario = $objB->mostrar_nombre_apellido_usuario($objE);
-                        // AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
+			$res_usuario	=	$objB-> verificar_usuario($objE);
+                        $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
+                        $intento_fallido = $objB->verificar_intentos_login($objE);
+// AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
 
 			if (count($res_usuario)>0) {
 				
