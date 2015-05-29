@@ -7,7 +7,7 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Grupo</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Grupo">
+                      <input type="text" class="form-control" id="exampleInputGrupo" placeholder="Grupo">
                       <div class="form-group">
                       <label for="exampleInputFecha">Fecha Vigencia</label>
                       <input type="date" class="form-control" id="exampleInputDate" placeholder="Fecha Vigencia">
