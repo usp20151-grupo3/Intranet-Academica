@@ -180,7 +180,7 @@ session_start();
       <div class="content-wrapper">
         <section class="content-header">
           <h1>
-            <?php include 'perfil.php' ?> 
+             
             <small>ASDAS</small>
           </h1>
           <ol class="breadcrumb">
