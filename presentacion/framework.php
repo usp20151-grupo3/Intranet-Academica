@@ -26,6 +26,20 @@ session_start();
 	}
 	else {            header('Location:../index.php');        }        
 ?>
+<style>
+      .example-modal .modal {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        display: block;
+        z-index: 1;
+      }
+      .example-modal .modal {
+        background: transparent!important;
+      }
+    </style>
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,7 +51,7 @@ session_start();
     <link href="../recursos/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/style.min.css" rel="stylesheet" type="text/css" />
     <link href="../recursos/css/skin-purple.min.css" rel="stylesheet" type="text/css" />
-    <link href="../recursos/css/sidebar.less.css" rel="stylesheet" type="text/css" />
+   
   </head>
     <body class="skin-purple sidebar-mini">
     <div class="wrapper">
@@ -96,18 +110,21 @@ session_start();
                   </li>-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat" id="btnPerfil">Perfil</a>
-                    </div>
+                      <a href="#" class="btn btn-default btn-flat" id="btnPerfil" data-toggle="modal" data-target="#perfil">Perfil</a>
+                                          </div>
                     <div class="pull-right">
                         <a href="#" class="btn btn-default btn-flat" id="btnCerrarSesion">Salir</a>
                     </div>
                   </li>
+                  
                 </ul>
               </li>
             </ul>
           </div>
+            
         </nav>
       </header>
+        
       <aside class="main-sidebar">
         <section class="sidebar">
           <div class="user-panel">
@@ -175,7 +192,7 @@ session_start();
       <div class="content-wrapper">
         <section class="content-header">
           <h1>
-            ASDJASDALSDHJAS
+            <?php include 'perfil.php' ?> 
             <small>ASDAS</small>
           </h1>
           <ol class="breadcrumb">
