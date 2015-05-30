@@ -12,7 +12,7 @@
                     <div class="form-group">
                       <div class="form-group">
                       <label for="exampleInputUsuario">Nueva Respuesta Secreta</label>
-                      <input type="text" class="form-control" id="nuevarespuesta" name="nuevarespuesta" placeholder="Nueva Respuesta Secreta">
+                      <input type="text" class="form-control" name="nuevarespuesta" placeholder="Nueva Respuesta Secreta">
                     </div>
                   </div>
                   <div class="modal-footer">
