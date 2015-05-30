@@ -23,19 +23,7 @@
                   <h3 class="box-title">Editar Perfil</h3>
                 </div>
                 <form role="form" action="../negocio/perfil.php" method="POST">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="exampleInputUsuario">Antigua Password</label>
-                      <input type="password" class="form-control" name="oldpassword" placeholder="Antigua Contraseña">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPersona">Nueva Password</label>
-                      <input type="password" class="form-control" name="newpassword" placeholder="Nueva Contraseña">
-                    </div> 
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Confirme Nueva Password</label>
-                      <input type="password" class="form-control" name="confirmnewpassword" placeholder="Confirme Nueva Contraseña">
-                    </div>
+                  <div class="box-body">                    
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
                       <input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">  
@@ -51,7 +39,7 @@
                     </div>
                   </div>
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                      <button type="submit" class="btn btn-primary">Confirmar</button> <button type="button" class="btn btn-primary">Cambiar Password</button>
                   </div>
                 </form>
               </div>
