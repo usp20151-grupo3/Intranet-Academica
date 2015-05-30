@@ -10,7 +10,7 @@
                 </div>
                 <form role="form">
                   <div class="box-body">                    
-                    <table border="1" class="box-body">
+                    <table border="1" class="box box-primary">
                     
                     <th class="box-body">Id</th>
                     <th class="box-body">Rol</th>
@@ -21,7 +21,7 @@
                     <?php 
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr bgcolor=#F0FFFF class="box-body">
+                   <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idrol']?> </td>
                     <td class="box-body"> <?php echo $rol['descripcion']?> </td>
                     <td class="box-body"> <?php echo $rol['fechaalta']?> </td>
