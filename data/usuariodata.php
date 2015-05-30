@@ -62,7 +62,7 @@ class UsuarioD{
                 {
                     $objCn = new conexion(); 
 
-                    $existe = existe_usuario_intentos($obj);
+                    $existe = existe_usuario_intentos($obj->idgetusuario());
 
                     //Chequea si el usuario existe en la tabla de intentos
                     if ($existe == 0){
@@ -71,7 +71,7 @@ class UsuarioD{
                     }
                     else{ 
                         $num = numero_intentos($obj);
-                        $date = fecha_ultimo_intento($obj->idgetusuario());
+                        $date = fecha_ultimo_intento($obj);
 
                         // Si han pasado mas de 24hrs y el # de intentos = 3
                         if(  strtotime($date) + 86400 > strtotime("now") && $num == 3 ){
