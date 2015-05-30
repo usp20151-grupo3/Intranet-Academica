@@ -1,3 +1,5 @@
+
+
 <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
 ?>
@@ -8,23 +10,23 @@
                 </div>
                 <form role="form">
                   <div class="box-body">                    
-                    <table border="1">
+                    <table border="1" class="box box-primary">
                     
-                    <th>Id</th>
-                    <th>  Rol</th>
-                    <th>FechaAlta</th>
-                    <th>FechaVig.</th>
-                    <th>Estado</th>
+                    <th class="box-header">Id</th>
+                    <th class="box-header">  Rol</th>
+                    <th class="box-header">FechaAlta</th>
+                    <th class="box-header">FechaVig.</th>
+                    <th class="box-header">Estado</th>
                     
                     <?php 
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr bgcolor=#F0FFFF>
-                    <td><?php echo $rol['idrol']?> </td>
-                    <td> <?php echo $rol['descripcion']?> </td>
-                    <td> <?php echo $rol['fechaalta']?> </td>
-                    <td> <?php echo $rol['fechavigencia']?> </td>
-                    <td> <?php echo $rol['estado']?> </td>
+                   <tr bgcolor=#F0FFFF class="box-header">
+                    <td class="box-header"><?php echo $rol['idrol']?> </td>
+                    <td class="box-header"> <?php echo $rol['descripcion']?> </td>
+                    <td class="box-header"> <?php echo $rol['fechaalta']?> </td>
+                    <td class="box-header"> <?php echo $rol['fechavigencia']?> </td>
+                    <td class="box-header"> <?php echo $rol['estado']?> </td>
                 </tr>
                     <?php } ?>
 </table>
