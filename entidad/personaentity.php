@@ -13,7 +13,7 @@
         private $fecharegistro;
         private $estado;
 	
-	function __construct($a, $b, $c, $d, $e,$f,$g,$h,$i,$j){
+	function __construct($a, $b, $c, $d, $e, $f, $g, $h, $i, $j){
 		$this->idpersona=$a;
 		$this->nombre=$b;
                 $this->apellido=$c;

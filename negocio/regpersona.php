@@ -6,7 +6,7 @@ require('../entidad/personaentity.php');
 
 
 $con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","","","","","","");
+$objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 
 
@@ -24,6 +24,6 @@ $objB	= 	new UsuarioD();
                         } else {
                         $objE->setestado(0);
 }
-                        $reg_persona	=	$objB->registro_persona($objE);
+                        $objB->registro_persona($objE);
                         //header('Location:../presentacion/framework.php');
 ?>
