@@ -8,11 +8,11 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Usuario</label>
-                      <input type="email" class="form-control" id="exampleInputUsuario" placeholder="Usuario">
+                      <input type="text" class="form-control" id="exampleInputUsuario" placeholder="Usuario">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsuario">Persona</label>
-                      <input type="email" class="form-control" id="exampleInputPersona" placeholder="Seleccione Persona">
+                      <input type="text" class="form-control" id="exampleInputPersona" placeholder="Seleccione Persona">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
@@ -20,11 +20,11 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="email" class="form-control" id="exampleInputPregunta" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" id="exampleInputPregunta" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="email" class="form-control" id="exampleInputRespuesta" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" id="exampleInputRespuesta" placeholder="Respuesta Secreta">  
                     </div>
                     <div class="checkbox">
                       <label>
