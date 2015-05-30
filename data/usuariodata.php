@@ -51,7 +51,7 @@ class UsuarioD{
 		}
                  function actualizar_respuesta($obj){
 			$objCn = new Conexion();
-			$sql = "call actualizar_respuesta('".$obj->getidpersona()."','".$obj->getrespuesta()."')";                        
+			$sql = "call actualizar_respuesta('".$obj->getidusuario()."','".$obj->getrespuesta()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }
