@@ -2,31 +2,31 @@
                 <div class="box-header">
                   <h3 class="box-title">Registro Usuario</h3>
                 </div>
-                <form role="form">
+                <form role="form" action="../negocio/regpersona.php" method="POST">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Usuario</label>
-                      <input type="text" class="form-control" placeholder="Usuario">
+                      <input type="text" class="form-control" name="usuario" placeholder="Usuario">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPersona">Persona</label>
-                      <input type="text" class="form-control" placeholder="Seleccione Persona">
+                      <input type="text" class="form-control" name="selpersona" placeholder="Seleccione Persona">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" placeholder="Password">
+                      <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="text" class="form-control" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" name="pregsecreta" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="text" class="form-control" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" name="rptasecreta" placeholder="Respuesta Secreta">  
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Habilitar
+                        <input type="checkbox" name="checkbox"> Habilitar
                       </label>
                     </div>
                   </div>
