@@ -3,11 +3,7 @@
                   <h3 class="box-title">Registro Usuario</h3>
                 </div>
                 <form role="form" action="../negocio/regusuario.php" method="POST">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="exampleInputUsuario">Usuario</label>
-                      <input type="text" class="form-control" name="usuario" placeholder="Usuario">
-                    </div>
+                  <div class="box-body">                    
                     <div class="form-group">
                       <label for="exampleInputPersona">Persona</label>
                       <input type="text" class="form-control" name="persona" placeholder="Seleccione Persona">
@@ -16,6 +12,10 @@
                       <label for="exampleInputRol">Rol</label>
                       <input type="text" class="form-control" name="rol" placeholder="Seleccione Rol">
                     </div> 
+                      <div class="form-group">
+                      <label for="exampleInputUsuario">Usuario</label>
+                      <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+                    </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
                       <input type="password" class="form-control" name="password" placeholder="Password">
