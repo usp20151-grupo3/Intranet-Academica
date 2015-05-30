@@ -241,6 +241,7 @@ session_start();
         <section class="content">
         <?php include 'reggrupo.php' ?>    
         <?php include 'regusuario.php' ?>
+        <?php include 'regpersona.php' ?>      
         <?php include 'perfil.php' ?> 
         </section>
       </div>
