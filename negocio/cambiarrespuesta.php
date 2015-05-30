@@ -8,11 +8,11 @@ require('../entidad/usuarioentity.php');
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
-$temp = $_SESSION['idpersona'];
+$temp = $_SESSION['idusuario'];
                         $objE->setrespuesta($_POST['nuevarespuesta']);
                         $objE->setidusuario($temp);
                         $objB->actualizar_respuesta($objE);                        
-                        //header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php');
                         
 
 
