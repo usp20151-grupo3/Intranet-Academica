@@ -12,7 +12,7 @@ $temp = $_SESSION['idpersona'];
                         $objE->setdireccion($_POST['nuevadireccion']);
                         $objE->setidpersona($temp);
                         $objB->actualizar_direccion($objE);                        
-                        header('Location:../presentacion/framework.php');
+                        //header('Location:../presentacion/framework.php');
                         
 
 
