@@ -3,7 +3,7 @@
                 <div class="box-header">
                   <h3 class="box-title">Registro Grupo de Usuarios - Rol</h3>
                 </div>
-                <form role="form">
+                <form role="form" action="negocio/login.php">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Grupo</label>
