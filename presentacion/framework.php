@@ -248,7 +248,7 @@ session_start();
       </div>
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          Gracias por tu visita <?php$rol?>
+          Gracias por tu visita
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
