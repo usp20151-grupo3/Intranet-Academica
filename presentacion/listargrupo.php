@@ -20,11 +20,11 @@
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr>
-                    <td><?php echo $rol['idrol']?></td>
-                    <td><?php echo $rol['descripcion']?></td>
-                    <td><?php echo $rol['fechaalta']?></td>
-                    <td><?php echo $rol['fechavigencia']?></td>
-                    <td><?php echo $rol['estado']?></td>
+                    <td><?php echo $rol['idrol']?> </td>
+                    <td><?php echo $rol['descripcion']?> </td>
+                    <td><?php echo $rol['fechaalta']?> </td>
+                    <td><?php echo $rol['fechavigencia']?> </td>
+                    <td><?php echo $rol['estado']?> </td>
                 </tr>
                     <?php } ?>
 </table>
