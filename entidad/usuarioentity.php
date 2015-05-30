@@ -30,8 +30,8 @@
 	function getidusuario() {return $this->idusuario;}
 	function getidpersona() {return $this->idtrabajador;}
         function getrol() {return $this->idrol;}
-	function getusuario() {return $this->usuario;}
-	function getpassword() {return $this->password;}
+	function getusuarior() {return $this->usuario;}
+	function getpasswordr() {return $this->password;}
         function getpregunta() {return $this->pregunta;}
         function getrespuesta() {return $this->respuesta;}
         function getfechaalta() {return $this->fechaalta;}
@@ -43,8 +43,8 @@
 	function setidusuario($val) {$this->idusuario=$val;}
 	function setidpersona($val) {$this->idpersona=$val;}
         function setrol($val) {$this->idrol=$val;}
-	function setusuario($val) {$this->usuario=$val;}
-	function setpassword($val) {$this->password=$val;}
+	function setusuarior($val) {$this->usuario=$val;}
+	function setpasswordr($val) {$this->password=$val;}
         function setpregunta($val) {$this->pregunta=$val;}
         function setrespuesta($val) {$this->respuesta=$val;}
         function setfechaalta($val) {$this->fechaalta=$val;}
