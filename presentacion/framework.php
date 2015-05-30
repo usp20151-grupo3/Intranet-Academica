@@ -161,7 +161,7 @@ session_start();
                 <?php if ($rol=='Secretaria') { ?>
                 <li><a href="#" name="div2">Registrar Usuario</a></li>
                 <?php } ?>
-                <li><a href="#">Visualizar Usuario</a></li>                                
+                <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
               </ul>
             </li>
               <?php if ($rol=='Secretaria') { ?>
@@ -248,7 +248,8 @@ session_start();
         <?php include 'cambiardireccion.php' ?>
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
-        <?php include '/listargrupo.php' ?> 
+        <?php include 'listargrupo.php' ?>
+        <?php include 'listarusuario.php' ?>  
         </section>
       </div>
       <footer class="main-footer">

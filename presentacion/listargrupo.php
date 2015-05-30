@@ -30,10 +30,5 @@
                 </tr>
                     <?php } ?>
 </table>
-                  </div>
-                  <div class="box-footer">
+            
                       
-                  </div>
-                </form>
-              </div>
-
