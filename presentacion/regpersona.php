@@ -13,7 +13,7 @@
                       <input type="text" class="form-control" name="apellido" placeholder="Apellidos">
                     </div> 
                     <div class="form-group">
-                      <label for="exampleInputPassword1">DNI</label>
+                      <label for="exampleInputPassword1">Documento Nacional de Identidad</label>
                       <input type="text" class="form-control" name="dni" placeholder="DNI">
                     </div>
                     <div class="form-group">
