@@ -19,10 +19,7 @@ class UsuarioD{
                 // registro_usuario idper, rol, usu, pass, preg, res, fec, est
                 // activar usuario by idusuario
                 // baja_usuario by idusuario
-                
-                
-                
-                
+                                                              
                 function existe_usuario_intentos($obj){
                 $objCn = new conexion();
                 $sql = "SELECT COUNT(*) total FROM historial WHERE idusuario='$obj'";                     
@@ -98,9 +95,7 @@ class UsuarioD{
                 
                 
                 
-                
-                
-                
+                                               
                 
 }
 
