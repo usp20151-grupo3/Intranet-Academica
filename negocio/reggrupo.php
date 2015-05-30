@@ -11,13 +11,11 @@ $objB	= 	new UsuarioD();
 $temp = 1;
 
 			$objE->setdescripcion('Prueba');                        
-			$objE->setfechavigencia('31/07/2015');                        
+			$objE->setfechavigencia('2015-07-07');                        
                         $objE->setestado($temp);
                         $reg_grupo	=	$objB->registrar_grupo_usuario($objE);
-   var_dump($reg_grupo);                     
-$_SESSION['grupo'] = $reg_grupo->descripcion;
-$_SESSION['date'] = $reg_grupo->fechavigencia;
-$_SESSION['estado'] = $reg_grupo->estado;
+                        
+
 
 
 ?>
