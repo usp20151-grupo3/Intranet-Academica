@@ -248,9 +248,11 @@ session_start();
         <?php include 'cambiardireccion.php' ?>
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
+        <?php include 'cambiarrespuesta.php'?>
         <?php include 'listargrupo.php' ?>
         <?php include 'listarusuario.php' ?>
-        <?php include 'listarpersona.php' ?>  
+        <?php include 'listarpersona.php' ?>
+        
         </section>
       </div>
       <footer class="main-footer">
