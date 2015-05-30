@@ -38,7 +38,6 @@
                       </label>
                     </div>
                   </div>
-
                   <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Confirmar</button>
                   </div>
