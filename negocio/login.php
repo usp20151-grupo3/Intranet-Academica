@@ -4,6 +4,7 @@ require('../conexion/conexion.php');
 require('../entidad/usuarioentity.php');
 require('../data/usuariodata.php');
 
+
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","");
 $objB	= 	new UsuarioD();
@@ -17,6 +18,7 @@ switch ($_POST['evento']) {
 
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
+                        
                         $intento_fallido = $objB->verificar_intentos_login($objE);
 // AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
 
@@ -32,13 +34,14 @@ switch ($_POST['evento']) {
                                 $_SESSION['nombre']         = $datonombre->nombre;
                                 $_SESSION['apellido']       = $datonombre->apellido;
 
-				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
-					
-					header('Location:../presentacion/framework.php');
-					
-					}
-                                        else {
-                                        header('Location:../');}
+                                var_dump($objE);
+//				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
+//					
+//					header('Location:../presentacion/framework.php');
+//					
+//					}
+//                                        else {
+//                                        header('Location:../');}
 										
 
 			}
