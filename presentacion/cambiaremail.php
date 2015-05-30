@@ -12,7 +12,7 @@
                     <div class="form-group">
                       <div class="form-group">
                       <label for="exampleInputUsuario">Nuevo Email</label>
-                      <input type="text" class="form-control" name="nuevoemail" placeholder="Nuevo Email">
+                      <input type="email" class="form-control" name="nuevoemail" placeholder="Nuevo Email">
                     </div>
                   </div>
                   <div class="modal-footer">
