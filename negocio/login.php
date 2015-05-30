@@ -23,6 +23,7 @@ $objB	= 	new UsuarioD();
 				$_SESSION['rol']            = $datos->idrol;
                                 $_SESSION['fechaalta']      = $datos->fechaalta;
                                 $_SESSION['idpersona']      = $datos ->idpersona;
+                                $_SESSION['respuesta']      = $datos ->respuesta;
                                 $_SESSION['nombrelog']         = $datonombre->nombre;
                                 $_SESSION['apellidolog']       = $datonombre->apellido;
                                 $_SESSION['direccion']       = $datoperfil->direccion;
