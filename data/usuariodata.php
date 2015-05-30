@@ -13,6 +13,13 @@ class UsuarioD{
 			$sql = "call nombre_persona_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
 			return $objCn->ejecutar($sql);	
 		}
+                
+                function registrar_grupo_usuario($obj){
+			$objCn = new Conexion();
+			$sql = "call registrar_grupo_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
+			return $objCn->ejecutar($sql);	
+		}
+                //null, `des`, getdate(), fecvig, est
                 // registrar_grupo_usuario null,descrip, getdate(), fecvig, est
                 // baja grupo_usuario idrol
                 //

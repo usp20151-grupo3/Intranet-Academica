@@ -11,7 +11,7 @@ $temp = '1';
 			$objE->setdescripcion($_POST['grupo']);
 			$objE->setfechavigencia($_POST['date']);                        
                         $objE->setestado($temp);
-
+                        $reg_grupo	=	$objB-> verificar_usuario($objE);
 
 
 ?>
