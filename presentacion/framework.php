@@ -148,10 +148,10 @@ session_start();
                 
 		<li class="treeview">
                 <?php if ($rol == 'Director') { ?>
-              <a href="#"><i class='fa fa-link'></i> <span>Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Rol</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#" name="div1">Registrar Grupo</a></li>
-                <li><a href="#" name="divlgrupo">Visualizar Grupo</a></li>
+                <li><a href="#" name="div1">Registrar Rol</a></li>
+                <li><a href="#" name="divlgrupo">Visualizar Rol</a></li>
               </ul>
               <?php } ?>
             </li>
