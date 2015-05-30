@@ -1,8 +1,10 @@
 <?php 
-//session_start();
-$dir = $_SESSION['direccion'];
-$cor = $_SESSION['email'];
-$tel = $_SESSION['telefono'];
+if (isset ($_SESSION['idusuario'])){ 
+                $dir = $_SESSION['direccion'];
+                $cor = $_SESSION['email'];
+                $tel = $_SESSION['telefono'];
+	}
+
 var_dump($tel);
 ?>
 <div class="box box-primary" id="divperfil" style="display:none">
