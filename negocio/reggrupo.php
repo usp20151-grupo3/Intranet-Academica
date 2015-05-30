@@ -9,14 +9,15 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
 
-if(isset($_POST['checkbox']))
-$objE->setestado(1);
-else
-$objE->setestado(0);
 
-			$objE->setdescripcion($_POST['grupo']);                        
+
+                        $objE->setdescripcion($_POST['grupo']);                        
 			$objE->setfechavigencia($_POST['date']);                        
-                        
+                        if (isset($_POST['checkbox'])) {
+                        $objE->setestado(1);
+                        } else {
+                        $objE->setestado(0);
+}
                         $reg_grupo	=	$objB->registrar_grupo_usuario($objE);
 
 
