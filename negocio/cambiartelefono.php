@@ -10,7 +10,7 @@ $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 $temp = $_SESSION['idusuario'];
                         $objE->settelefono($_POST['nuevotelefono']);
-                        $objE->setidusuario(['$temp']);
+                        $objE->setidusuario([$temp]);
                         $objB->actualizar_telefono($objE);                        
                         //header('Location:../presentacion/framework.php');
                         
