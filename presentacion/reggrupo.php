@@ -20,7 +20,7 @@
                   </div>
 
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirmar</button>
+                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirmar <?php header('Location:../presentacion/framework.php'); ?></button>
                   </div>
                  </div>
                 </form>             
