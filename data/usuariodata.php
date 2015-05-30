@@ -61,8 +61,8 @@ class UsuarioD{
                 function verificar_intentos_login($obj)
                 {
                     $objCn = new conexion(); 
-
-                    $existe = existe_usuario_intentos($obj->idgetusuario());
+                    var_dump($obj);
+                    //$existe = existe_usuario_intentos($obj->idgetusuario());
 
                     //Chequea si el usuario existe en la tabla de intentos
                     if ($existe == 0){
