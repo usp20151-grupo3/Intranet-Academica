@@ -19,7 +19,7 @@ switch ($_POST['evento']) {
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
                         
-                        $intento_fallido = $objB->verificar_intentos_login($objE);
+                        //$intento_fallido = $objB->verificar_intentos_login($objE);
 // AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
 
 			if (count($res_usuario)>0) {
@@ -34,7 +34,7 @@ switch ($_POST['evento']) {
                                 $_SESSION['nombre']         = $datonombre->nombre;
                                 $_SESSION['apellido']       = $datonombre->apellido;
 
-                                var_dump($objE);
+                                var_dump($dato_usuario);
 //				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
 //					
 //					header('Location:../presentacion/framework.php');
