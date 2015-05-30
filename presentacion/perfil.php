@@ -20,7 +20,7 @@
           </div> /.example-modal -->
 <div class="box box-primary" id="divperfil" style="display:none">
                 <div class="box-header">
-                  <h3 class="box-title">Registro Usuario</h3>
+                  <h3 class="box-title">Editar Perfil</h3>
                 </div>
                 <form role="form" action="../negocio/regusuario.php" method="POST">
                   <div class="box-body">
