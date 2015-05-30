@@ -13,7 +13,7 @@ if (isset ($_SESSION['idusuario'])){
                   <div class="box-body">                    
                     <div class="form-group">
                         <label for="exampleInputDireccion">Dirección  <li class="fa fa-long-arrow-right"> </li>     </label>
-                      <label>    <?php print($dir)?>    </label><li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#myModal"> Editar </a></li>  
+                      <label>    <?php print($dir)?>    </label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#myModal"> Editar </a></li>  
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
