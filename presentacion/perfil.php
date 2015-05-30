@@ -7,7 +7,7 @@ if (isset ($_SESSION['idusuario'])){
 ?>
 <div class="box box-primary" id="divperfil" style="display:none">
                 <div class="box-header">
-                  <h3 class="box-title">Editar Perfil</h3>
+                  <h3 class="box-title">Editar Perfil - Debe Relogear para que se actualicen los datos</h3>
                 </div>
                 <form role="form">
                   <div class="box-body">                    
