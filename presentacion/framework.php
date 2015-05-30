@@ -244,10 +244,10 @@ session_start();
         <?php include 'regusuario.php' ?>
         <?php include 'regpersona.php' ?>      
         <?php include 'perfil.php' ?> 
-        <?php include 'modal/cambiarpassword.php' ?>
-        <?php include 'modal/cambiardireccion.php' ?>
-        <?php include 'modal/cambiaremail.php' ?>
-        <?php include 'modal/cambiartelefono.php' ?>
+        <?php include 'cambiarpassword.php' ?>
+        <?php include 'cambiardireccion.php' ?>
+        <?php include 'cambiaremail.php' ?>
+        <?php include 'cambiartelefono.php' ?>
         </section>
       </div>
       <footer class="main-footer">

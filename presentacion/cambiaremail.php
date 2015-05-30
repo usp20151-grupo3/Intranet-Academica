@@ -1,18 +1,18 @@
 <?php ?>
 
-<div class="modal fade" id="Modaltel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <form role="form" action="../../negocio/cambiartelefono.php" method="POST">
+<div class="modal fade" id="Modalema" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<form role="form" action="../negocio/cambiaremail.php" method="POST">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Cambiar Telefono</h4>
+                    <h4 class="modal-title">Cambiar Email</h4>
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
                       <div class="form-group">
-                      <label for="exampleInputUsuario">Nuevo Telefono</label>
-                      <input type="text" class="form-control" id="nuevotelefono" name="nuevotelefono" placeholder="Nuevo Telefono">
+                      <label for="exampleInputUsuario">Nuevo Email</label>
+                      <input type="email" class="form-control" name="nuevoemail" placeholder="Nuevo Email">
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -21,7 +21,6 @@
                   </div>
                 </div>  
               </div>  
-
           </div>
-    </form>
-    </div>
+</form>
+</div>
