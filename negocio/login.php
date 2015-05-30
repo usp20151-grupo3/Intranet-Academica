@@ -18,7 +18,7 @@ $objB	= 	new UsuarioD();
                                 $datonombre = $dato_usuario->fetch_object();
                                 $datoperfil = $dato_perfil->fetch_object();
                                 
-				$_SESSION['usuario']        = $datos->usuario;				
+				$_SESSION['usuario']        = $datos->usuario;
                                 $_SESSION['idusuario']      = $datos->idusuario;
 				$_SESSION['rol']            = $datos->idrol;
                                 $_SESSION['fechaalta']      = $datos->fechaalta;
@@ -30,8 +30,8 @@ $objB	= 	new UsuarioD();
                                 $_SESSION['direccion']       = $datoperfil->direccion;
                                 $_SESSION['email']       = $datoperfil->email;
                                 $_SESSION['telefono']       = $datoperfil->telefono;
-				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {					
-					header('Location:../presentacion/framework.php');					
+				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
+					header('Location:../presentacion/framework.php');
 					}
                                         else {
                                         header('Location:../');}										
