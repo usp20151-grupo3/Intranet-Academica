@@ -28,7 +28,6 @@ if (isset ($_SESSION['idusuario'])){
                     </div>
                   </div>
                   <div class="box-footer">
-                      <button type="submit" class="btn btn-primary">Confirmar</button> 
                       <button type="button" class="btn btn-primary" name="divpassword" data-toggle="modal" data-target="#myModal">Cambiar Password</button>
                   </div>
                 </form>
