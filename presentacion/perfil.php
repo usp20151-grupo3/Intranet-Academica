@@ -13,11 +13,11 @@ if (isset ($_SESSION['idusuario'])){
                   <div class="box-body">                    
                     <div class="form-group">
                         <label for="exampleInputDireccion">Dirección  <li class="fa fa-long-arrow-right"> </li>     </label>
-                      <label>    <?php print($dir)?>    </label><button type="button" class="btn-sm btn-primary" name="divpassword" data-toggle="modal" data-target="#myModal">Editar</button>
+                      <label>    <?php print($dir)?>    </label><li class="fa fa-file-text-o"> </li>  
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputEmail">Email  <li class="fa fa-long-arrow-right"> </li> </label>
+                          <label for="exampleInputEmail">Email  <li class="fa fa-long-arrow-right" data-toggle="modal" data-target="#myModal"><a href="#"> </a></li> </label>
                       <label>    <?php print($cor)?></label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
