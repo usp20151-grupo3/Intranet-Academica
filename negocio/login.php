@@ -16,10 +16,7 @@ $objB	= 	new UsuarioD();
 
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
-                        
-                        
-// AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
-
+                                               
 			if (count($res_usuario)>0) {
 				
 				$datos = $res_usuario->fetch_object(); // -> AQUI EXTRAES LOS DATOS. se ahce asi por que es 1 dato , pero si fueran un monton de rows
