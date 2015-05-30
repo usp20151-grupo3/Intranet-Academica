@@ -158,7 +158,7 @@ session_start();
               <ul class="treeview-menu">
                   <?php if ($rol=='Secretaria') { ?>
                 <li><a href="#" name="div2">Mantenimiento Usuario</a></li>
-                < } ? php>
+                <?php } ?>
                 <li><a href="#">Visualizar Usuario</a></li>
               </ul>
             </li>  
