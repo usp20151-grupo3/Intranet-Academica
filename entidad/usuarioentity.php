@@ -32,8 +32,12 @@
         function getrol() {return $this->idrol;}
 	function getusuario() {return $this->usuario;}
 	function getpassword() {return $this->password;}
-	function getestado() {return $this->estado;}
+        function getpregunta() {return $this->pregunta;}
+        function getrespuesta() {return $this->respuesta;}
         function getfechaalta() {return $this->fechaalta;}
+        function getfechavigencia() {return $this->vigencia;}
+	function getestado() {return $this->estado;}
+        
 	
 	//set es para modificar el valor almacenado	
 	function setidusuario($val) {$this->idusuario=$val;}
@@ -41,8 +45,12 @@
         function setrol($val) {$this->idrol=$val;}
 	function setusuario($val) {$this->usuario=$val;}
 	function setpassword($val) {$this->password=$val;}
+        function setpregunta($val) {$this->pregunta=$val;}
+        function setrespuesta($val) {$this->respuesta=$val;}
+        function setfechaalta($val) {$this->fechaalta=$val;}
+        function setfechavigencia($val) {$this->fechavigencia=$val;}
 	function setestado($val) {$this->estado=$val;}
-	function setfechaalta($val) {$this->fechaalta=$val;}
+	
 }
 
         ?>
