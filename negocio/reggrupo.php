@@ -18,7 +18,7 @@ $objB	= 	new UsuarioD();
                         } else {
                         $objE->setestado(0);
 }
-                        $reg_grupo	=	$objB->registro_grupo_usuario($objE);                        
+                        $objB->registro_grupo_usuario($objE);                        
                         header('Location:../presentacion/framework.php');
                         
 
