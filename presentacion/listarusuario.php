@@ -38,5 +38,8 @@
                 </tr>
                     <?php } ?>
 </table>
+                       </div>
+                </form>
+</div>
             
                       
