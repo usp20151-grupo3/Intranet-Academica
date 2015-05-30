@@ -41,7 +41,7 @@ class UsuarioD{
 		}
                 function actualizar_direccion($obj){
 			$objCn = new Conexion();
-			$sql = "call actualizar_direccion('".$obj->getdireccion()."','".$obj->getidpersona()."')";                        
+			$sql = "call actualizar_direccion('".$obj->getidpersona()."','".$obj->getdireccion()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }
