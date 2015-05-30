@@ -1,6 +1,6 @@
 <?php ?>
 
-<div class="modal fade" id="Modale" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="Modalema" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
               <div class="modal-dialog">
                 <div class="modal-content">
