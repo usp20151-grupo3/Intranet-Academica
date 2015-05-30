@@ -161,8 +161,17 @@ session_start();
                 <?php if ($rol=='Secretaria') { ?>
                 <li><a href="#" name="div2">Mantenimiento Usuario</a></li>
                 <?php } ?>
-                <li><a href="#">Visualizar Usuario</a></li>
+                <li><a href="#">Visualizar Usuario</a></li>                                
               </ul>
+              <?php if ($rol=='Secretaria') { ?>
+              <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Mantenimiento Matricula</a></li>
+                <li><a href="#">Visualizar Matricula</a></li>
+              </ul>
+            </li>
+            <?php } ?>
             </li>  
             <?php if ($rol == 'Director') { ?>
             <li class="treeview">
