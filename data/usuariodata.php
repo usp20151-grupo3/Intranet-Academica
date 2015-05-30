@@ -46,7 +46,7 @@ class UsuarioD{
 		}
                 function actualizar_correo($obj){
 			$objCn = new Conexion();
-			$sql = "call actualizar_correo('".$obj->getidpersona()."','".$obj->getdireccion()."')";                        
+			$sql = "call actualizar_correo('".$obj->getidpersona()."','".$obj->getemail()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }
