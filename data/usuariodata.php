@@ -24,20 +24,6 @@ class UsuarioD{
 			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
-}//INSERT INTO persona  (nombre,apellido,dni,sexo,direccion,telefono,email,fecharegistro,estado) 
-//VALUES (nom,ape,doc,sex,dir,tel,cor,now(),est)
-//                        $objE->setnombre($_POST['nombre']);                        
-//			  $objE->setapellido($_POST['apellido']);
-//                        $objE->setdni($_POST['dni']);
-//                        $objE->setsexo($_POST['sexo']);
-//                        $objE->setdireccion($_POST['direccion']);
-//                        $objE->settelefono($_POST['telefono']);
-//                        $objE->setemail($_POST['telefono']);
-//                      
-//                        if (isset($_POST['checkbox'])) {
-//                        $objE->setestado(1);
-
-
-
+}
 ?>
 
