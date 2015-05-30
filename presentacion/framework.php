@@ -243,6 +243,7 @@ session_start();
         <?php include 'regusuario.php' ?>
         <?php include 'regpersona.php' ?>      
         <?php include 'perfil.php' ?> 
+        <?php include 'cambiarpassword.php' ?>
         </section>
       </div>
       <footer class="main-footer">
