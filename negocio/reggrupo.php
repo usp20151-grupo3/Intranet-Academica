@@ -14,8 +14,6 @@ $objE->setestado(1);
 else
 $objE->setestado(0);
 
-$temp = 1;
-
 			$objE->setdescripcion($_POST['grupo']);                        
 			$objE->setfechavigencia($_POST['date']);                        
                         
