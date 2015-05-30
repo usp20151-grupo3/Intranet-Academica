@@ -11,7 +11,7 @@
                     <table>
                     <caption> Lista de Roles</caption>
                     <th>Id</th>
-                    <th>Rol</th>
+                    <th>  Rol</th>
                     <th>FechaAlta</th>
                     <th>FechaVig.</th>
                     <th>Estado</th>
