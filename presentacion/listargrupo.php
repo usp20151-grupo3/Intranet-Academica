@@ -17,13 +17,14 @@
                     <th><input type="submit" name="BtnEliminar" value="Eliminar"/></th>
                     <?php 
                     $consulta = mysqli_query('Select * From rol');
-                    while ($rol = mysqli_fetch_array($consulta)); ?>
+                    while ($rol = mysqli_fetch_array($consulta)){ ?>
                    <tr>
                     <td><?php echo $rol['idrol']?></td>
                     <td><?php echo $rol['Descripcion']?></td>
                     <td><?php echo $rol['FechaAlta']?></td>
                     <td><?php echo $rol['FechaVigencia']?></td>
                 </tr>
+                    <?php } ?>
 </table>
                   </div>
                   <div class="box-footer">
