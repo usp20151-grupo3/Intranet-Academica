@@ -164,18 +164,18 @@ session_start();
                 <li><a href="#">Visualizar Usuario</a></li>                                
               </ul>
               <?php if ($rol=='Secretaria') { ?>
-              <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="#">Mantenimiento Matricula</a></li>
-                <li><a href="#">Visualizar Matricula</a></li>
-              </ul>
-            </li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Mantenimiento Persona</a></li>
                 <li><a href="#">Visualizar Persona</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Mantenimiento Matricula</a></li>
+                <li><a href="#">Visualizar Matricula</a></li>
               </ul>
             </li>
             <?php } ?>
@@ -225,7 +225,7 @@ session_start();
             <small>Bienvenido</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a><i class="fa fa-desktop"></i> Navegación</a></li>
+            <li><a><i class="fa fa-github-alt"></i> Navegación</a></li>
             <?php if ($rol == 'Director') { ?>
             <li class="active">Dirección</li>
             <?php } if ($rol == 'Secretaria') { ?>
