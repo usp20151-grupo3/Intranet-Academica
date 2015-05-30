@@ -15,7 +15,7 @@
                     <th>FechaAlta</th>
                     <th>FechaVigencia</th>
                     <th>Estado</th>
-                    <th><input type="submit" name="BtnEliminar" value="Eliminar"/></th>
+                    
                     <?php 
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
