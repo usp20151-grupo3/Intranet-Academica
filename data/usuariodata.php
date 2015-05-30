@@ -21,8 +21,8 @@ class UsuarioD{
 		}
                 function registro_persona($obj){
 			$objCn = new Conexion();
-			//$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
-                        $sql = "INSERT INTO persona  (nombre,apellido,dni,sexo,direccion,telefono,email,estado) VALUES ('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
+			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
+                        //$sql = "INSERT INTO persona  (nombre,apellido,dni,sexo,direccion,telefono,email,estado) VALUES ('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
 			return $objCn->ejecutar($sql);	
 		}
 }//INSERT INTO persona  (nombre,apellido,dni,sexo,direccion,telefono,email,fecharegistro,estado) 
