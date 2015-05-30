@@ -14,8 +14,8 @@
                     
                     <th class="box-body">Id</th>
                     <th class="box-body">Rol</th>
-                    <th class="box-body">FechaAlta</th>
-                    <th class="box-body">FechaVig.</th>
+                    <th class="box-body">Fecha Alta</th>
+                    <th class="box-body">Fecha Vigencia</th>
                     <th class="box-body">Estado</th>
                     
                     <?php 
