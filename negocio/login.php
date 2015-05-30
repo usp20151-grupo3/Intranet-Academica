@@ -3,6 +3,8 @@ session_start();
 require('../conexion/conexion.php');
 require('../entidad/usuarioentity.php');
 require('../data/usuariodata.php');
+require('../data/personaentity.php');
+
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
