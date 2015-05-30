@@ -11,8 +11,8 @@ $objB	= 	new UsuarioD();
 $temp = $_SESSION['idpersona'];
                         $objE->setdireccion($_POST['nuevadireccion']);
                         $objE->setidpersona($temp);
-                        $objB->actualizar_direccion($objE);                        
-                        //header('Location:../presentacion/framework.php');
+                        $objB->actualizar_correo($objE);                        
+                        header('Location:../presentacion/framework.php');
                         
 
 

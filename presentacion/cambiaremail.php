@@ -1,7 +1,7 @@
 <?php ?>
 
 <div class="modal fade" id="Modalema" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<form role="form" action="../negocio/cambiardireccion.php" method="POST">
+<form role="form" action="../negocio/cambiaremail.php" method="POST">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
