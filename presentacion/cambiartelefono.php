@@ -1,7 +1,7 @@
 <?php ?>
 
 <div class="modal fade" id="Modaltel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <form role="form" action="../negocio/reggrupo.php" method="POST">
+    <form role="form" action="../negocio/cambiartelefono.php" method="POST">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
