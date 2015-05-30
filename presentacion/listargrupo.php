@@ -17,11 +17,9 @@
                     <th>Estado</th>
                     
                     <?php 
-                    $color_row=array('#cccccc', 'lightblue');
-                    $ind_color=0;
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr bgcolor=${color_row[$ind_color]>
+                   <tr bgcolor=#F0FFFF>
                     <td><?php echo $rol['idrol']?> </td>
                     <td> <?php echo $rol['descripcion']?> </td>
                     <td> <?php echo $rol['fechaalta']?> </td>
