@@ -150,7 +150,7 @@ session_start();
                 <?php if ($rol == 'Director') { ?>
               <a href="#"><i class='fa fa-link'></i> <span>Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#" name="div1">Mantenimiento Grupo</a></li>
+                <li><a href="#" name="div1">Registro Grupo</a></li>
                 <li><a href="#">Visualizar Grupo</a></li>
               </ul>
               <?php } ?>
@@ -159,7 +159,7 @@ session_start();
               <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <?php if ($rol=='Secretaria') { ?>
-                <li><a href="#" name="div2">Mantenimiento Usuario</a></li>
+                <li><a href="#" name="div2">Registro Usuario</a></li>
                 <?php } ?>
                 <li><a href="#">Visualizar Usuario</a></li>                                
               </ul>
@@ -168,14 +168,14 @@ session_start();
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#" name="div3">Mantenimiento Persona</a></li>
+                <li><a href="#" name="div3">Registro Persona</a></li>
                 <li><a href="#">Visualizar Persona</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Mantenimiento Matricula</a></li>
+                <li><a href="#">Registro Matricula</a></li>
                 <li><a href="#">Visualizar Matricula</a></li>
               </ul>
             </li>
