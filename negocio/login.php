@@ -20,9 +20,9 @@ $objB	= 	new UsuarioD();
                                 $_SESSION['fechaalta']      = $datos->fechaalta;
                                 $_SESSION['nombrelog']         = $datonombre->nombre;
                                 $_SESSION['apellidolog']       = $datonombre->apellido;
-                                $_SESSION['direccion']       = $datonombre->direccion;
-                                $_SESSION['email']       = $datonombre->email;
-                                $_SESSION['telefono']       = $datonombre->telefono;
+                                $_SESSION['direccion']       = $datoperfil->direccion;
+                                $_SESSION['email']       = $datoperfil->email;
+                                $_SESSION['telefono']       = $datoperfil->telefono;
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {					
 					header('Location:../presentacion/framework.php');					
 					}

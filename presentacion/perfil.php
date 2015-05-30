@@ -1,6 +1,8 @@
 <?php 
 session_start();
-
+$dir = $_SESSION['direccion'];
+$cor = $_SESSION['email'];
+$tel = $_SESSION['telefono'];
 ?>
 <div class="box box-primary" id="divperfil" style="display:none">
                 <div class="box-header">
