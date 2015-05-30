@@ -18,7 +18,7 @@
               </div> /.modal-dialog 
 
           </div> /.example-modal -->
-<div class="box box-primary" id="div4" style="display:none">
+<div class="box box-primary" id="divperfil" style="display:none">
                 <div class="box-header">
                   <h3 class="box-title">Registro Usuario</h3>
                 </div>
