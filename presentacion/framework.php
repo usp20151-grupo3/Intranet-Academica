@@ -168,7 +168,7 @@ session_start();
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#" name="div3">Mantenimiento Persona</a></li>
+                <li><a href="#" name="div2">Mantenimiento Persona</a></li>
                 <li><a href="#">Visualizar Persona</a></li>
               </ul>
             </li>
