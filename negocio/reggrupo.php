@@ -2,6 +2,7 @@
 session_start();
 require('../conexion/conexion.php');
 require('../data/usuariodata.php');
+require('../entidad/grupoentity.php');
 
 
 $con 	= 	new Conexion();
