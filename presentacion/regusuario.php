@@ -6,23 +6,23 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Usuario</label>
-                      <input type="text" class="form-control" id="exampleInputUsuario" placeholder="Usuario">
+                      <input type="text" class="form-control" placeholder="Usuario">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPersona">Persona</label>
-                      <input type="text" class="form-control" id="exampleInputPersona" placeholder="Seleccione Persona">
+                      <input type="text" class="form-control" placeholder="Seleccione Persona">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="text" class="form-control" id="exampleInputPregunta" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="text" class="form-control" id="exampleInputRespuesta" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" placeholder="Respuesta Secreta">  
                     </div>
                     <div class="checkbox">
                       <label>
