@@ -62,7 +62,7 @@ class UsuarioD{
                 {
                     $objCn = new conexion(); 
                     var_dump($obj->getidusuario());
-                    $existe = existe_usuario_intentos($obj);
+                    $existe = existe_usuario_intentos($obj->getidusuario());
 
                     //Chequea si el usuario existe en la tabla de intentos
                     if ($existe == 0){
