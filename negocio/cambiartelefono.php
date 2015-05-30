@@ -9,9 +9,8 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 
-                        $objE->settelefono($_POST['nuevotelefono']);                        
-			
-                        $objB->registro_grupo_usuario($objE);                        
+                        $objE->settelefono($_POST['nuevotelefono']);                        			
+                        $objB->actualizar_telefono($objE);                        
                         header('Location:../presentacion/framework.php');
                         
 
