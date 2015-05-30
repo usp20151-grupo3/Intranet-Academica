@@ -28,14 +28,14 @@
 	}
     //get es para retornar	
 	function getidusuario() {return $this->idusuario;}
-	function getidpersona() {return $this->idtrabajador;}
+	function getidpersona() {return $this->idpersona;}
         function getrol() {return $this->idrol;}
 	function getusuario() {return $this->usuario;}
 	function getpassword() {return $this->password;}
         function getpregunta() {return $this->pregunta;}
         function getrespuesta() {return $this->respuesta;}
         function getfechaalta() {return $this->fechaalta;}
-        function getfechavigencia() {return $this->vigencia;}
+        function getfechavigencia() {return $this->fechavigencia;}
 	function getestado() {return $this->estado;}
         
 	
