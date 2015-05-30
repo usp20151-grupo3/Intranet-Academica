@@ -8,7 +8,7 @@
                       <label for="exampleInputUsuario">Grupo</label>
                       <input type="text" class="form-control" name="grupo" placeholder="Grupo">
                       <div class="form-group">
-                      <label for="exampleInputDate">Fecha Vigencia</label>
+                          <label for="exampleInputDate">Fecha Vigencia - <small>Falta validar para que Fecha Vigencia no sea menor a Fecha Actual</small></label>
                       <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia">
                     </div>                                    
                     <div class="checkbox">
