@@ -248,6 +248,7 @@ session_start();
         <?php include 'cambiardireccion.php' ?>
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
+        <?php include 'cambiarpregunta.php'?>
         <?php include 'cambiarrespuesta.php'?>
         <?php include 'listargrupo.php' ?>
         <?php include 'listarusuario.php' ?>
