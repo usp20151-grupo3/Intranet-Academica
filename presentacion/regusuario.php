@@ -1,5 +1,3 @@
-<?php
-?>
                 <div class="box box-primary" id="div2" style="display:none">
                 <div class="box-header">
                   <h3 class="box-title">Registro Usuario</h3>
