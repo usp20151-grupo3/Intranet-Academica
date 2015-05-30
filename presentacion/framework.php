@@ -244,6 +244,9 @@ session_start();
         <?php include 'regpersona.php' ?>      
         <?php include 'perfil.php' ?> 
         <?php include 'cambiarpassword.php' ?>
+        <?php include 'cambiardireccion.php' ?>
+        <?php include 'cambiaremail.php' ?>
+        <?php include 'cambiartelefono.php' ?>
         </section>
       </div>
       <footer class="main-footer">
