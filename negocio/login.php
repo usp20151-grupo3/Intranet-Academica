@@ -17,7 +17,7 @@ switch ($_POST['evento']) {
 
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
-                        //$intento_fallido = $objB->verificar_intentos_login($objE);
+                        $intento_fallido = $objB->verificar_intentos_login($objE);
 // AHORA EXTRAEMOS LOS DATOS DENTRO DEL OBJETO
 
 			if (count($res_usuario)>0) {
