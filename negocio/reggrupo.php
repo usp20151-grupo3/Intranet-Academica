@@ -10,8 +10,7 @@ $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
 $temp = 1;
 
-			$objE->setdescripcion($_POST['grupo']);
-                        
+			$objE->setdescripcion($_POST['grupo']);                        
 			$objE->setfechavigencia($_POST['date']);                        
                         $objE->setestado($temp);
                         $reg_grupo	=	$objB->registrar_grupo_usuario($objE);
