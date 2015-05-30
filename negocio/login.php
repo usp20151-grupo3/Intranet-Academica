@@ -32,8 +32,8 @@ $objB	= 	new UsuarioD();
 
                                 
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
-					
-					header('Location:../presentacion/framework.php');
+					var_dump($datos);
+					//header('Location:../presentacion/framework.php');
 					
 					}
                                         else {
