@@ -8,23 +8,23 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Usuario</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Usuario">
+                      <input type="email" class="form-control" id="exampleInputUsuario" placeholder="Usuario">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsuario">Persona</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Seleccione Persona">
+                      <input type="email" class="form-control" id="exampleInputPersona" placeholder="Seleccione Persona">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Pregunta Secreta">  
+                      <input type="email" class="form-control" id="exampleInputPregunta" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Respuesta Secreta">  
+                      <input type="email" class="form-control" id="exampleInputRespuesta" placeholder="Respuesta Secreta">  
                     </div>
                     <div class="checkbox">
                       <label>
