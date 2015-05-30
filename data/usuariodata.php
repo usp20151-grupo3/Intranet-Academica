@@ -71,7 +71,7 @@ class UsuarioD{
                     }
                     else{ 
                         $num = numero_intentos($obj);
-                        $date = fecha_ultimo_intento($obj);
+                        $date = fecha_ultimo_intento($obj->idgetusuario());
 
                         // Si han pasado mas de 24hrs y el # de intentos = 3
                         if(  strtotime($date) + 86400 > strtotime("now") && $num == 3 ){
