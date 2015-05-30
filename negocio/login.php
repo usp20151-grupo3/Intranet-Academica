@@ -24,5 +24,5 @@ $objB	= 	new UsuarioD();
 					}
                                         else {
                                         header('Location:../');}										
-			}			
+                                                    }			
 ?>
