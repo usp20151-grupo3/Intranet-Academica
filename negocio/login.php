@@ -17,8 +17,8 @@ $objB	= 	new UsuarioD();
                                 $_SESSION['idusuario']      = $datos->idusuario;
 				$_SESSION['rol']            = $datos->idrol;
                                 $_SESSION['fechaalta']      = $datos->fechaalta;
-                                $_SESSION['nombre']         = $datonombre->nombre;
-                                $_SESSION['apellido']       = $datonombre->apellido;                               
+                                $_SESSION['nombrelog']         = $datonombre->nombre;
+                                $_SESSION['apellidolog']       = $datonombre->apellido;                               
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {					
 					header('Location:../presentacion/framework.php');					
 					}

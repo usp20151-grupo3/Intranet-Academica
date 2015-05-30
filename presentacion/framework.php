@@ -10,8 +10,8 @@ session_start();
 	if (isset ($_SESSION['idusuario'])){ 
                 $usuarioid = $_SESSION['idusuario'];
 		$usuario = $_SESSION['usuario'];
-                $usuarionombre = $_SESSION['nombre'];
-                $usuarioapellido = $_SESSION['apellido'];
+                $usuarionombre = $_SESSION['nombrelog'];
+                $usuarioapellido = $_SESSION['apellidolog'];
                 $fechaalta = $_SESSION['fechaalta'];
                 $rol = $_SESSION['rol'];
                 if ($rol=='1'){

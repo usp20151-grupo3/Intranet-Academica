@@ -10,9 +10,10 @@
         private $direccion;
         private $telefono;
         private $email;
+        private $fecharegistro;
         private $estado;
 	
-	function __construct($a, $b, $c, $d, $e,$f,$g,$h,$i){
+	function __construct($a, $b, $c, $d, $e,$f,$g,$h,$i,$j){
 		$this->idpersona=$a;
 		$this->nombre=$b;
                 $this->apellido=$c;
@@ -21,7 +22,8 @@
 		$this->direccion=$f;
                 $this->telefono=$g;              
 		$this->email=$h;
-		$this->estado=$i;
+                $this->fecharegistro=$i;
+		$this->estado=$j;
 	}
     //get es para retornar	
 	
@@ -33,8 +35,8 @@
         function getdireccion() {return $this->direccion;}
 	function gettelefono() {return $this->telefono;}
 	function getemail() {return $this->email;}                
-	function getestado() {return $this->estado;}
-
+	function getfecharegistro() {return $this->fecharegistro;}
+        function getestado() {return $this->estado;}
 	
 	//set es para modificar el valor almacenado	
 	function setidpersona($val) {$this->idpersona=$val;}
@@ -45,8 +47,8 @@
 	function setdireccion($val) {$this->direccion=$val;}
 	function settelefono($val) {$this->telefono=$val;}
 	function setemail($val) {$this->email=$val;}
-	function setestado($val) {$this->estado=$val;}
-	
+	function setfecharegistro($val) {$this->fecharegistro=$val;}
+	function setestado() {return $this->estado;}
 }
 
         ?>
