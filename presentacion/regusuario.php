@@ -9,7 +9,7 @@
                       <input type="text" class="form-control" name="persona" placeholder="Seleccione Persona">
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputRol">Rol - <small>Falta Optimizar por ahora ingresar RolID existente</label>
+                          <label for="exampleInputRol">Rol - <small>Falta Optimizar por ahora ingresar RolID existente</small></label>
                       <input type="text" class="form-control" name="rol" placeholder="Seleccione Rol">
                     </div> 
                       <div class="form-group">
