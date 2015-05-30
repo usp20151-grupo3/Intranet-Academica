@@ -7,9 +7,10 @@ require('../data/usuariodata.php');
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
-
-			$objE->setusuario($_POST['user']);
-			$objE->setpassword($_POST['password']);
+$temp = '1';
+			$objE->setdescripcion($_POST['grupo']);
+			$objE->setfechavigencia($_POST['date']);                        
+                        $objE->setestado($temp);
 
 
 
