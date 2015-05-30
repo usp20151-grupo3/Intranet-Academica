@@ -10,17 +10,17 @@ session_start();
                   <div class="box-body">                    
                     <div class="form-group">
                       <label for="exampleInputDireccion">Dirección</label>
-                      <label for="exampleInputDireccion">A</label>
+                      <label>A</label>
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputEmail">Email</label>
-                      <label for="exampleInputDireccion">B</label>
+                      <label>B</label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
                       <label for="exampleInputTelefono">Teléfono</label>
-                      <label for="exampleInputDireccion">C</label>
+                      <label>C</label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                   </div>
