@@ -17,5 +17,6 @@ $temp = 1;
 $_SESSION['grupo'] = $reg_grupo->descripcion;
 $_SESSION['date'] = $reg_grupo->fechavigencia;
 $_SESSION['estado'] = $reg_grupo->estado;
+var_dump($_SESSION);
 
 ?>
