@@ -8,9 +8,9 @@ require('../entidad/personaentity.php');
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
-
+$temp = $_SESSION['idusuario'];
                         $objE->settelefono($_POST['nuevotelefono']);
-                        $objE->setidusuario($_SESSION['idusuario']);
+                        $objE->setidusuario(['$temp']);
                         $objB->actualizar_telefono($objE);                        
                         //header('Location:../presentacion/framework.php');
                         
