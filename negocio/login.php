@@ -9,9 +9,7 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","");
 $objB	= 	new UsuarioD();
 
-switch ($_POST['evento']) {
 
-	case 'verificar':
 
 			$objE->setusuario($_POST['user']);
 			$objE->setpassword($_POST['password']);
@@ -35,7 +33,7 @@ switch ($_POST['evento']) {
                                 $_SESSION['nombre']         = $datonombre->nombre;
                                 $_SESSION['apellido']       = $datonombre->apellido;
 
-                                var_dump($bloqueo);
+                                
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
 					
 					header('Location:../presentacion/framework.php');
@@ -48,10 +46,6 @@ switch ($_POST['evento']) {
 			}
                         //var_dump($datos); // var_dump imprime el dato sea objeta o lo que sea , temuestra q es lo q contiene.
 			
-	break;
-	
-	default:
-	
-	break;
-}
+
+
 ?>
