@@ -169,7 +169,7 @@ session_start();
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div3">Registrar Persona</a></li>
-                <li><a href="#">Visualizar Persona</a></li>
+                <li><a href="#" name="divlpersona">Visualizar Persona</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -249,7 +249,8 @@ session_start();
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
         <?php include 'listargrupo.php' ?>
-        <?php include 'listarusuario.php' ?>  
+        <?php include 'listarusuario.php' ?>
+        <?php include 'listarpersona.php.php' ?>  
         </section>
       </div>
       <footer class="main-footer">
