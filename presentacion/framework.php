@@ -151,7 +151,7 @@ session_start();
               <a href="#"><i class='fa fa-link'></i> <span>Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div1">Registrar Grupo</a></li>
-                <li><a href="#">Visualizar Grupo</a></li>
+                <li><a href="#" id="Divlistgrupo">Visualizar Grupo</a></li>
               </ul>
               <?php } ?>
             </li>
@@ -248,6 +248,7 @@ session_start();
         <?php include 'cambiardireccion.php' ?>
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
+        <?php include '/listargrupo.php' ?> 
         </section>
       </div>
       <footer class="main-footer">
