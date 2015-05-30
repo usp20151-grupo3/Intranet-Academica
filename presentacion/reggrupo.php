@@ -1,4 +1,3 @@
- 
 <div class="box box-primary" id="div1" style="display:none">
                 <div class="box-header">
                   <h3 class="box-title">Registro Grupo de Usuarios - Rol</h3>
