@@ -34,6 +34,11 @@ class UsuarioD{
 			$sql = "call reporte_perfil('".$obj->getusuario()."','".$obj->getpassword()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+                function actualizar_telefono($obj){
+			$objCn = new Conexion();
+			$sql = "call reporte_perfil('".$obj->getidusuario()."','".$obj->gettelefono()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
 }
 ?>
 
