@@ -11,7 +11,7 @@ $objB	= 	new UsuarioD();
 $temp = $_SESSION['idpersona'];
 var_dump($temp);
                         $objE->settelefono($_POST['nuevotelefono']);
-                        $objE->setidusuario([$temp]);
+
                         $objB->actualizar_telefono($objE);
                         
                         //header('Location:../presentacion/framework.php');
