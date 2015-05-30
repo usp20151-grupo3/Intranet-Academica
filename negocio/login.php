@@ -12,11 +12,11 @@ $objB	= 	new UsuarioD();
 			$objE->setpassword($_POST['password']);
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
-                        
+                        $dato_perfil = $objB->reporte_persona_perfil($objE);
 			if (count($res_usuario)>0) {				
 				$datos = $res_usuario->fetch_object(); // -> AQUI EXTRAES LOS DATOS.
                                 $datonombre = $dato_usuario->fetch_object();
-                                
+                                $datoperfil = $dato_perfil->fetch_object();
                                 
 				$_SESSION['usuario']        = $datos->usuario;				
                                 $_SESSION['idusuario']      = $datos->idusuario;
@@ -24,7 +24,9 @@ $objB	= 	new UsuarioD();
                                 $_SESSION['fechaalta']      = $datos->fechaalta;
                                 $_SESSION['nombrelog']         = $datonombre->nombre;
                                 $_SESSION['apellidolog']       = $datonombre->apellido;
-
+                                $_SESSION['direccion']       = $datoperfil->direccion;
+                                $_SESSION['email']       = $datoperfil->email;
+                                $_SESSION['telefono']       = $datoperfil->telefono;
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {					
 					header('Location:../presentacion/framework.php');					
 					}
