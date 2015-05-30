@@ -22,7 +22,7 @@ $objB	= 	new UsuarioD();
 
 
                         $objE->setidpersona($_POST['persona']);
-                        $objE->setidrol($_POST['rol']);                        			
+                        $objE->setrol($_POST['rol']);                        			
                         $objE->setusuario($_POST['usuario']);
                         $objE->setpassword($_POST['password']);
                         $objE->setpregunta($_POST['pregunta']);
