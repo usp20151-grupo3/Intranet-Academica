@@ -3,7 +3,7 @@ if (isset ($_SESSION['idusuario'])){
                 $dir = $_SESSION['direccion'];
                 $cor = $_SESSION['email'];
                 $tel = $_SESSION['telefono'];
-                $res = $_SESSION['respuesta'];
+                $resp = $_SESSION['respuesta'];
                 
 	}
 ?>
@@ -35,7 +35,7 @@ if (isset ($_SESSION['idusuario'])){
                     </div>
                       <div class="form-group">
                       <label for="exampleInputTelefono">Respuesta  <li class="fa fa-long-arrow-right"> </li> </label>
-                      <label>    <?php print($res)?></label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modalres"> Editar </a></li>
+                      <label>    <?php print($resp)?></label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modalres"> Editar </a></li>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                   </div>
