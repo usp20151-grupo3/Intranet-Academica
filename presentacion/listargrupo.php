@@ -1,11 +1,11 @@
 <?php mysqli_connect('localhost', 'root', '', 'intranet');
 ?>
 
-<div class="box box-primary" id="divlistgrupo" style="display:none">
+<div class="box box-primary" id="divlgrupo" style="display:none">
                 <div class="box-header">
                     <h3 class="box-title">Editar Perfil - <small>Debe Relogear para que los cambios surtan efecto</small></h3>
                 </div>
-                <form role="form">
+                <form role="form"> asd
                   <div class="box-body">                    
                     <table>
                     <caption> Lista de Roles</caption>;
