@@ -183,7 +183,7 @@ session_start();
             </li>  
             <?php if ($rol == 'Director') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Regularizar Asistencia</a></li>
               </ul>
@@ -191,26 +191,26 @@ session_start();
             <?php } ?>
             <?php } if ($rol == 'Docente') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Grupo de Estudio</a></li>                
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Calificación -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Grupo de Estudio</a></li>                
               </ul>
             </li>
 		<?php } if ($rol == 'Alumno') { ?>
             <li class="treeview">
-            <a href="#"><i class='fa fa-link'></i> <span>Calificación</span>  <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class='fa fa-link'></i> <span>Calificación -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Calificación</a></li>                
               </ul>
             </li>
             <li class="treeview">
-            <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Asistencia</a></li>                
               </ul>
