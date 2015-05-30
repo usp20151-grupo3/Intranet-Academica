@@ -20,15 +20,15 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Sexo</label>
-                      <input type="email" class="form-control" id="" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" id="" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Direccion</label>
-                      <input type="email" class="form-control" id="" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" id="" placeholder="Respuesta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Telefono</label>
-                      <input type="email" class="form-control" id="" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" id="" placeholder="Respuesta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Email</label>
