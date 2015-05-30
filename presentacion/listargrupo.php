@@ -10,10 +10,10 @@
                   <div class="box-body">                    
                     <table>
                     <caption> Lista de Roles</caption>
-                    <th>IdRol</th>
-                    <th>Descripcion</th>
+                    <th>Id</th>
+                    <th>Rol</th>
                     <th>FechaAlta</th>
-                    <th>FechaVigencia</th>
+                    <th>FechaVig.</th>
                     <th>Estado</th>
                     
                     <?php 
