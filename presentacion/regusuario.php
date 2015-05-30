@@ -22,12 +22,16 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="text" class="form-control" name="pregsecreta" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" name="pregunta" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="text" class="form-control" name="rptasecreta" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta">  
                     </div>
+                      <div class="form-group">
+                      <label for="exampleInputDate">Fecha Vigencia</label>
+                      <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia">
+                    </div>  
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="checkbox"> Habilitar
