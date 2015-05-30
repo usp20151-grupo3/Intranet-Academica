@@ -12,7 +12,7 @@
                     <div class="form-group">
                       <div class="form-group">
                       <label for="exampleInputUsuario">Nuevo Telefono</label>
-                      <input type="text" class="form-control" name="nuevoemail" placeholder="Nuevo Telefono">
+                      <input type="text" class="form-control" name="nuevotelefono" placeholder="Nuevo Telefono">
                     </div>
                   </div>
                   <div class="modal-footer">
