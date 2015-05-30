@@ -29,9 +29,9 @@ class UsuarioD{
 			$sql = "call registro_usuario('".$obj->getidpersona()."','".$obj->getrol()."','".$obj->getusuario()."','".$obj->getpassword()."','".$obj->getpregunta()."','".$obj->getrespuesta()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
-                function reporte_persona_perfil($obj){
+                function reporte_perfil($obj){
 			$objCn = new Conexion();
-			$sql = "call reporte_persona_perfil('".$obj->getusuario()."','".$obj->getpassword()."')";                        
+			$sql = "call reporte_perfil('".$obj->getusuario()."','".$obj->getpassword()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }
