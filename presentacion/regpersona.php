@@ -14,7 +14,7 @@
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">DNI</label>
-                      <input type="text" class="form-control" id="" placeholder="Password">
+                      <input type="text" class="form-control" id="" placeholder="DNI">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Sexo</label>
