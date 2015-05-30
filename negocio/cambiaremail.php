@@ -11,7 +11,7 @@ $objB	= 	new UsuarioD();
 $temp = $_SESSION['idpersona'];
                         $objE->setemail($_POST['nuevoemail']);
                         $objE->setidpersona($temp);
-                        $objB->actualizar_direccion($objE);                        
+                        $objB->actualizar_correo($objE);                        
                         //header('Location:../presentacion/framework.php');
                         
 
