@@ -15,7 +15,8 @@ $objB	= 	new UsuarioD();
                         $dato_perfil = $objB->reporte_persona_perfil($objE);
 			if (count($res_usuario)>0) {				
 				$datos = $res_usuario->fetch_object(); // -> AQUI EXTRAES LOS DATOS.
-                                $datonombre = $dato_usuario->fetch_object();                                                              
+                                $datonombre = $dato_usuario->fetch_object();
+                                $datoperfil = $dato_perfil->fetch_object();
 				$_SESSION['usuario']        = $datos->usuario;				
                                 $_SESSION['idusuario']      = $datos->idusuario;
 				$_SESSION['rol']            = $datos->idrol;
