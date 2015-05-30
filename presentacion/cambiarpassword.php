@@ -8,7 +8,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Perfil</h4>
                   </div>
-                  <div class="form-group">
+                  <div class="modal-body">
+                    <div class="form-group">
                       <label for="exampleInputUsuario">Antigua Password</label>
                       <input type="password" class="form-control" name="oldpassword" placeholder="Antigua Contraseña">
                     </div>
@@ -20,14 +21,15 @@
                       <label for="exampleInputPassword1">Confirme Nueva Password</label>
                       <input type="password" class="form-control" name="confirmnewpassword" placeholder="Confirme Nueva Contraseña">
                     </div>
+                  </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
-                </div> /.modal-content 
-              </div> /.modal-dialog 
+                </div>  
+              </div>  
 
-          </div> /.example-modal -->
+          </div> 
                     
                             
                       
