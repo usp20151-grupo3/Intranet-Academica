@@ -11,7 +11,7 @@
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Nueva Dirección</label>
-                      <input type="text" class="form-control" name="nuevadireccion" placeholder="Nueva Direccioón">
+                      <input type="text" class="form-control" name="nuevadireccion" placeholder="Nueva Dirección">
                     </div>
                   </div>
                   <div class="modal-footer">
