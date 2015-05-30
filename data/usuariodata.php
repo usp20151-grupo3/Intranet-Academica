@@ -16,7 +16,7 @@ class UsuarioD{
                 
                 function registrar_grupo_usuario($obj){
 			$objCn = new Conexion();
-			$sql = "call registrar_grupo_usuario('','".$obj->getdescripcion()."','','".$obj->getfechavigencia()."','".$obj->getestado()."')";
+			$sql = "call registrar_grupo_usuario('','".$obj->getdescripcion()."','".NOW()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
                         //$sql = ("insert into rol(descripcion,fechavigencia,estado) values ('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')");
 			return $objCn->ejecutar($sql);	
 		}
