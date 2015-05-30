@@ -171,6 +171,13 @@ session_start();
                 <li><a href="#">Visualizar Matricula</a></li>
               </ul>
             </li>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Mantenimiento Persona</a></li>
+                <li><a href="#">Visualizar Persona</a></li>
+              </ul>
+            </li>
             <?php } ?>
             </li>  
             <?php if ($rol == 'Director') { ?>
