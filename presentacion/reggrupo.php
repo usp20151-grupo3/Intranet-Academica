@@ -20,7 +20,7 @@
                   </div>
 
                   <div class="box-footer">
-                      <button type="submit" class="btn btn-primary" id="submit" name="submit"><a href="../presentacion/framework.php">Confirmar</a></button>
+                      <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirmar</button>
                   </div>
                  </div>
                 </form>             
