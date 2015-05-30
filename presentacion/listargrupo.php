@@ -8,7 +8,7 @@
                 </div>
                 <form role="form">
                   <div class="box-body">                    
-                    <table>
+                    <table border="1">
                     <caption> Lista de Roles</caption>
                     <th>Id</th>
                     <th>  Rol</th>
