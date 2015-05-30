@@ -39,6 +39,11 @@ class UsuarioD{
 			$sql = "call actualizar_telefono('".$obj->gettelefono()."','".$obj->getidpersona()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+                function actualizar_direccion($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_direccion('".$obj->getdireccion()."','".$obj->getidpersona()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
 }
 ?>
 

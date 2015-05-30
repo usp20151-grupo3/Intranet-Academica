@@ -9,11 +9,12 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 $temp = $_SESSION['idpersona'];
-                        $objE->settelefono($_POST['nuevotelefono']);
+                        $objE->setdireccion($_POST['nuevadireccion']);
                         $objE->setidpersona($temp);
-                        $objB->actualizar_telefono($objE);                        
+                        $objB->actualizar_direccion($objE);                        
                         header('Location:../presentacion/framework.php');
                         
 
 
 ?>
+
