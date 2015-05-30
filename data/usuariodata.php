@@ -14,12 +14,30 @@ class UsuarioD{
 			return $objCn->ejecutar($sql);	
 		}
                 
-                function registrar_grupo_usuario($obj){
+                function registro_grupo_usuario($obj){
 			$objCn = new Conexion();
 			$sql = "call registrar_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
 			return $objCn->ejecutar($sql);	
-		}                
+		}
+                function registro_persona($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."' "
+                                . ",'".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
+			return $objCn->ejecutar($sql);	
+		}
 }
+//                        $objE->setnombre($_POST['nombre']);                        
+//			  $objE->setapellido($_POST['apellido']);
+//                        $objE->setdni($_POST['dni']);
+//                        $objE->setsexo($_POST['sexo']);
+//                        $objE->setdireccion($_POST['direccion']);
+//                        $objE->settelefono($_POST['telefono']);
+//                        $objE->setemail($_POST['telefono']);
+//                      
+//                        if (isset($_POST['checkbox'])) {
+//                        $objE->setestado(1);
+
+
 
 ?>
 
