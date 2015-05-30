@@ -147,11 +147,13 @@ session_start();
                 <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
                 
 		<li class="treeview">
+                <?php if ($rol == 'Director') { ?>
               <a href="#"><i class='fa fa-link'></i> <span>Grupo</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div1">Mantenimiento Grupo</a></li>
                 <li><a href="#">Visualizar Grupo</a></li>
               </ul>
+              <?php } ?>
             </li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
