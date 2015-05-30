@@ -9,7 +9,7 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
 
-$val = now();
+$val -> now();
 
                         $objE->setdescripcion($_POST['grupo']);                        
 			$objE->setfechavigencia($_POST['date']);
