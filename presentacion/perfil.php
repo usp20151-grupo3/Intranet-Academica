@@ -13,11 +13,6 @@
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
                       <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta">  
                     </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="checkbox"> Habilitar
-                      </label>
-                    </div>
                   </div>
                   <div class="box-footer">
                       <button type="submit" class="btn btn-primary">Confirmar</button> 
