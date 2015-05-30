@@ -11,7 +11,7 @@ $objB	= 	new UsuarioD();
 
                         $objE->settelefono($_POST['nuevotelefono']);                        			
                         $objB->actualizar_telefono($objE);                        
-                        header('Location:../presentacion/framework.php');
+                        //header('Location:../presentacion/framework.php');
                         
 
 
