@@ -12,21 +12,21 @@
                   <div class="box-body">                    
                     <table border="1" class="box box-primary">
                     
-                    <th class="box-header">Id</th>
-                    <th class="box-header">  Rol</th>
-                    <th class="box-header">FechaAlta</th>
-                    <th class="box-header">FechaVig.</th>
-                    <th class="box-header">Estado</th>
+                    <th class="box-body">Id</th>
+                    <th class="box-body">  Rol</th>
+                    <th class="box-body">FechaAlta</th>
+                    <th class="box-body">FechaVig.</th>
+                    <th class="box-body">Estado</th>
                     
                     <?php 
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr bgcolor=#F0FFFF class="box-header">
-                    <td class="box-header"><?php echo $rol['idrol']?> </td>
-                    <td class="box-header"> <?php echo $rol['descripcion']?> </td>
-                    <td class="box-header"> <?php echo $rol['fechaalta']?> </td>
-                    <td class="box-header"> <?php echo $rol['fechavigencia']?> </td>
-                    <td class="box-header"> <?php echo $rol['estado']?> </td>
+                   <tr bgcolor=#F0FFFF class="box-body">
+                    <td class="box-body"><?php echo $rol['idrol']?> </td>
+                    <td class="box-body"> <?php echo $rol['descripcion']?> </td>
+                    <td class="box-body"> <?php echo $rol['fechaalta']?> </td>
+                    <td class="box-body"> <?php echo $rol['fechavigencia']?> </td>
+                    <td class="box-body"> <?php echo $rol['estado']?> </td>
                 </tr>
                     <?php } ?>
 </table>
