@@ -5,11 +5,11 @@ require('../data/usuariodata.php');
 
 
 $con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","");
+$objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
 
-			$objE->setusuario($val);
-			$objE->setpassword;
+			$objE->setusuario($_POST['user']);
+			$objE->setpassword($_POST['password']);
 
 
 
