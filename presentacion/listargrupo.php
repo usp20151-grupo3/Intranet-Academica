@@ -4,7 +4,7 @@
 
 <div class="box box-primary" id="divlgrupo" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Editar Perfil - <small>Debe Relogear para que los cambios surtan efecto</small></h3>
+                    <h3 class="box-title">Listar Rol</h3>
                 </div>
                 <form role="form"> asd
                   <div class="box-body">                    
@@ -21,15 +21,16 @@
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr>
                     <td><?php echo $rol['idrol']?></td>
-                    <td><?php echo $rol['Descripcion']?></td>
-                    <td><?php echo $rol['FechaAlta']?></td>
-                    <td><?php echo $rol['FechaVigencia']?></td>
+                    <td><?php echo $rol['descripcion']?></td>
+                    <td><?php echo $rol['fechaalta']?></td>
+                    <td><?php echo $rol['fechavigencia']?></td>
+                    <td><?php echo $rol['estado']?></td>
                 </tr>
                     <?php } ?>
 </table>
                   </div>
                   <div class="box-footer">
-                      <button type="button" class="btn btn-primary" name="divpassword" data-toggle="modal" data-target="#myModal">Cambiar Password</button>
+                      
                   </div>
                 </form>
               </div>
