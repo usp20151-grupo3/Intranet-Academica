@@ -17,7 +17,7 @@ if (isset ($_SESSION['idusuario'])){
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
-                          <label for="exampleInputEmail">Email  <li class="fa fa-long-arrow-right"><a href="#" data-toggle="modal" data-target="#myModal">asdas</a></li> </label>
+                          <label for="exampleInputEmail">Email  <li class="fa fa-long-arrow-right" data-toggle="modal" data-target="#myModal"><a href="#" class="inline"></a></li> </label>
                       <label>    <?php print($cor)?></label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
