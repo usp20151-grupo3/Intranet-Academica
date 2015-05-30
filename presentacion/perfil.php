@@ -17,12 +17,12 @@ if (isset ($_SESSION['idusuario'])){
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputEmail">Email:     </label>
+                      <label for="exampleInputEmail">Email  <li class="fa fa-long-arrow-right"> </li> </label>
                       <label>    <?php print($cor)?></label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputTelefono">Teléfono:     </label>
+                      <label for="exampleInputTelefono">Teléfono  <li class="fa fa-long-arrow-right"> </li> </label>
                       <label>    <?php print($tel)?></label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
