@@ -10,11 +10,11 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPersona">Persona</label>
-                      <input type="text" class="form-control" name="selpersona" placeholder="Seleccione Persona">
+                      <input type="text" class="form-control" name="persona" placeholder="Seleccione Persona">
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRol">Rol</label>
-                      <input type="text" class="form-control" name="selrol" placeholder="Seleccione Rol">
+                      <input type="text" class="form-control" name="rol" placeholder="Seleccione Rol">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
