@@ -28,7 +28,6 @@ $objB	= 	new UsuarioD();
                         $objE->setpregunta($_POST['pregunta']);
                         $objE->setrespuesta($_POST['respuesta']);
                         $objE->setfechavigencia($_POST['date']);
-                        $objE->setemail($_POST['email']);
                       
                         if (isset($_POST['checkbox'])) {
                         $objE->setestado(1);
