@@ -19,7 +19,7 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);
 }
                         $reg_grupo	=	$objB->registro_grupo_usuario($objE);
-                        $var_dump($reg_grupo);
+                        //$var_dump($reg_grupo);
                         //header('Location:../presentacion/framework.php');
                         
 

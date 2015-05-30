@@ -16,7 +16,7 @@ class UsuarioD{
                 
                 function registro_grupo_usuario($obj){
 			$objCn = new Conexion();
-			$sql = "call registrar_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
+			$sql = "call registro_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
 			return $objCn->ejecutar($sql);	
 		}
                 function registro_persona($obj){
