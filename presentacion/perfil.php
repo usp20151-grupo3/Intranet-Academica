@@ -4,8 +4,6 @@ if (isset ($_SESSION['idusuario'])){
                 $cor = $_SESSION['email'];
                 $tel = $_SESSION['telefono'];
 	}
-
-var_dump($tel);
 ?>
 <div class="box box-primary" id="divperfil" style="display:none">
                 <div class="box-header">
@@ -14,17 +12,17 @@ var_dump($tel);
                 <form role="form">
                   <div class="box-body">                    
                     <div class="form-group">
-                      <label for="exampleInputDireccion">Dirección</label>
+                      <label for="exampleInputDireccion">Dirección: </label>
                       <label><?php print($dir)?> a</label>
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputEmail">Email</label>
+                      <label for="exampleInputEmail">Email: </label>
                       <label><?php print($cor)?> b</label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputTelefono">Teléfono</label>
+                      <label for="exampleInputTelefono">Teléfono: </label>
                       <label><?php print($tel)?> c</label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
