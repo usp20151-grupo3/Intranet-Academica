@@ -10,6 +10,7 @@
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
+                        <div class="form-group">
                       <label for="exampleInputUsuario">Nuevo Teléfono</label>
                       <input type="text" class="form-control" name="nuevotelefono" placeholder="Nuevo Teléfono">
                     </div>
