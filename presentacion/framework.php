@@ -239,6 +239,7 @@ session_start();
           </ol>
         </section>
         <section class="content">
+           
         <?php include 'reggrupo.php' ?>    
         <?php include 'regusuario.php' ?>
         <?php include 'regpersona.php' ?>      
