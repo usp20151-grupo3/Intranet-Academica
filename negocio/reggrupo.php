@@ -1,7 +1,6 @@
 <?php
 session_start();
 require('../conexion/conexion.php');
-require('../entidad/historialentity.php');
 require('../data/usuariodata.php');
 require('../data/login.php');
 
