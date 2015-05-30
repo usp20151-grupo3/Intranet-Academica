@@ -17,7 +17,7 @@
                       <input type="text" class="form-control" name="dni" placeholder="DNI">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPregunta">Sexo - <small>Falta Optimizar, 1 = Hombre & 2 = Mujer</small</label>
+                        <label for="exampleInputPregunta">Sexo - <small>Falta Optimizar, 1 = Hombre & 2 = Mujer</small></label>
                       <input type="text" class="form-control" name="sexo" placeholder="Sexo">  
                     </div>
                       <div class="form-group">
