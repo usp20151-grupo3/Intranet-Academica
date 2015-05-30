@@ -4,7 +4,7 @@
 
 <div class="box box-primary" id="divlgrupo" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar Rol</h3>
+                    <h3 class="box-title"></h3>
                 </div>
                 <form role="form">
                   <div class="box-body">                    
