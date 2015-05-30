@@ -1,7 +1,7 @@
 <?php ?>
 
 <div class="modal fade" id="Modaltel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
+    <form role="form">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -23,4 +23,5 @@
               </div>  
 
           </div>
+    </form>
     </div>
