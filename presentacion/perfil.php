@@ -4,6 +4,7 @@ if (isset ($_SESSION['idusuario'])){
                 $cor = $_SESSION['email'];
                 $tel = $_SESSION['telefono'];
                 $resp = $_SESSION['respuesta'];
+                $preg = $_SESSION['pregunta'];
                 
 	}
 ?>
