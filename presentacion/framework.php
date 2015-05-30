@@ -230,10 +230,10 @@ session_start();
             <li class="active">Dirección</li>
             <?php } if ($rol == 'Secretaria') { ?>
             <li class="active">Secretaría</li>
-            <?php } if ($rol == 'Docencia') {?>
-            <li class="active">Docente</li>
-            <?php } if ($rol == 'Alumnado') {?>
-            <li class="active">Alumno</li>
+            <?php } if ($rol == 'Docente') {?>
+            <li class="active">Docencia</li>
+            <?php } if ($rol == 'Alumno') {?>
+            <li class="active">Alumnado</li>
             <?php } ?>
           </ol>
         </section>
