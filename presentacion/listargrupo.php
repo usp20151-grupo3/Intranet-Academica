@@ -10,10 +10,10 @@
                 </div>
                 <form role="form">
                   <div class="box-body">                    
-                    <table border="1" class="box box-primary">
+                    <table border="1" class="box-body">
                     
                     <th class="box-body">Id</th>
-                    <th class="box-body">  Rol</th>
+                    <th class="box-body">Rol</th>
                     <th class="box-body">FechaAlta</th>
                     <th class="box-body">FechaVig.</th>
                     <th class="box-body">Estado</th>
