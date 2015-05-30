@@ -173,7 +173,7 @@ session_start();
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Matricula <small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Registrar Matricula</a></li>
                 <li><a href="#">Visualizar Matricula</a></li>
