@@ -154,15 +154,7 @@ session_start();
                 <li><a href="#">Visualizar Grupo</a></li>
               </ul>
               <?php } ?>
-            </li>
-            <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <?php if ($rol=='Secretaria') { ?>
-                <li><a href="#" name="div2">Mantenimiento Usuario</a></li>
-                <?php } ?>
-                <li><a href="#">Visualizar Usuario</a></li>                                
-              </ul>
+            </li>            
               <?php if ($rol=='Secretaria') { ?>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
@@ -179,12 +171,22 @@ session_start();
               </ul>
             </li>
             <?php } ?>
+            
             </li>  
             <?php if ($rol == 'Director') { ?>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Regularizar Asistencia</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <?php if ($rol=='Secretaria') { ?>
+                <li><a href="#" name="div2">Mantenimiento Usuario</a></li>
+                <?php } ?>
+                <li><a href="#">Visualizar Usuario</a></li>                                
               </ul>
             </li>
             <?php } ?>
