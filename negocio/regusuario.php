@@ -35,6 +35,6 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);
 }
                         $objB->registro_usuario($objE);
-                        var_dump($objB);
-                        //header('Location:../presentacion/framework.php');
+                        
+                        header('Location:../presentacion/framework.php');
 ?>
