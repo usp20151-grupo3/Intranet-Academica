@@ -225,7 +225,7 @@ session_start();
             <small>Bienvenido</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a><i class="fa fa-dashboard"></i> Navegación</a></li>
+            <li><a><i class="fa fa-desktop"></i> Navegación</a></li>
             <?php if ($rol == 'Director') { ?>
             <li class="active">Dirección</li>
             <?php } if ($rol == 'Secretaria') { ?>
