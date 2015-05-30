@@ -12,17 +12,17 @@ $tel = $_SESSION['telefono'];
                   <div class="box-body">                    
                     <div class="form-group">
                       <label for="exampleInputDireccion">Dirección</label>
-                      <label value="<?php $dir ?>"></label>
+                      <label><?php print($dir)?></label>
                       <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
-                      <label for="exampleInputEmail"></label>
-                      <label value="<?php $cor ?>"></label>
+                      <label for="exampleInputEmail">Email</label>
+                      <label><?php print($cor)?></label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
                       <label for="exampleInputTelefono">Teléfono</label>
-                      <label value="<?php $tel ?>"></label>
+                      <label><?php print($tel)?></label>
                       <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                   </div>
