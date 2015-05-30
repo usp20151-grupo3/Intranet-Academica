@@ -1,8 +1,29 @@
 <?php
+session_start();
+require('../conexion/conexion.php');
+require('../data/usuariodata.php');
+require('../entidad/usuarioentity.php');
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+$con 	= 	new Conexion();
+$objE	= 	new UsuarioE("","","","","","","","","","");
+$objB	= 	new UsuarioD();
+
+
+
+                        $objE->setnombre($_POST['nombre']);                        
+			$objE->setapellido($_POST['apellido']);
+                        $objE->setdni($_POST['dni']);
+                        $objE->setsexo($_POST['sexo']);
+                        $objE->setdireccion($_POST['direccion']);
+                        $objE->settelefono($_POST['telefono']);
+                        $objE->setemail($_POST['email']);
+                      
+                        if (isset($_POST['checkbox'])) {
+                        $objE->setestado(1);
+                        } else {
+                        $objE->setestado(0);
+}
+                        $objB->registro_persona($objE);
+                        header('Location:../presentacion/framework.php');
+?>

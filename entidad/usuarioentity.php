@@ -7,17 +7,24 @@
         private	$usuario;
         private $idrol;
         private $password;
+        private $pregunta;
+        private $respuesta;
         private $fechaalta;
+        private $fechavigencia;
 	private $estado;
 	
-	function __construct($a, $b, $c, $d, $e,$f,$g){
+	function __construct($a, $b, $c, $d, $e,$f,$g,$h,$i,$j){
 		$this->idusuario=$a;
 		$this->idpersona=$b;
                 $this->idrol=$c;
 		$this->usuario=$d;              
 		$this->password=$e;
-		$this->estado=$f;
-                $this->fechaalta=$g;
+                $this->pregunta=$f;
+                $this->respuesta=$g;
+                $this->fechaalta=$h;
+                $this->fechavigencia=$i;
+		$this->estado=$j;
+                
 	}
     //get es para retornar	
 	function getidusuario() {return $this->idusuario;}
