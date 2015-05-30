@@ -250,7 +250,7 @@ session_start();
         <?php include 'cambiartelefono.php' ?>
         <?php include 'listargrupo.php' ?>
         <?php include 'listarusuario.php' ?>
-        <?php include 'listarpersonaphp' ?>  
+        <?php include 'listarpersona.php' ?>  
         </section>
       </div>
       <footer class="main-footer">
