@@ -20,6 +20,7 @@ $objB	= 	new UsuarioD();
 }
                         $reg_grupo	=	$objB->registro_grupo_usuario($objE);
                         header('Location:../presentacion/framework.php');
+                        
 
 
 ?>

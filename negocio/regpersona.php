@@ -24,7 +24,8 @@ $objB	= 	new UsuarioD();
                         } else {
                         $objE->setestado(0);
 }
-                        $reg_grupo	=	$objB->registro_persona($objE);
+                        $reg_persona	=	$objB->registro_persona($objE);
+                        var_dump($reg_persona);
                         //header('Location:../presentacion/framework.php');
 
 

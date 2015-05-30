@@ -21,8 +21,7 @@ class UsuarioD{
 		}
                 function registro_persona($obj){
 			$objCn = new Conexion();
-			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."' "
-                                . ",'".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
+			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";
 			return $objCn->ejecutar($sql);	
 		}
 }
