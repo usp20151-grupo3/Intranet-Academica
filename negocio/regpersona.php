@@ -25,7 +25,7 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);
 }
                         $reg_grupo	=	$objB->registrar_grupo_usuario($objE);
-                        header('Location:../presentacion/framework.php');
+                        //header('Location:../presentacion/framework.php');
 
 
 ?>
