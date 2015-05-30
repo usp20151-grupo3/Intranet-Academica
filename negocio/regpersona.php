@@ -25,8 +25,5 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);
 }
                         $reg_persona	=	$objB->registro_persona($objE);
-                        var_dump($reg_persona);
                         //header('Location:../presentacion/framework.php');
-
-
 ?>
