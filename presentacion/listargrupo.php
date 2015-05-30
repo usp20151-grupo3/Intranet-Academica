@@ -1,4 +1,5 @@
-<?php mysqli_connect('localhost', 'root', '', 'intranet');
+<?php mysql_connect('localhost', 'root', '');
+ mysql_select_db('intranet');
 ?>
 
 <div class="box box-primary" id="divlgrupo" style="display:none">
@@ -16,8 +17,8 @@
                     <th>Estado</th>
                     <th><input type="submit" name="BtnEliminar" value="Eliminar"/></th>
                     <?php 
-                    $consulta = mysqli_query('Select * From rol');
-                    while ($rol = mysqli_fetch_array($consulta)){ ?>
+                    $consulta = mysql_query('Select * From rol');
+                    while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr>
                     <td><?php echo $rol['idrol']?></td>
                     <td><?php echo $rol['Descripcion']?></td>
