@@ -4,12 +4,12 @@
 
 <div class="box box-primary" id="divlgrupo" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title"></h3>
+                    <h3 class="box-title">Listar Rol</h3>
                 </div>
                 <form role="form">
                   <div class="box-body">                    
                     <table border="1">
-                    <caption> Lista de Roles</caption>
+                    
                     <th>Id</th>
                     <th>  Rol</th>
                     <th>FechaAlta</th>
@@ -17,9 +17,11 @@
                     <th>Estado</th>
                     
                     <?php 
+                    $color_row=array('#cccccc', 'lightblue');
+                    $ind_color=0;
                     $consulta = mysql_query('Select * From rol');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr>
+                   <tr bgcolor=${color_row[$ind_color]>
                     <td><?php echo $rol['idrol']?> </td>
                     <td> <?php echo $rol['descripcion']?> </td>
                     <td> <?php echo $rol['fechaalta']?> </td>
