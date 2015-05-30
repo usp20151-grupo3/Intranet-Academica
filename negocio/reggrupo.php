@@ -8,7 +8,7 @@ require('../entidad/grupoentity.php');
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
-$temp = '1';
+$temp = 1;
 
 			$objE->setdescripcion($_POST['grupo']);
                         
