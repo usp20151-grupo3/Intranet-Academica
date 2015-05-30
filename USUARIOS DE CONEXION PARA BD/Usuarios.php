@@ -1,7 +1,7 @@
 <?php
 
 /* 
-ING. Buenas, aqui están los usuarios para conectar a la BD:
+ING. Buenas, aqui están los usuarios para conectarse al Intranet:
  * 
  * 
  * id: victor   password: 123 -> rol -> director
