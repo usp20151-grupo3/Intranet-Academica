@@ -6,7 +6,7 @@ session_start();
                 <div class="box-header">
                   <h3 class="box-title">Editar Perfil</h3>
                 </div>
-                <form role="form" action="../negocio/perfil.php" method="POST">
+                <form role="form">
                   <div class="box-body">                    
                     <div class="form-group">
                       <label for="exampleInputDireccion">Dirección</label>
