@@ -22,27 +22,27 @@
                 <div class="box-header">
                   <h3 class="box-title">Editar Perfil</h3>
                 </div>
-                <form role="form" action="../negocio/regusuario.php" method="POST">
+                <form role="form" action="../negocio/perfil.php" method="POST">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="exampleInputUsuario">Usuario</label>
-                      <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+                      <label for="exampleInputUsuario">Antigua Password</label>
+                      <input type="password" class="form-control" name="oldpassword" placeholder="Antigua Contraseña">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPersona">Persona</label>
-                      <input type="text" class="form-control" name="selpersona" placeholder="Seleccione Persona">
+                      <label for="exampleInputPersona">Nueva Password</label>
+                      <input type="password" class="form-control" name="newpassword" placeholder="Nueva Contraseña">
                     </div> 
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Password">
+                      <label for="exampleInputPassword1">Confirme Nueva Password</label>
+                      <input type="password" class="form-control" name="confirmnewpassword" placeholder="Confirme Nueva Contraseña">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="text" class="form-control" name="pregsecreta" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="text" class="form-control" name="rptasecreta" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta">  
                     </div>
                     <div class="checkbox">
                       <label>
