@@ -11,7 +11,7 @@
                       <input type="text" class="form-control" id="exampleInputUsuario" placeholder="Usuario">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputUsuario">Persona</label>
+                      <label for="exampleInputPersona">Persona</label>
                       <input type="text" class="form-control" id="exampleInputPersona" placeholder="Seleccione Persona">
                     </div> 
                     <div class="form-group">
