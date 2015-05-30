@@ -9,11 +9,11 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
 
-$val -> now();
+
 
                         $objE->setdescripcion($_POST['grupo']);                        
 			$objE->setfechavigencia($_POST['date']);
-                        $objE->setfechaalta($val);
+
                         if (isset($_POST['checkbox'])) {
                         $objE->setestado(1);
                         } else {
