@@ -186,6 +186,12 @@ session_start();
                 <li><a href="#">Visualizar Calificación</a></li>                
               </ul>
             </li>
+            <li class="treeview">
+            <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Visualizar Asistencia</a></li>                
+              </ul>
+            </li>
             <?php }  ?>            
           </ul>
         </section>
