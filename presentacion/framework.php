@@ -104,7 +104,7 @@ session_start();
                   </li>-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat" id="btnPerfil" name="divperfil">Perfil</a> <!--data-toggle="modal" data-target="#myModal"-->
+                      <a href="#" class="btn btn-default btn-flat" name="divperfil">Perfil</a> <!--data-toggle="modal" data-target="#myModal"-->
                                           </div>
                     <div class="pull-right">
                         <a href="#" class="btn btn-default btn-flat" id="btnCerrarSesion">Salir</a>
