@@ -36,7 +36,7 @@ class UsuarioD{
 		}
                 function actualizar_telefono($obj){
 			$objCn = new Conexion();
-			$sql = "call reporte_perfil('".$obj->getidpersona()."','".$obj->gettelefono()."')";                        
+			$sql = "call reporte_perfil('".$obj->gettelefono()."','".$obj->getidpersona()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }
