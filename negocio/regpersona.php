@@ -17,7 +17,7 @@ $objB	= 	new UsuarioD();
                         $objE->setsexo($_POST['sexo']);
                         $objE->setdireccion($_POST['direccion']);
                         $objE->settelefono($_POST['telefono']);
-                        $objE->setemail($_POST['telefono']);
+                        $objE->setemail($_POST['email']);
                       
                         if (isset($_POST['checkbox'])) {
                         $objE->setestado(1);
@@ -25,7 +25,7 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);
 }
                         $reg_persona	=	$objB->registro_persona($objE);
-                        var_dump($reg_persona);
+                        var_dump($objB);
                         //header('Location:../presentacion/framework.php');
 
 
