@@ -19,9 +19,13 @@ $objB	= 	new UsuarioD();
                         $objE->settelefono($_POST['telefono']);
                         $objE->setemail($_POST['email']);                      
                         if (isset($_POST['checkbpersona'])) {
+                        $est = 1; 
+                        echo "<script>alert('$est')</script>";  
                         $objE->setestado(1);
                         } else {
                         $objE->setestado(0);
+                        $est = 0; 
+                        echo "<script>alert('$est')</script>"; 
 }
                         $objB->registro_persona($objE);
                         header('Location:../presentacion/framework.php');
