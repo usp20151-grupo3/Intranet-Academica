@@ -42,7 +42,7 @@
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox"> Habilitar
+                        <input type="checkbox" name="checkboxp"> Habilitar
                       </label>
                     </div>
                   </div>

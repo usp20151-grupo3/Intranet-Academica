@@ -19,7 +19,7 @@ $objB	= 	new UsuarioD();
                         $objE->settelefono($_POST['telefono']);
                         $objE->setemail($_POST['email']);
                       
-                        if (isset($_POST['checkbox'])) {
+                        if (isset($_POST['checkboxp'])) {
                         $objE->setestado(1);
                         } else {
                         $objE->setestado(0);
