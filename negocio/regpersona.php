@@ -17,9 +17,8 @@ $objB	= 	new UsuarioD();
                         $objE->setsexo($_POST['sexo']);
                         $objE->setdireccion($_POST['direccion']);
                         $objE->settelefono($_POST['telefono']);
-                        $objE->setemail($_POST['email']);
-                      
-                        if (isset($_POST['checkboxp'])) {
+                        $objE->setemail($_POST['email']);                      
+                        if (isset($_POST['checkbpersona'])) {
                         $objE->setestado(1);
                         } else {
                         $objE->setestado(0);
