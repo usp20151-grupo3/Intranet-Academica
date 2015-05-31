@@ -48,7 +48,7 @@
 	function settelefono($val) {$this->telefono=$val;}
 	function setemail($val) {$this->email=$val;}
 	function setfecharegistro($val) {$this->fecharegistro=$val;}
-	function setestado() {return $this->estado;}
+	function setestado($val) {$this->estado=$val;}
 }
 
         ?>
