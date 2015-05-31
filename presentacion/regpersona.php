@@ -16,10 +16,18 @@
                       <label for="exampleInputPassword1">Documento Nacional de Identidad</label>
                       <input type="text" class="form-control" name="dni" placeholder="DNI">
                     </div>
-                    <div class="form-group">
+                      <div class="form-group">
+                      <label>Sexo</label>
+                      <br>
+                      <select name="sexo">
+                      <option value="1">Masculino</option>
+                      <option value="2">Femenino</option>
+                      </select>
+                      </div>
+<!--                    <div class="form-group">
                         <label for="exampleInputPregunta">Sexo - <small>Falta Optimizar, 1 = Hombre & 2 = Mujer</small></label>
                       <input type="text" class="form-control" name="sexo" placeholder="Sexo">  
-                    </div>
+                    </div>-->
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Direccion</label>
                       <input type="text" class="form-control" name="direccion" placeholder="Direccion">  
