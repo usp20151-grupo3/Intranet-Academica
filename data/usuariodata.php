@@ -10,7 +10,7 @@ class UsuarioD{
                 
                 function mostrar_nombre_apellido_usuario($obj){
 			$objCn = new Conexion();
-			$sql = "call nombre_persona_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
+			$sql = "call nombre_persona_usuario('".$obj->getusuario()."')";
 			return $objCn->ejecutar($sql);	
 		}
                 
@@ -31,7 +31,7 @@ class UsuarioD{
 		}
                 function reporte_perfil($obj){
 			$objCn = new Conexion();
-			$sql = "call reporte_perfil('".$obj->getusuario()."','".$obj->getpassword()."')";                        
+			$sql = "call reporte_perfil('".$obj->getusuario()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
                 function actualizar_telefono($obj){
