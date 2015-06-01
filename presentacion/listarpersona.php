@@ -1,4 +1,4 @@
-<?php mysql_connect('localhost', 'root', '');
+<?php $cn = mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet2');
 ?>
 
@@ -35,7 +35,7 @@
                     <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
                 </tr>
-                    <?php } ?>
+                    <?php } mysql_close($cn) ?>
                     </table>
                   </div>
                 </form>

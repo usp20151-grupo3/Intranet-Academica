@@ -1,6 +1,6 @@
 
 
-<?php mysql_connect('localhost', 'root', '');
+<?php $cn = mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
 ?>
 
@@ -27,7 +27,7 @@
                     <td class="box-body"> <?php echo $rol['fechavigencia']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
                 </tr>
-                    <?php } ?>
+                    <?php } mysql_close($cn)?>
 </table>
                   </div>
                 </form>
