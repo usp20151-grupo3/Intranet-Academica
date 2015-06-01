@@ -2,7 +2,7 @@
                 <div class="box-header">
                   <h3 class="box-title">Registro Grupo de Usuarios - Rol</h3>
                 </div>
-                <form role="form" action="../negocio/reggrupo.php" method="POST">
+                <form role="form" action="../negocio/registrargrupo.php" method="POST">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Grupo</label>

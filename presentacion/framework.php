@@ -240,9 +240,9 @@ session_start();
         </section>
         <section class="content">
            
-        <?php include 'reggrupo.php' ?>    
-        <?php include 'regusuario.php' ?>
-        <?php include 'regpersona.php' ?>      
+        <?php include 'registrargrupo.php' ?>    
+        <?php include 'registrarusuario.php' ?>
+        <?php include 'registrarpersona.php' ?>      
         <?php include 'perfil.php' ?> 
         <?php include 'cambiarpassword.php' ?>
         <?php include 'cambiardireccion.php' ?>
