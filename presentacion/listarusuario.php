@@ -29,8 +29,6 @@
                     <td class="box-body"><?php echo $rol['apellido']?> </td>
                     <td class="box-body"><?php echo $rol['usuario']?> </td>
                     <td class="box-body"><?php echo $rol['password']?> </td>
-                    <td class="box-body"><?php echo $rol['pregunta']?> </td>
-                    <td class="box-body"><?php echo $rol['respuesta']?> </td>
                     <td class="box-body"><?php echo $rol['fechaalta']?> </td>
                     <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
                     <td class="box-body"><?php echo $rol['estado']?> </td>
