@@ -1,7 +1,5 @@
-
-
-<?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
+<?php 
+require('../conexion/conexion.php');
 ?>
 
 <div class="box box-primary" id="divlgrupo" style="display:none">

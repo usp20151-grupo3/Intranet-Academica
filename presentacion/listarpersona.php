@@ -1,5 +1,5 @@
-<?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
+<?php 
+require('../conexion/conexion.php');
 ?>
 
 <div class="box box-primary" id="divlpersona" style="display:none">
@@ -24,12 +24,12 @@
                     $consulta = mysql_query('call reporte_persona');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
-                    <td class="box-body"><?php echo $rol['idpersona']?> </td>
+                    <td class="box-body"> <?php echo $rol['idpersona']?> </td>
                     <td class="box-body"> <?php echo $rol['nombre']?> </td>
                     <td class="box-body"> <?php echo $rol['apellido']?> </td>
                     <td class="box-body"> <?php echo $rol['dni']?> </td>
                     <td class="box-body"> <?php echo $rol['sexo']?> </td>
-                    <td class="box-body"><?php echo $rol['direccion']?> </td>
+                    <td class="box-body"> <?php echo $rol['direccion']?> </td>
                     <td class="box-body"> <?php echo $rol['telefono']?> </td>
                     <td class="box-body"> <?php echo $rol['email']?> </td>
                     <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
