@@ -1,5 +1,5 @@
-<?php 
-require('../conexion/conexion.php');
+<?php mysql_connect('localhost', 'root', '');
+ mysql_select_db('intranet');
 ?>
 
 <div class="box box-primary" id="divlusuario" style="display:none">
