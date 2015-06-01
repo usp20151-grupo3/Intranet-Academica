@@ -23,7 +23,8 @@
                     <?php 
                     $consulta = mysql_query('call reporte_persona');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr bgcolor=#F0FFFF>
+                    
+                <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idpersona']?> </td>
                     <td class="box-body"> <?php echo $rol['nombre']?> </td>
                     <td class="box-body"> <?php echo $rol['apellido']?> </td>
