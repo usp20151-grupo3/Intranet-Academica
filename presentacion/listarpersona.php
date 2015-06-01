@@ -20,7 +20,6 @@
                     <th class="box-body">Email</th>
                     <th class="box-body">FechaRegistro</th>
                     <th class="box-body">Estado</th>
-                    
                     <?php 
                     $consulta = mysql_query('call reporte_persona');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
