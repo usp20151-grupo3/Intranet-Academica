@@ -1,5 +1,5 @@
 <?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
+ mysql_select_db('intranet2');
 ?>
 
 <div class="box box-primary" id="divlpersona" style="display:none">
@@ -21,7 +21,7 @@
                     <th class="box-body">FechaRegistro</th>
                     <th class="box-body">Estado</th>
                     <?php 
-                    $consulta = mysql_query('call reporte_persona');
+                    $consulta = mysql_query('Select * From persona');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idpersona']?> </td>
@@ -40,4 +40,3 @@
                   </div>
                 </form>
 </div>
-

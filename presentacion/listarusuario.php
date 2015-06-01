@@ -25,12 +25,12 @@
                     $consulta = mysql_query('call reporte_usuario');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
-<!--                    <td class="box-body"><?php echo $rol['idusuario']?> </td>
+<!--                <td class="box-body"><?php echo $rol['idusuario']?> </td>
                     <td class="box-body"><?php echo $rol['idpersona']?> </td>-->
                     <td class="box-body"><?php echo $rol['rol']?> </td>
                     <td class="box-body"><?php echo $rol['usuario']?> </td>
                     <td class="box-body"><?php echo $rol['password']?> </td>
-<!--                    <td class="box-body"><?php echo $rol['pregunta']?> </td>
+<!--                <td class="box-body"><?php echo $rol['pregunta']?> </td>
                     <td class="box-body"><?php echo $rol['respuesta']?> </td>-->
                     <td class="box-body"><?php echo $rol['fechaalta']?> </td>
                     <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
