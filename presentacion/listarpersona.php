@@ -21,7 +21,7 @@
                     <th class="box-body">FechaRegistro</th>
                     <th class="box-body">Estado</th>
                     <?php 
-                    $consulta = mysql_query('Select * From persona');
+                    $consulta = mysql_query('call reporte_persona');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idpersona']?> </td>
