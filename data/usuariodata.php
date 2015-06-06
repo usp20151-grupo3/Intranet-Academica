@@ -45,7 +45,7 @@ class UsuarioD{
 		}
                 function reporte_perfil($obj){
 			$objCn = new Conexion();
-			$sql = "call reporte_perfil('".$obj->getusuario()."')";  // NO SE, COMO HAS DEFINIDO TU PS ,A  VER ABRE esta por nombre mi procedure. ABRELO QUIERO VERLO                      
+			$sql = "call reporte_perfil('".$obj->getusuario()."')";                    
 			return $objCn->ejecutar($sql);	
 		}
                 function actualizar_telefono($obj){
