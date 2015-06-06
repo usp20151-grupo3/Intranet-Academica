@@ -1,8 +1,5 @@
-<?php $cn = mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet2');
-?>
 
-<div class="box box-primary" id="divlpersona" style="display:none">
+<div class="box box-primary" id="divlpersona" >
                 <div class="box-header">
                     <h3 class="box-title">Listar Persona</h3>
                 </div>
@@ -20,22 +17,20 @@
                     <th class="box-body">Email</th>
                     <th class="box-body">FechaRegistro</th>
                     <th class="box-body">Estado</th>
-                    <?php 
-                    $consulta = mysql_query('call reporte_persona');
-                    while ($rol = mysql_fetch_array($consulta)){ ?>
+                     <?php foreach($personas as $persona){?>
                    <tr bgcolor=#F0FFFF>
-                    <td class="box-body"> <?php echo $rol['idpersona']?> </td>
-                    <td class="box-body"> <?php echo $rol['nombre']?> </td>
-                    <td class="box-body"> <?php echo $rol['apellido']?> </td>
-                    <td class="box-body"> <?php echo $rol['dni']?> </td>
-                    <td class="box-body"> <?php echo $rol['sexo']?> </td>
-                    <td class="box-body"> <?php echo $rol['direccion']?> </td>
-                    <td class="box-body"> <?php echo $rol['telefono']?> </td>
-                    <td class="box-body"> <?php echo $rol['email']?> </td>
-                    <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
-                    <td class="box-body"> <?php echo $rol['estado']?> </td>
+                    <td class="box-body"> <?php echo $persona->idpersona; ?> </td>
+                    <td class="box-body"> <?php echo $persona->nombre; ?> </td>
+                    <td class="box-body"> <?php echo $persona->apellido; ?> </td>
+                    <td class="box-body"> <?php echo $persona->dni; ?> </td>
+                    <td class="box-body"> <?php echo $persona->sexo; ?> </td>
+                    <td class="box-body"> <?php echo $persona->direccion; ?> </td>
+                    <td class="box-body"> <?php echo $persona->telefono; ?> </td>
+                    <td class="box-body"> <?php echo $persona->email; ?> </td>
+                    <td class="box-body"> <?php echo $persona->fecharegistro; ?> </td>
+                    <td class="box-body"> <?php echo $persona->estado; ?> </td>
                 </tr>
-                    <?php } mysql_close($cn) ?>
+                    <?php } ?>
                     </table>
                   </div>
                 </form>

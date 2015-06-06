@@ -8,9 +8,9 @@ require('../entidad/usuarioentity.php');
 $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
-$temp = $_SESSION['idusuario'];
+
                         $objE->setpregunta($_POST['nuevapregunta']);
-                        $objE->setidusuario($temp);
+                        $objE->setidusuario($_SESSION['idusuario']);
                         $objB->actualizar_pregunta($objE);                        
                         header('Location:../presentacion/framework.php');
                         

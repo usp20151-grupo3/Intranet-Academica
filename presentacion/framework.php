@@ -104,7 +104,7 @@ session_start();
                   </li>-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat" id="btnPerfil" name="divperfil">Perfil</a> <!--data-toggle="modal" data-target="#myModal"-->
+                      <a href="#" class="btn btn-default btn-flat" id="btnPerfil" data-ruta="perfil">Perfil</a> <!--data-toggle="modal" data-target="#myModal"-->
                                           </div>
                     <div class="pull-right">
                         <a href="#" class="btn btn-default btn-flat" id="btnCerrarSesion">Salir</a>
@@ -151,7 +151,7 @@ session_start();
               <a href="#"><i class='fa fa-link'></i> <span>Rol</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div1">Registrar Rol</a></li>
-                <li><a href="#" name="divlgrupo">Visualizar Rol</a></li>
+                <li><a href="#" class="enlaces" data-ruta="rol">Visualizar Rol</a></li>
               </ul>
               <?php } ?>
             </li>
@@ -161,7 +161,7 @@ session_start();
                 <?php if ($rol=='Secretaria') { ?>
                 <li><a href="#" name="div2">Registrar Usuario</a></li>
                 <?php } ?>
-                <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
+                <li><a href="#"  class="enlaces" data-ruta="usuario">Visualizar Usuario</a></li>                            
               </ul>
             </li>
               <?php if ($rol=='Secretaria') { ?>
@@ -169,7 +169,7 @@ session_start();
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div3">Registrar Persona</a></li>
-                <li><a href="#" name="divlpersona">Visualizar Persona</a></li>
+                <li><a href="#" class="enlaces" data-ruta="persona">Visualizar Persona</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -238,21 +238,21 @@ session_start();
             <?php } ?>
           </ol>
         </section>
-        <section class="content">
+        <section class="content contenedor-general">
            
-        <?php include 'registrargrupo.php' ?>    
+        
         <?php include 'registrarusuario.php' ?>
         <?php include 'registrarpersona.php' ?>      
-        <?php include 'perfil.php' ?> 
+
         <?php include 'cambiarpassword.php' ?>
         <?php include 'cambiardireccion.php' ?>
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
         <?php include 'cambiarpregunta.php'?>
         <?php include 'cambiarrespuesta.php'?>
-        <?php include 'listargrupo.php' ?>
-        <?php include 'listarusuario.php' ?>
-        <?php include 'listarpersona.php' ?>
+
+        
+
         
         </section>
       </div>
@@ -265,6 +265,7 @@ session_start();
         
      <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../recursos/js/main.js" type="text/javascript"></script>
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
     <script src="../recursos/js/logout.js" type="text/javascript"> </script>
 

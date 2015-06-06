@@ -7,7 +7,21 @@ class UsuarioD{
 			$sql = "call verificar_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
 			return $objCn->ejecutar($sql);	
 		}
-                
+		function listar_usuario(){
+			$objCn = new conexion();
+			$sql = "call reporte_usuario()";
+			return $objCn->ejecutar($sql);	
+		}
+                function listar_persona(){
+			$objCn = new conexion();
+			$sql = "call reporte_persona()";
+			return $objCn->ejecutar($sql);	
+		}
+                function listar_rol(){
+			$objCn = new conexion();
+			$sql = "call reporte_rol()";
+			return $objCn->ejecutar($sql);	
+		}
                 function mostrar_nombre_apellido_usuario($obj){
 			$objCn = new Conexion();
 			$sql = "call nombre_persona_usuario('".$obj->getusuario()."')";
@@ -31,7 +45,7 @@ class UsuarioD{
 		}
                 function reporte_perfil($obj){
 			$objCn = new Conexion();
-			$sql = "call reporte_perfil('".$obj->getusuario()."')";                        
+			$sql = "call reporte_perfil('".$obj->getusuario()."')";  // NO SE, COMO HAS DEFINIDO TU PS ,A  VER ABRE esta por nombre mi procedure. ABRELO QUIERO VERLO                      
 			return $objCn->ejecutar($sql);	
 		}
                 function actualizar_telefono($obj){

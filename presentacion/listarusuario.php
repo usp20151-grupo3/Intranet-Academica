@@ -1,8 +1,5 @@
-<?php $cn = mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
-?>
 
-<div class="box box-primary" id="divlusuario" style="display:none">
+<div class="box box-primary" id="divlusuario">
                 <div class="box-header">
                     <h3 class="box-title">Listar Usuario</h3>
                 </div>
@@ -17,22 +14,18 @@
                     <th class="box-body">Rol</th>
                     <th class="box-body">FechaAlta</th>
                     <th class="box-body">FechaVigencia</th>
-
-                    
-                    <?php 
-                    $consulta = mysql_query('call reporte_usuario');
-                    while ($rol = mysql_fetch_array($consulta)){ ?>
+                    <?php foreach($usuarios as $usuario){?>
                    <tr bgcolor=#F0FFFF>
                        
-                    <td class="box-body"><?php echo $rol['usuario']?> </td>
-                    <td class="box-body"><?php echo $rol['nombre']?> </td>
-                    <td class="box-body"><?php echo $rol['apellido']?> </td>           
-                    <td class="box-body"><?php echo $rol['rol']?> </td>
-                    <td class="box-body"><?php echo $rol['fechaalta']?> </td>
-                    <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
+                    <td class="box-body"><?php echo $usuario->usuario;?> </td>
+                    <td class="box-body"><?php echo $usuario->nombre;?> </td>
+                    <td class="box-body"><?php echo $usuario->apellido;?> </td>           
+                    <td class="box-body"><?php echo $usuario->rol;?> </td>
+                    <td class="box-body"><?php echo $usuario->fechaalta;?> </td>
+                    <td class="box-body"><?php echo $usuario->fechavigencia;?> </td>
                     
                 </tr>
-                    <?php } mysql_close($cn)?>
+<?php }?>
 </table>
                        </div>
                 </form>
