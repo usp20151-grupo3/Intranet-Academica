@@ -17,9 +17,9 @@ class conexion{
 
 	function abrir(){
 		$this->cn = new mysqli($this->server,
-								$this->user,
-								$this->password,
-								$this->database);
+                $this->user,
+                $this->password,
+                $this->database);
 	}
 
 	function ejecutar($sql){
@@ -36,7 +36,6 @@ class conexion{
 	function cerrar(){
 		$this->cn->close();
 	}
-        
         
 }
 

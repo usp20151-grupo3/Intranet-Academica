@@ -27,7 +27,7 @@ session_start();
                     $rol = 'Alumno';
                 }
 	}
-	else {            header('Location:../index.php');        }        
+	else { header('Location:../index.php'); }        
 ?>
 
 <!DOCTYPE html>
