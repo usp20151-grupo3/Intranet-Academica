@@ -13,7 +13,7 @@ require('../data/usuariodata.php');
 // 			$objE->setusuario($_POST['user']);
 // 			$objE->setpassword(md5($_POST['password']));
 
-            $usuario = $_POST['usuario'];
+            $usuario = $_POST['user'];
             $pass = md5($_POST['password']);
 
             $resp   = mysql_query("SELECT * FROM usuario WHERE usuario='$usuario' LIMIT 1",$conexion);
