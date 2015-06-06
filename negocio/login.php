@@ -29,6 +29,7 @@ $objB	= 	new UsuarioD();
         $_SESSION['direccion']      = $datoperfil->direccion;
         $_SESSION['email']          = $datoperfil->email;
         $_SESSION['telefono']       = $datoperfil->telefono;
+        
         if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
             header('Location:../presentacion/framework.php');
         }
