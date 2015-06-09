@@ -27,6 +27,12 @@ class UsuarioD{
 			return $objCn->ejecutar($sql);	
 		}
                 
+                function registro_acceso($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_acceso('".$obj->getidusuario()."','".$obj->getipacceso()."')";
+			return $objCn->ejecutar($sql);	
+		}
+                
                 function registro_grupo_usuario($obj){
 			$objCn = new Conexion();
 			$sql = "call registro_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
