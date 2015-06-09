@@ -37,7 +37,7 @@ $objB	= 	new UsuarioD();
                                 $_SESSION['email']       = $datoperfil->email;
                                 $_SESSION['telefono']       = $datoperfil->telefono;
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
-                                    $objE->setidusuario($_SESSION['idusuario']);
+                                    
                                     $objE->setipacceso($_SERVER["REMOTE_ADDR"]);
                                     $objB->registro_acceso($objE);
                         
