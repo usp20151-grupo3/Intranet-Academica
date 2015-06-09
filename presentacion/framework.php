@@ -239,7 +239,14 @@ session_start();
           </ol>
         </section>
         <section class="content">
-           
+        <?PHP
+
+        $ipaddress = $_SERVER["REMOTE_ADDR"];
+
+        echo "Your IP is $ipaddress!";
+
+        ?>
+     
         <?php include 'reggrupo.php' ?>    
         <?php include 'regusuario.php' ?>
         <?php include 'regpersona.php' ?>      
