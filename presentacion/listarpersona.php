@@ -21,23 +21,24 @@
                     <th class="box-body">FechaRegistro</th>
                     <th class="box-body">Estado</th>
                     <?php 
-                    $consulta = mysql_query('Select * From persona');
+                    $consulta = mysql_query('call reporte_persona()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
-                    <td class="box-body"><?php echo $rol['idpersona']?> </td>
-                    <td class="box-body"> <?php echo $rol['nombre']?> </td>
-                    <td class="box-body"> <?php echo $rol['apellido']?> </td>
-                    <td class="box-body"> <?php echo $rol['dni']?> </td>
-                    <td class="box-body"> <?php echo $rol['sexo']?> </td>
-                    <td class="box-body"><?php echo $rol['direccion']?> </td>
-                    <td class="box-body"> <?php echo $rol['telefono']?> </td>
-                    <td class="box-body"> <?php echo $rol['email']?> </td>
-                    <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
-                    <td class="box-body"> <?php echo $rol['estado']?> </td>
+                    <td class="box-body"> <?php echo $rol['idpersona']?> </td>
+                    <td class="box-body"> <?php echo $rol['nombre']?> </td>
+                    <td class="box-body"> <?php echo $rol['apellido']?> </td>
+                    <td class="box-body"> <?php echo $rol['dni']?> </td>
+                    <td class="box-body"> <?php echo $rol['sexo']?> </td>
+                    <td class="box-body"> <?php echo $rol['direccion']?> </td>
+                    <td class="box-body"> <?php echo $rol['telefono']?> </td>
+                    <td class="box-body"> <?php echo $rol['email']?> </td>
+                    <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
+                    <td class="box-body"> <?php echo $rol['estado']?> </td>
                 </tr>
-                    <?php } ?>
+                    <?php } mysql_close(); ?>
                     </table>
                   </div>
                 </form>
 </div>
+
 

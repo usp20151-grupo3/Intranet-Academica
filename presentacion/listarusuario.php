@@ -10,36 +10,34 @@
                   <div class="box-body">                    
                     <table border="1" class="box box-primary">
                     
-                    <th class="box-body">IdUsuario</th>
-                    <th class="box-body">IdPersona</th>
-                    <th class="box-body">IdRol</th>
                     <th class="box-body">Usuario</th>
-                    <th class="box-body">Password</th>
-                    <th class="box-body">Pregunta</th>
-                    <th class="box-body">Respuesta</th>
-                    <th class="box-body">FechaAlta</th>
-                    <th class="box-body">FechaVigencia</th>
-                    <th class="box-body">Estado</th>
+                    <th class="box-body">Nombre</th>
+                    <th class="box-body">Apellido</th>
+                    <th class="box-body">Rol</th>
+                    <th class="box-body">Fecha Alta</th>
+                    <th class="box-body">Fecha Vigencia</th>
+     
                     
                     <?php 
-                    $consulta = mysql_query('Select * From usuario');
+                    $consulta = mysql_query('call reporte_usuario()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
-                    <td class="box-body"><?php echo $rol['idusuario']?> </td>
-                    <td class="box-body"><?php echo $rol['idpersona']?> </td>
-                    <td class="box-body"><?php echo $rol['idrol']?> </td>
-                    <td class="box-body"><?php echo $rol['usuario']?> </td>
-                    <td class="box-body"><?php echo $rol['password']?> </td>
-                    <td class="box-body"><?php echo $rol['pregunta']?> </td>
-                    <td class="box-body"><?php echo $rol['respuesta']?> </td>
-                    <td class="box-body"><?php echo $rol['fechaalta']?> </td>
-                    <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
-                    <td class="box-body"><?php echo $rol['estado']?> </td>
+   
+                    <td class="box-body"><?php echo $rol['usuario']?> </td>
+                    <td class="box-body"><?php echo $rol['nombre']?> </td>
+                    
+                    <td class="box-body"><?php echo $rol['apellido']?> </td>
+                    <td class="box-body"><?php echo $rol['rol']?> </td>
+                
+                    <td class="box-body"><?php echo $rol['fechaalta']?> </td>
+                    <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
+                    
                 </tr>
-                    <?php } ?>
+                    <?php } mysql_close(); ?>
 </table>
                        </div>
                 </form>
 </div>
+
             
                       
