@@ -19,9 +19,9 @@
                     <div class="form-group">
                         <label>Sexo</label><br>
                         <select name="sexo">
--                      <option value="1">Masculino</option>
--                      <option value="2">Femenino</option>
--                      </select>
+                      <option value="1">Masculino</option>
+                     <option value="2">Femenino</option>
+                     </select>
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Direccion</label>
