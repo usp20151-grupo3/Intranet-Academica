@@ -10,7 +10,6 @@ $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 
 
-
                         $objE->setnombre($_POST['nombre']);                        
 			$objE->setapellido($_POST['apellido']);
                         $objE->setdni($_POST['dni']);
@@ -24,5 +23,8 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);                  
 }
                         $objB->registro_persona($objE);
-                        header('Location:../presentacion/framework.php');
+                        
+                        require '../presentacion/registrarpersona.php';
+
+                        
 ?>

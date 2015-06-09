@@ -168,7 +168,7 @@ session_start();
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#" name="div3">Registrar Persona</a></li>
+                <li><a href="#" id="div3">Registrar Persona</a></li>
                 <li><a href="#" class="enlaces" data-ruta="persona">Visualizar Persona</a></li>
               </ul>
             </li>
@@ -242,7 +242,7 @@ session_start();
            
         
         <?php include 'registrarusuario.php' ?>
-        <?php include 'registrarpersona.php' ?>      
+     
 
         <?php include 'cambiarpassword.php' ?>
         <?php include 'cambiardireccion.php' ?>
