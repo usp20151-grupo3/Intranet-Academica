@@ -19,7 +19,7 @@
                     <th class="box-body">Estado</th>
                     
                     <?php 
-                    $consulta = mysql_query('Select * From rol');
+                    $consulta = mysql_query('call reporte_rol()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idrol']?> </td>
@@ -28,7 +28,7 @@
                     <td class="box-body"> <?php echo $rol['fechavigencia']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
                 </tr>
-                    <?php } ?>
+                    <?php } mysql_close();?>
 </table>
                   </div>
                 </form>
