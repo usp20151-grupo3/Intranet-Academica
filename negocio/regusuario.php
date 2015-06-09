@@ -13,7 +13,7 @@ $objB	= 	new UsuarioD();
                         $objE->setidpersona($_POST['persona']);
                         $objE->setrol($_POST['rol']);                        			
                         $objE->setusuario($_POST['usuario']);
-                        $objE->setpassword($_POST['password']);
+                        $objE->setpassword(md5($_POST['password']));
                         $objE->setpregunta($_POST['pregunta']);
                         $objE->setrespuesta($_POST['respuesta']);
                         $objE->setfechavigencia($_POST['date']);
