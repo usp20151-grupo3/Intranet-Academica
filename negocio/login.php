@@ -9,7 +9,7 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 			$objE->setusuario($_POST['user']);
-			$objE->setpassword($_POST['password']);
+			$objE->setpassword(mod5($_POST['password']));
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
                         $dato_perfil = $objB->reporte_perfil($objE);

@@ -1,5 +1,4 @@
-<?php
-// ESTO ES LA CAPA DE DATOS . DONDE HACES LAS CONSULTAS A LA BD
+<?php 
 class UsuarioD{
     
 		function verificar_usuario($obj){
@@ -7,10 +6,24 @@ class UsuarioD{
 			$sql = "call verificar_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
 			return $objCn->ejecutar($sql);	
 		}
-                
+		function listar_usuario(){
+			$objCn = new conexion();
+			$sql = "call reporte_usuario()";
+			return $objCn->ejecutar($sql);	
+		}
+                function listar_persona(){
+			$objCn = new conexion();
+			$sql = "call reporte_persona()";
+			return $objCn->ejecutar($sql);	
+		}
+                function listar_rol(){
+			$objCn = new conexion();
+			$sql = "call reporte_rol()";
+			return $objCn->ejecutar($sql);	
+		}
                 function mostrar_nombre_apellido_usuario($obj){
 			$objCn = new Conexion();
-			$sql = "call nombre_persona_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
+			$sql = "call nombre_persona_usuario('".$obj->getusuario()."')";
 			return $objCn->ejecutar($sql);	
 		}
                 
@@ -31,7 +44,7 @@ class UsuarioD{
 		}
                 function reporte_perfil($obj){
 			$objCn = new Conexion();
-			$sql = "call reporte_perfil('".$obj->getusuario()."','".$obj->getpassword()."')";                        
+			$sql = "call reporte_perfil('".$obj->getusuario()."')";                    
 			return $objCn->ejecutar($sql);	
 		}
                 function actualizar_telefono($obj){
@@ -61,4 +74,3 @@ class UsuarioD{
 		}
 }
 ?>
-
