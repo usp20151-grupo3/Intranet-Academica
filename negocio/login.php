@@ -13,7 +13,7 @@ $objB	= 	new UsuarioD();
                         
                         
 
-			$objE->setusuario($_POST['user']);
+			$objE->setusuario($_POST['user']);                        
 			$objE->setpassword(md5($_POST['password']));
 			$res_usuario	=	$objB-> verificar_usuario($objE);
                         $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
@@ -38,8 +38,8 @@ $objB	= 	new UsuarioD();
                                 $_SESSION['telefono']       = $datoperfil->telefono;
 				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {
                                     
-                                    $objE->setipacceso($_SERVER["REMOTE_ADDR"]);
-                                    $objB->registro_acceso($objE);
+                                    
+                                    
                         
                         
 					header('Location:../presentacion/framework.php');					
