@@ -1,5 +1,5 @@
 <?php
-// REPRESENTACION DE LAS TABLAS DE LAS BD'S PARA USARLAS COMO OBJETOS
+
  class UsuarioE{
 
         private	$idpersona;
@@ -25,7 +25,7 @@
                 $this->fecharegistro=$i;
 		$this->estado=$j;
 	}
-    //get es para retornar	
+
 	
 	function getidpersona() {return $this->idpersona;}
         function getnombre() {return $this->nombre;}
@@ -38,7 +38,7 @@
 	function getfecharegistro() {return $this->fecharegistro;}
         function getestado() {return $this->estado;}
 	
-	//set es para modificar el valor almacenado	
+	
 	function setidpersona($val) {$this->idpersona=$val;}
 	function setnombre($val) {$this->nombre=$val;}
         function setapellido($val) {$this->apellido=$val;}
@@ -48,7 +48,7 @@
 	function settelefono($val) {$this->telefono=$val;}
 	function setemail($val) {$this->email=$val;}
 	function setfecharegistro($val) {$this->fecharegistro=$val;}
-	function setestado() {return $this->estado;}
+	function setestado($val) {$this->estado=$val;}
 }
 
         ?>
