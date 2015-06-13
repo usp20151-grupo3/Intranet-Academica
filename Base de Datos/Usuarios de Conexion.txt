@@ -1,5 +1,3 @@
-<?php
-
 /* 
  * User: lily -> Password: 123 -> rol: Administrador
  * User: victor -> Password: 123 -> rol: Director
@@ -9,4 +7,3 @@
  * Se Ha agregado Alumno, Docente y Curso en el Menu de Administrador.
  * 
  */
-
