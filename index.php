@@ -14,7 +14,7 @@
 		<input type="text" name="user" id="name" placeholder="Usuario" required/>
 		<label id="pass" for="password">k</label>
 		<input type="password" name="password" id="password" placeholder="Contraseña" required /> 
-                <input type="submit" id="submit" name="submit" value="a">/>
+		<input type="submit" id="submit" name="submit" value="a"/>
 	</div>
 </form>
 <div id="option"> 

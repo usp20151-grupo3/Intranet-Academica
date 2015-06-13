@@ -155,21 +155,34 @@ session_start();
               </ul>
               <?php } ?>
             </li>
-            <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <?php if ($rol=='Secretaria') { ?>
-                <li><a href="#" name="div2">Registrar Usuario</a></li>
-                <?php } ?>
-                <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
-              </ul>
-            </li>
+            
               <?php if ($rol=='Secretaria') { ?>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div3">Registrar Persona</a></li>
                 <li><a href="#" name="divlpersona">Visualizar Persona</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Docente</span> <small>- NEW</small>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#" name="regdocente">Registrar Docente</a></li>
+                <li><a href="#" name="divldocente">Visualizar Docente</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Alumno</span> <small>- NEW</small>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#" name="regalumno">Registrar Alumno</a></li>
+                <li><a href="#" name="divlalumno">Visualizar Alumno</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Curso</span>  <small>- NEW</small> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#" name="regcurso">Registrar Curso</a></li>
+                <li><a href="#" name="divlcurso">Visualizar Curso</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -180,6 +193,15 @@ session_start();
               </ul>
             </li>
             <?php } ?>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <?php if ($rol=='Secretaria') { ?>
+                <li><a href="#" name="div2">Registrar Usuario</a></li>
+                <?php } ?>
+                <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
+              </ul>
+            </li>
             </li>  
             <?php if ($rol == 'Director') { ?>
             <li class="treeview">
@@ -239,17 +261,13 @@ session_start();
           </ol>
         </section>
         <section class="content">
-        <?PHP
-
-        $ipaddress = $_SERVER["REMOTE_ADDR"];
-
-        echo "Your IP is $ipaddress!";
-
-        ?>
-     
+          
         <?php include 'reggrupo.php' ?>    
         <?php include 'regusuario.php' ?>
-        <?php include 'regpersona.php' ?>      
+        <?php include 'regpersona.php' ?>   
+        <?php include 'regalumno.php' ?>
+        <?php include 'regdocente.php' ?>
+        <?php include 'regcurso.php' ?>    
         <?php include 'perfil.php' ?> 
         <?php include 'cambiarpassword.php' ?>
         <?php include 'cambiardireccion.php' ?>
@@ -257,6 +275,9 @@ session_start();
         <?php include 'cambiartelefono.php' ?>
         <?php include 'cambiarpregunta.php'?>
         <?php include 'cambiarrespuesta.php'?>
+        <?php include 'listaralumno.php' ?>
+        <?php include 'listarcurso.php' ?>
+        <?php include 'listardocente.php' ?>
         <?php include 'listargrupo.php' ?>
         <?php include 'listarusuario.php' ?>
         <?php include 'listarpersona.php' ?>
@@ -269,8 +290,8 @@ session_start();
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
-        
-     <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
+    <script src='../recursos/js/modalseleccionar.js'></script>    
+    <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../recursos/js/app.min.js" type="text/javascript"></script>
     <script src="../recursos/js/logout.js" type="text/javascript"> </script>

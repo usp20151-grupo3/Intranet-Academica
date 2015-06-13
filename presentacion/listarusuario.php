@@ -4,7 +4,7 @@
 
 <div class="box box-primary" id="divlusuario" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar Usuario - <small>Falta Encriptar Password</small></h3>
+                    <h3 class="box-title">Listar Usuario</h3>
                 </div>
                 <form role="form">
                   <div class="box-body">                    

@@ -27,12 +27,6 @@ class UsuarioD{
 			return $objCn->ejecutar($sql);	
 		}
                 
-                function registro_acceso($obj){
-			$objCn = new Conexion();
-			$sql = "call registro_acceso('".$obj->getidusuario()."','".$obj->getipacceso()."')";
-			return $objCn->ejecutar($sql);	
-		}
-                
                 function registro_grupo_usuario($obj){
 			$objCn = new Conexion();
 			$sql = "call registro_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
@@ -43,9 +37,24 @@ class UsuarioD{
 			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+		        function registro_alumno($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_alumno('".$obj->getidpersona()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
                 function registro_usuario($obj){
 			$objCn = new Conexion();
 			$sql = "call registro_usuario('".$obj->getidpersona()."','".$obj->getrol()."','".$obj->getusuario()."','".$obj->getpassword()."','".$obj->getpregunta()."','".$obj->getrespuesta()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		        function registro_docente($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_docente('".$obj->getidpersona()."','".$obj->getcodigo()."','".$obj->getidrol()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		        function registro_curso($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_curso('".$obj->getdescripcion()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
                 function reporte_perfil($obj){
@@ -76,6 +85,16 @@ class UsuarioD{
                 function actualizar_pregunta($obj){
 			$objCn = new Conexion();
 			$sql = "call actualizar_pregunta('".$obj->getidusuario()."','".$obj->getpregunta()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		        function actualizar_persona($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_persona('".$obj->getidpersona()."','".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		        function buscar_persona($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_persona('".$obj->getidpersona()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }

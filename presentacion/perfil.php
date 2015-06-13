@@ -17,27 +17,27 @@ if (isset ($_SESSION['idusuario'])){
                     <div class="form-group">
                         <label for="exampleInputDireccion">Dirección  <li class="fa fa-long-arrow-right"> </li>     </label>
                       <label>    <?php print($dir)?>    </label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modaldir"> Editar </a></li>  
-  
+                      <!--<input type="text" class="form-control" name="secreta" placeholder="Pregunta Secreta">-->  
                     </div>
                       <div class="form-group">
                           <label for="exampleInputEmail">Email   <li class="fa fa-long-arrow-right"> </li> </label>
                       <label>    <?php print($cor)?></label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modalema"> Editar </a></li>
-
+                      <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
                       <label for="exampleInputTelefono">Teléfono  <li class="fa fa-long-arrow-right"> </li> </label>
                       <label>    <?php print($tel)?></label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modaltel"> Editar </a></li>
-
+                      <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
                       <label for="exampleInputTelefono">Pregunta  <li class="fa fa-long-arrow-right"> </li> </label>
                       <label>    <?php print($preg)?></label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modalpre"> Editar </a></li>
- 
+                      <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                       <div class="form-group">
                       <label for="exampleInputTelefono">Respuesta  <li class="fa fa-long-arrow-right"> </li> </label>
                       <label>    <?php print($resp)?></label>   <li class="fa fa-file-text-o"> <a href="#" class="inline" data-toggle="modal" data-target="#Modalres"> Editar </a></li>
-
+                      <!--<input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta"> --> 
                     </div>
                   </div>
                   <div class="box-footer">

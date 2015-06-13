@@ -10,8 +10,8 @@ $objE	= 	new UsuarioE("","","","","","","","","","");
 $objB	= 	new UsuarioD();
 
 
-                        $objE->setidpersona($_POST['persona']);
-                        $objE->setrol($_POST['rol']);                        			
+                        $objE->setidpersona($_POST['idpersona']);
+                        $objE->setrol($_POST['roles']);                        			
                         $objE->setusuario($_POST['usuario']);
                         $objE->setpassword(md5($_POST['password']));
                         $objE->setpregunta($_POST['pregunta']);
@@ -26,4 +26,5 @@ $objB	= 	new UsuarioD();
                         $objB->registro_usuario($objE);
                         
                         header('Location:../presentacion/framework.php');
+//var_dump($objE);
 ?>
