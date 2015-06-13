@@ -15,7 +15,7 @@
                     <th class="box-body">Apellido</th>
                     <th class="box-body">Codigo</th>
                     <th class="box-body">Estado</th>
-                    <th class="box-body">Accion</th>
+                    <th class="box-body">Accion - En Proceso</th>
                     <?php 
                     $consulta = mysql_query('call reporte_docente()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
@@ -43,7 +43,8 @@
                     <h4 class="modal-title">Editar Docente</h4>
                   </div>
                   <div class="modal-body">
-                  <table  class="box box-primary">
+                      EN PROCESO
+<!--                  <table  class="box box-primary">
                     <thead>
                       <th>Numero</th>
                       <th>Nombre</th>
@@ -66,7 +67,7 @@
                 </tr>
                     <?php } mysql_close();?>                   
                     </tbody>
-                  </table>
+                  </table>-->
 
                   </div>
                   <div class="modal-footer">

@@ -15,6 +15,7 @@
                     <th class="box-body">Codigo</th>
                     <th class="box-body">Fecha Registro</th>
                     <th class="box-body">Estado</th>
+                    <th class="box-body">Accion</th>
                     <?php 
                     $consulta = mysql_query('call reporte_curso()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
@@ -24,6 +25,10 @@
                     <td class="box-body"> <?php echo $rol['codigo']?> </td>
                     <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
+                    <td class="box-body"> 
+                      <button class="btn btn-default btn-flat btn-e-curso"
+                                data-id="<?php echo $rol['idcurso']?>"> Editar </button>
+                    </td>
                 </tr>
                     <?php } mysql_close(); ?>
                     </table>
