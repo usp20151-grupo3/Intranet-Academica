@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2015 a las 21:01:03
+-- Tiempo de generación: 13-06-2015 a las 21:55:12
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -37,6 +37,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_correo`(IN `idper` INT(1
 update persona 
 set email = cor 
 where idpersona = idper$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_curso`(IN `idc` INT(11), IN `des` VARCHAR(50), IN `cod` CHAR(16), IN `est` CHAR(1))
+    NO SQL
+    SQL SECURITY INVOKER
+update curso 
+set descripcion = des,
+codigo = cod,
+estado = est 
+where idcurso = idc$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_direccion`(IN `idper` INT(11), IN `dir` VARCHAR(100))
     NO SQL
@@ -92,6 +101,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `baja_usuario`(IN `idusu` INT(11))
 update usuario 
 set estado = '0' 
 where idusuario = idusu$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_curso`(IN `idc` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+select * from curso where idcurso = idc$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_persona`(IN `idp` INT(11))
     NO SQL
