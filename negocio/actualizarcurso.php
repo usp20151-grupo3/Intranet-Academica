@@ -21,5 +21,5 @@ $objB	= 	new UsuarioD();
 }
                         $objB->actualizar_curso($objE);
                         
-                        header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php?#');
 ?>
