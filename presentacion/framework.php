@@ -18,7 +18,7 @@ session_start();
                     $rol = 'Director';
                 }
                 if ($rol=='2'){
-                    $rol = 'Secretaria';
+                    $rol = 'Administrador';
                 }
                 if ($rol=='3'){
                     $rol = 'Docente';
@@ -63,7 +63,7 @@ session_start();
               <li class="dropdown messages-menu">
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+                  <?php if ($rol == 'Director' || $rol=='Administrador') { ?>
                   <img src="../recursos/img/admin.png" class="user-image" alt="User Image"/>
                   <?php } ?>
                   <?php if ($rol == 'Docente') { ?>
@@ -76,7 +76,7 @@ session_start();
                 </a>
                 <ul class="dropdown-menu">
                   <li class="user-header">
-                      <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+                      <?php if ($rol == 'Director' || $rol=='Administrador') { ?>
                     <img src="../recursos/img/admin.png" class="img-circle" alt="User Image" />
                       <?php } ?>
                     <?php if ($rol == 'Docente') { ?>
@@ -123,7 +123,7 @@ session_start();
         <section class="sidebar">
           <div class="user-panel">
             <div class="pull-left image">
-                <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+                <?php if ($rol == 'Director' || $rol=='Administrador') { ?>
               <img src="../recursos/img/adminwhite.png" class="img-circle" alt="User Image" />
                 <?php } ?>
               <?php if ($rol == 'Docente') { ?>
@@ -144,7 +144,7 @@ session_start();
             <!-- Optionally, you can add icons to the links -->
             <!--<li class="active"><a href="#"><i class='fa fa-link'></i> <span>Configurar Grupos</span></a></li>-->
             <!--<li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>-->
-                <?php if ($rol == 'Director' || $rol=='Secretaria') { ?>
+                <?php if ($rol == 'Director' || $rol=='Administrador') { ?>
                 
 		<li class="treeview">
                 <?php if ($rol == 'Director') { ?>
@@ -156,7 +156,7 @@ session_start();
               <?php } ?>
             </li>
             
-              <?php if ($rol=='Secretaria') { ?>
+              <?php if ($rol=='Administrador') { ?>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -196,7 +196,7 @@ session_start();
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <?php if ($rol=='Secretaria') { ?>
+                <?php if ($rol=='Administrador') { ?>
                 <li><a href="#" name="div2">Registrar Usuario</a></li>
                 <?php } ?>
                 <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
@@ -251,8 +251,8 @@ session_start();
             <li><a><i class="fa fa-github-alt"></i> Navegación</a></li>
             <?php if ($rol == 'Director') { ?>
             <li class="active">Dirección</li>
-            <?php } if ($rol == 'Secretaria') { ?>
-            <li class="active">Secretaría</li>
+            <?php } if ($rol == 'Administrador') { ?>
+            <li class="active">Administración</li>
             <?php } if ($rol == 'Docente') {?>
             <li class="active">Docencia</li>
             <?php } if ($rol == 'Alumno') {?>
@@ -290,6 +290,7 @@ session_start();
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
+    <script src="../recursos/js/persona.js"></script>    
     <script src='../recursos/js/modalseleccionar.js'></script>    
     <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>

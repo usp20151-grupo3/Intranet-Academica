@@ -1,7 +1,7 @@
 <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
 ?>
-<script src="../recursos/js/persona.js"></script>
+
 <div class="box box-primary" id="divlpersona" style="display:none">
                 <div class="box-header">
                     <h3 class="box-title">Listar Persona</h3>
