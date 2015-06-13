@@ -18,7 +18,7 @@
 	</div>
 </form>
 <div id="option"> 
-<!--	<p>Intranet Academica</p> -->
+
 	<a href="#">Recuperar Clave</a>
 </div>
             </body>
