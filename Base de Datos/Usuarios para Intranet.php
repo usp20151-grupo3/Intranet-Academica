@@ -5,5 +5,8 @@
  * User: victor -> Password: 123 -> rol: Director
  * User: heber -> Password: 123 -> rol: Docente
  * User: jfrank -> Password: 123 -> rol: Estudiante
+ * 
+ * Se Ha agregado Alumno, Docente y Curso en el Menu de Administrador.
+ * 
  */
 
