@@ -97,5 +97,15 @@ class UsuarioD{
 			$sql = "call buscar_persona('".$obj->getidpersona()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+                        function actualizar_curso($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_curso('".$obj->getidcurso()."','".$obj->getdescripcion()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+                	function buscar_curso($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_curso('".$obj->getidcurso()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
 }
 ?>

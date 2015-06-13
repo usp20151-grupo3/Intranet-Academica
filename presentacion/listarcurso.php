@@ -44,8 +44,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Editar Curso</h4>
                   </div>
-                  <form role="form" action="../negocio/actualizarpersona.php" method="POST">
-                  <div class="modal-body body-persona">
+                  <form role="form" action="../negocio/actualizarcurso.php" method="POST">
+                  <div class="modal-body body-curso">
                  
 
                   </div>

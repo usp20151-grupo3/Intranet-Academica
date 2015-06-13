@@ -9,8 +9,8 @@ $(document).ready(function(){
 	});	
         
         $('.btn-e-curso').click(function(e) {
-		var id_persona = $(this).attr('data-id');
-		$.post('../negocio/editarcurso.php',{id_persona:id_persona},function(result){
+		var id_curso = $(this).attr('data-id');
+		$.post('../negocio/editarcurso.php',{id_curso:id_curso},function(result){
 			$('.body-curso').html(result);
 		});
 		$('#Modalecurso').modal('show');
