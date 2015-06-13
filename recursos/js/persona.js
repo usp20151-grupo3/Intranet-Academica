@@ -11,9 +11,9 @@ $(document).ready(function(){
         $('.btn-e-curso').click(function(e) {
 		var id_persona = $(this).attr('data-id');
 		$.post('../negocio/editarcurso.php',{id_persona:id_persona},function(result){
-			$('.body-persona').html(result);
+			$('.body-curso').html(result);
 		});
-		$('#Modalepersona').modal('show');
+		$('#Modalecurso').modal('show');
 	});
 
 });
