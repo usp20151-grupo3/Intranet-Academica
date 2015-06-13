@@ -145,18 +145,19 @@ session_start();
             <!--<li class="active"><a href="#"><i class='fa fa-link'></i> <span>Configurar Grupos</span></a></li>-->
             <!--<li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>-->
                 <?php if ($rol == 'Director' || $rol=='Administrador') { ?>
-                
+            
+                <?php if ($rol == 'Administrador') { ?>
 		<li class="treeview">
-                <?php if ($rol == 'Director') { ?>
+                
               <a href="#"><i class='fa fa-link'></i> <span>Rol</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="div1">Registrar Rol</a></li>
                 <li><a href="#" name="divlgrupo">Visualizar Rol</a></li>
               </ul>
-              <?php } ?>
+              
             </li>
             
-              <?php if ($rol=='Administrador') { ?>
+              
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Persona</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
