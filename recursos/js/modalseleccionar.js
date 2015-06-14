@@ -4,7 +4,7 @@ $(document).ready(function(e) {
 		var nombre_persona = $(this).attr('data-persona');
 		document.getElementById('idpersona').value =id_persona;
 		document.getElementById('persona').value =nombre_persona;
-		$('#Modaldir').modal('hide');
+		$('#Modalper').modal('hide');
 	});	
 
 
