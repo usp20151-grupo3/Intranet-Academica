@@ -102,9 +102,19 @@ class UsuarioD{
 			$sql = "call actualizar_curso('".$obj->getidcurso()."','".$obj->getdescripcion()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+                        function actualizar_rol($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_rol('".$obj->getidrol()."','".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}                
                 	function buscar_curso($obj){
 			$objCn = new Conexion();
 			$sql = "call buscar_curso('".$obj->getidcurso()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+                        function buscar_rol($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_rol('".$obj->getidrol()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }

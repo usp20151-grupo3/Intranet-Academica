@@ -12,7 +12,7 @@ $temp = $_SESSION['idpersona'];
                         $objE->setemail($_POST['nuevoemail']);
                         $objE->setidpersona($temp);
                         $objB->actualizar_correo($objE);                        
-                        header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php?#');
                         
 
 

@@ -25,6 +25,6 @@ $objB	= 	new UsuarioD();
 }
                         $objB->registro_usuario($objE);
                         
-                        header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php?#');
 //var_dump($objE);
 ?>

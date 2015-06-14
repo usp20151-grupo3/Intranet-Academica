@@ -2,7 +2,7 @@
 session_start();
 require('../conexion/conexion.php');
 require('../data/usuariodata.php');
-require('../entidad/grupoentity.php');
+require('../entidad/rolentity.php');
 
 
 $con 	= 	new Conexion();
@@ -19,7 +19,7 @@ $objB	= 	new UsuarioD();
                         $objE->setestado(0);
 }
                         $objB->registro_grupo_usuario($objE);                        
-                        header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php?#');
                         
 
 

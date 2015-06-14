@@ -12,7 +12,7 @@ $temp = $_SESSION['idpersona'];
                         $objE->settelefono($_POST['nuevotelefono']);
                         $objE->setidpersona($temp);
                         $objB->actualizar_telefono($objE);                        
-                        header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php?#');
                         
 
 

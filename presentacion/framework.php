@@ -263,7 +263,7 @@ session_start();
         </section>
         <section class="content">
           
-        <?php include 'reggrupo.php' ?>    
+        <?php include 'regrol.php' ?>    
         <?php include 'regusuario.php' ?>
         <?php include 'regpersona.php' ?>   
         <?php include 'regalumno.php' ?>
@@ -279,7 +279,7 @@ session_start();
         <?php include 'listaralumno.php' ?>
         <?php include 'listarcurso.php' ?>
         <?php include 'listardocente.php' ?>
-        <?php include 'listargrupo.php' ?>
+        <?php include 'listarrol.php' ?>
         <?php include 'listarusuario.php' ?>
         <?php include 'listarpersona.php' ?>
         
@@ -291,7 +291,7 @@ session_start();
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
-    <script src="../recursos/js/persona.js"></script>    
+    <script src="../recursos/js/editar.js"></script>    
     <script src='../recursos/js/modalseleccionar.js'></script>    
     <script src="../recursos/js/jQuery-2.1.4.min.js"></script>
     <script src="../recursos/js/bootstrap.min.js" type="text/javascript"></script>

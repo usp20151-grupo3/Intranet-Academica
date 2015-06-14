@@ -15,5 +15,11 @@ $(document).ready(function(){
 		});
 		$('#Modalecurso').modal('show');
 	});
-
+        $('.btn-e-rol').click(function(e) {
+		var id_rol = $(this).attr('data-id');
+		$.post('../negocio/editarrol.php',{id_rol:id_rol},function(result){
+			$('.body-rol').html(result);
+		});
+		$('#Modalerol').modal('show');
+	});
 });

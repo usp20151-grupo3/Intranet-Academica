@@ -2,7 +2,7 @@
                 <div class="box-header">
                   <h3 class="box-title">Registro Grupo de Usuarios - Rol</h3>
                 </div>
-                <form role="form" action="../negocio/reggrupo.php" method="POST">
+                <form role="form" action="../negocio/regrol.php" method="POST">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Grupo - Rol</label>
@@ -10,7 +10,7 @@
                       <div class="form-group">
                           <label for="exampleInputDate">Fecha Vigencia - <small>Falta validar para que Fecha Vigencia no sea menor a Fecha Actual</small></label>
                       <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia">
-                    </div>                                    
+                      </div>                                    
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="checkbox"> Habilitar

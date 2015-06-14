@@ -12,7 +12,7 @@ $temp = $_SESSION['idusuario'];
                         $objE->setrespuesta($_POST['nuevarespuesta']);
                         $objE->setidusuario($temp);
                         $objB->actualizar_respuesta($objE);                        
-                        header('Location:../presentacion/framework.php');
+                        header('Location:../presentacion/framework.php?#');
                         
 
 

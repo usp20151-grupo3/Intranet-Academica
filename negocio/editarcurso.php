@@ -16,4 +16,5 @@ $objB	= 	new UsuarioD();
 
                         $curso = $resp_curso->fetch_object();
                        require'../presentacion/formulario_curso.php';
+                       
 ?>

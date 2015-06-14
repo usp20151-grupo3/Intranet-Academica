@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2015 a las 21:55:12
+-- Tiempo de generación: 14-06-2015 a las 22:26:23
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -81,6 +81,15 @@ update usuario
 set respuesta = resp 
 where idusuario = idusu$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_rol`(IN `idr` INT(11), IN `des` VARCHAR(30), IN `fecvig` DATE, IN `est` CHAR(1))
+    NO SQL
+    SQL SECURITY INVOKER
+update rol 
+set descripcion = des,
+fechavigencia = fecvig,
+estado = est
+where idrol = idr$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_telefono`(IN `tel` CHAR(15), IN `idper` INT(11))
     NO SQL
     SQL SECURITY INVOKER
@@ -111,6 +120,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_persona`(IN `idp` INT(11))
     NO SQL
     SQL SECURITY INVOKER
 select * from persona where idpersona = idp$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_rol`(IN `idr` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+select * from rol where idrol = idr$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `editar_alumno`(IN `ida` INT, IN `idp` INT, IN `cod` CHAR(10), IN `est` CHAR(1))
     NO SQL
@@ -500,7 +514,7 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `idpersona` int(11) NOT NULL COMMENT 'Llave foránea que identifica a la persona.',
   `codigo` char(10) NOT NULL COMMENT 'Código del alumno.',
   `estado` char(1) NOT NULL COMMENT 'Estado de alumno. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `alumno`
@@ -512,7 +526,8 @@ INSERT INTO `alumno` (`idalumno`, `idpersona`, `codigo`, `estado`) VALUES
 (3, 8, '222003', '1'),
 (5, 12, '111145', '1'),
 (6, 10, '11146', '1'),
-(7, 14, '222009', '1');
+(7, 14, '222009', '1'),
+(8, 15, '111010', '1');
 
 -- --------------------------------------------------------
 
@@ -794,27 +809,28 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `email` varchar(50) NOT NULL COMMENT 'Email de la persona',
   `fecharegistro` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora del registro de la persona',
   `estado` char(1) NOT NULL COMMENT 'Estado de la persona'
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `persona`
 --
 
 INSERT INTO `persona` (`idpersona`, `nombre`, `apellido`, `dni`, `sexo`, `direccion`, `telefono`, `email`, `fecharegistro`, `estado`) VALUES
-(1, 'Victor Andres', 'Lopez Vasquez', '32134213', '1', 'San Borja - Lima', '345612', 'victorandres@gmail.com', '2015-04-03 15:04:09', '0'),
+(1, 'Victor Andres', 'Lopez Vasquez', '32134213', '1', 'San Borja - Lima', '345612', 'victorandres@gmail.com', '2015-04-03 15:04:09', '1'),
 (2, 'Joseph', 'Perez Perez', '32134567', '1', 'Av. Meiggs 451', '32134567', 'joseperez@gmail.com', '2015-04-03 15:04:28', '1'),
 (3, 'Maria Elena', 'Herrera Quezada', '32923159', '2', 'Jr. Huascar Mz H Lt 22 El Porvenir', '324561', 'servielshaddai@hotmail.com', '2015-04-03 15:02:49', '1'),
 (4, 'Joel Franklin ', 'Tapia Herrera', '46457322', '1', 'Jr. Huascar Mz H Lt 22 El Porvenir', '944939642', 'cancerfrlj@gmail.com', '2015-04-03 15:04:55', '1'),
-(5, 'Kelly', 'Alvarez Aguirre', '12345678', '2', 'Av Guardia Civil', '5555555', 'misha.neko@gmail.com', '2015-04-03 15:03:07', '1'),
+(5, 'Kelly', 'Alvarez Aguirre', '12345678', '2', 'Av Guardia Civil', '5555555', 'misha.neko@gmail.com', '2015-04-03 15:03:07', '0'),
 (6, 'Hilda', 'Aguirre', '87654321', '2', 'Av Guardia Civil', '55555555', 'hilda@gmail.com', '2015-04-03 15:03:13', '1'),
 (7, 'Miguel', 'Valle Pelaez', '3215678', '1', '21 de abril', '321345', 'miguel@gmail.com', '2015-04-03 15:07:51', '0'),
 (8, 'Franco', 'Hermoza', '32451232', '1', 'Callao', '323431', 'franko_h@hotmail.com', '2015-04-07 20:21:17', '1'),
 (9, 'David', 'Hermoza', '22314234', '1', 'Callao', '3231342', 'davidhermoza@hotmail.com', '2015-04-07 20:27:00', '1'),
 (10, 'Daniel', 'Quezada', '32569877', '1', 'chimbote', '325689', 'danqueas@hotmail.com', '2015-04-07 20:50:54', '1'),
-(11, 'Lily', 'Alvarez Aguirre', '56875412', '2', 'Lima', '321345', 'lily@qq.com', '2015-04-07 20:50:54', '1'),
+(11, 'Lily', 'Alvarez Aguirre', '56875412', '2', 'Chimbote', '321345', 'lily@qq.com', '2015-04-07 20:50:54', '1'),
 (12, 'Luis', 'Renteria Valera', '45782345', '1', 'Av Pardo', '32134571', 'luis@hotmail.com', '2015-06-08 21:47:49', '1'),
 (13, 'Heber', 'Gomez Hurtado', '45231234', '1', 'Los Pinos', '123456', 'hgh@hotmail.com', '2015-06-13 04:00:09', '1'),
-(14, 'Orlando', 'Sojos', '30134521', '1', 'Nvo Chimbote', '94832312', 'orlando3001@hotmail.com', '2015-06-13 13:14:44', '1');
+(14, 'Orlando', 'Sojos', '30134521', '1', 'Nvo Chimbote', '94832312', 'orlando3001@hotmail.com', '2015-06-13 13:14:44', '1'),
+(15, 'Bryan', 'Aguilar', '98532312', '1', 'Bellamar Nuevo Chimbote', '3412356', 'bryan@hotmail.com', '2015-06-13 15:15:20', '1');
 
 -- --------------------------------------------------------
 
@@ -838,7 +854,8 @@ INSERT INTO `rol` (`idrol`, `descripcion`, `fechaalta`, `fechavigencia`, `estado
 (1, 'Director', '2015-05-29 00:48:42', '2015-07-31', '1'),
 (2, 'Administrador', '2015-05-29 00:48:53', '2015-07-24', '1'),
 (3, 'Docente', '2015-05-29 00:49:02', '2015-08-19', '1'),
-(4, 'Alumno', '2015-05-29 00:49:19', '2015-08-06', '1');
+(4, 'Alumno', '2015-05-29 00:49:19', '2015-08-06', '1'),
+(5, 'Rol Test_', '2015-06-14 14:01:12', '2015-09-30', '1');
 
 -- --------------------------------------------------------
 
@@ -882,7 +899,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `fechaalta` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechavigencia` date NOT NULL,
   `estado` char(1) NOT NULL COMMENT 'Estado del usuario.'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -898,7 +915,8 @@ INSERT INTO `usuario` (`idusuario`, `idpersona`, `idrol`, `usuario`, `password`,
 (9, 9, 3, 'david', '81dc9bdb52d04dc20036dbd8313ed055', 'hola', 'hola', '2015-06-01 15:13:26', '2015-09-16', '1'),
 (13, 12, 4, 'luis', '202cb962ac59075b964b07152d234b70', '123', '123', '2015-06-13 01:52:43', '2015-06-13', '1'),
 (14, 14, 4, 'orlando', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-13 13:15:57', '2015-06-27', '1'),
-(15, 13, 3, 'heber', '202cb962ac59075b964b07152d234b70', 'universidad', 'usp', '2015-06-13 13:57:22', '2015-06-19', '1');
+(15, 13, 3, 'heber', '202cb962ac59075b964b07152d234b70', 'universidad', 'usp', '2015-06-13 13:57:22', '2015-06-19', '1'),
+(16, 15, 4, 'bryan', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-13 15:16:23', '2015-08-12', '1');
 
 --
 -- Índices para tablas volcadas
@@ -1014,7 +1032,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del alumno.',AUTO_INCREMENT=8;
+MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del alumno.',AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `curso`
 --
@@ -1044,7 +1062,7 @@ MODIFY `idnota` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la not
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificador de la persona',AUTO_INCREMENT=15;
+MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificador de la persona',AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
@@ -1059,7 +1077,7 @@ MODIFY `idtrabajador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario.',AUTO_INCREMENT=16;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario.',AUTO_INCREMENT=17;
 --
 -- Restricciones para tablas volcadas
 --
