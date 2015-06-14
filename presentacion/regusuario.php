@@ -31,23 +31,23 @@
                     </div> 
                       <div class="form-group">
                       <label for="exampleInputUsuario">Usuario</label>
-                      <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+                      <input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Password">
+                      <input type="password" class="form-control" name="password" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="text" class="form-control" name="pregunta" placeholder="Pregunta Secreta">  
+                      <input type="text" class="form-control" name="pregunta" placeholder="Pregunta Secreta" required>  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta">  
+                      <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta" required>  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputDate">Fecha Vigencia</label>
-                      <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia">
+                      <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia" required>
                     </div>  
                     <div class="checkbox">
                       <label>

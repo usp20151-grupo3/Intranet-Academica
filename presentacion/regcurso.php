@@ -6,11 +6,11 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label>Nombre Curso</label>
-                      <input type="text" class="form-control" name="descripcion" placeholder="Ingrese Nombre de Curso">
+                      <input type="text" class="form-control" name="descripcion" placeholder="Ingrese Nombre de Curso" required>
                     </div>
                     <div class="form-group">
                       <label>Codigo</label>
-                      <input type="text" class="form-control" name="codigo" placeholder="Codigo">
+                      <input type="text" class="form-control" name="codigo" placeholder="Codigo" required>
                     </div>
                     <div class="checkbox">
                       <label>
