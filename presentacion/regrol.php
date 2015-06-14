@@ -6,10 +6,10 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Grupo - Rol</label>
-                      <input type="text" class="form-control" name="grupo" placeholder="Grupo - Rol">
+                      <input type="text" class="form-control" name="grupo" placeholder="Grupo - Rol" required>
                       <div class="form-group">
                           <label for="exampleInputDate">Fecha Vigencia</label>
-                      <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia">
+                      <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia" required>
                       </div>                                    
                     <div class="checkbox">
                       <label>

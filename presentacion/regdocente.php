@@ -7,13 +7,13 @@
                     <div class="form-group">
                       <label for="exampleInputUsuario">Persona</label>
                       <input type="hidden" class="form-control" id="iddocente" name="idpersona">
-                      <input readonly='true' type="text" class="form-control" id='docente' name="persona" placeholder="Seleccionar Persona">
+                      <input readonly='true' type="text" class="form-control" id='docente' name="persona" placeholder="Seleccionar Persona" required>
                       <a href="#" class="inline" data-toggle="modal" data-target="#Modaldocente">
                       <button class="btn btn-default btn-flat"> Buscar</button> </a>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsuario">Codigo</label>
-                      <input type="text" class="form-control" name="codigo" placeholder="Codigo">
+                      <input type="text" class="form-control" name="codigo" placeholder="Codigo" required>
                       <input type="hidden" class="form-control" value="3" name="idrol">
                     </div>
                     <div class="checkbox">

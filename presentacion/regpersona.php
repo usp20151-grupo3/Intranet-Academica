@@ -6,15 +6,15 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Nombre</label>
-                      <input type="text" class="form-control" name="nombre" placeholder="Nombres">
+                      <input type="text" class="form-control" name="nombre" placeholder="Nombres" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsuario">Apellido</label>
-                      <input type="text" class="form-control" name="apellido" placeholder="Apellidos">
+                      <input type="text" class="form-control" name="apellido" placeholder="Apellidos" required>
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Documento Nacional de Identidad</label>
-                      <input type="text" class="form-control" name="dni" placeholder="DNI">
+                      <input type="text" class="form-control" name="dni" placeholder="DNI" required>
                     </div>
                     <div class="form-group">
                      <label>Sexo</label><br>
@@ -26,15 +26,15 @@
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Direccion</label>
-                      <input type="text" class="form-control" name="direccion" placeholder="Direccion">  
+                      <input type="text" class="form-control" name="direccion" placeholder="Direccion" required>  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Telefono</label>
-                      <input type="text" class="form-control" name="telefono" placeholder="Teléfono">  
+                      <input type="text" class="form-control" name="telefono" placeholder="Teléfono" required>  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Email</label>
-                      <input type="email" class="form-control" name="email" placeholder="Correo Electrónico">  
+                      <input type="email" class="form-control" name="email" placeholder="Correo Electrónico" required>  
                     </div>
                     <div class="checkbox">
                       <label>

@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label for="exampleInputPersona">Persona</label>
                       <input type="hidden" class="form-control" id="idpersona" name="idpersona">
-                      <input readonly="true" type="text" class="form-control" id="persona" name="persona" placeholder="Seleccione Persona"><a href="#" class="inline" data-toggle="modal" data-target="#Modaldir">
+                      <input readonly="true" type="text" class="form-control" id="persona" name="persona" placeholder="Seleccione Persona"><a href="#" class="inline" data-toggle="modal" data-target="#Modalper">
                       <button class="btn btn-default btn-flat"> Buscar</button> </a>
                     </div>
                       <div class="form-group">
@@ -61,7 +61,7 @@
                 </form>
               </div>
 
-              <div class="modal fade" id="Modaldir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal fade" id="Modalper" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
               <div class="modal-dialog">
                 <div class="modal-content">
