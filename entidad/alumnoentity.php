@@ -23,7 +23,7 @@ class UsuarioE{
 	//set es para modificar el valor almacenado	
 	function setidalumno($val) {$this->idalumno=$val;}
 	function setidpersona($val) {$this->idpersona=$val;}
-        function setcodigo($val) {$this->codigo=$val;}
+    function setcodigo($val) {$this->codigo=$val;}
 	function setestado($val) {$this->estado=$val;}
         
         }

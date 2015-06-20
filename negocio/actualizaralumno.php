@@ -2,24 +2,23 @@
 session_start();
 require('../conexion/conexion.php');
 require('../data/usuariodata.php');
-require('../entidad/rolentity.php');
+require('../entidad/alumnoentity.php');
 
 
 $con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","","");
+$objE	= 	new UsuarioE("","","","");
 $objB	= 	new UsuarioD();
 
 
-                        $objE->setidrol($_POST['id_rol']);
-                        $objE->setdescripcion($_POST['descripcion']);                        
-			$objE->setfechavigencia($_POST['date']);
-                      
+                        $objE->setidalumno($_POST['id_alumno']);
+                        $objE->setidpersona($_POST['id_persona_al']);
+						$objE->setcodigo($_POST['codigo']);                   
                         if (isset($_POST['checkbox'])) {
                         $objE->setestado(1);
                         } else {
                         $objE->setestado(0);
 }
-                        $objB->actualizar_rol($objE);
+                        $objB->actualizar_alumno($objE);
                         
                         header('Location:../presentacion/framework.php?#');
 ?>

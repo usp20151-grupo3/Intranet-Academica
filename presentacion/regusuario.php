@@ -1,8 +1,9 @@
 <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
+
 ?>
 
-<script src='../recursos/js/registrarusuario.js'></script>
+
 <div class="box box-primary" id="div2" style="display:none">
                 <div class="box-header">
                   <h3 class="box-title">Registro Usuario</h3>
@@ -71,7 +72,7 @@
                   <div class="modal-body">
                   <table  class="box box-primary">
                     <thead>
-                      <th>Numero</th>
+                      <th>Id</th>
                       <th>Nombre</th>
                       <th>Apellido</th>
                       <th></th>

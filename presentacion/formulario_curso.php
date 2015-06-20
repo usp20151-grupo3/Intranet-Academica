@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div class="box-body">
+
                   <div class="box-body">
                     <div class="form-group">
                       <label>Nombre Curso</label>
@@ -19,4 +19,3 @@
                     </div>
                   </div>
 
-                  </div>

@@ -106,7 +106,17 @@ class UsuarioD{
 			$objCn = new Conexion();
 			$sql = "call actualizar_rol('".$obj->getidrol()."','".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
-		}                
+		} 
+                        function actualizar_trabajador($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_trabajador('".$obj->getidtrabajador()."','".$obj->getidpersona()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		                function actualizar_alumno($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_alumno('".$obj->getidalumno()."','".$obj->getidpersona()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}                 
                 	function buscar_curso($obj){
 			$objCn = new Conexion();
 			$sql = "call buscar_curso('".$obj->getidcurso()."')";                        
@@ -115,6 +125,16 @@ class UsuarioD{
                         function buscar_rol($obj){
 			$objCn = new Conexion();
 			$sql = "call buscar_rol('".$obj->getidrol()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		                function buscar_trabajador($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_trabajador('".$obj->getidtrabajador()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		                function buscar_alumno($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_alumno('".$obj->getidalumno()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }

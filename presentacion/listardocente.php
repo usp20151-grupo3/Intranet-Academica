@@ -1,13 +1,27 @@
 <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
 ?>
+<script>
+  $(document).ready(function(){
 
+    $(document).off('submit','#searchdoc');
+  $(document).on('submit','#searchdoc',function(event){
+    event.preventDefault();
+    var buscar_docente = $(this).find("input[name=buscar-doc]").val();
+    $.post('../negocio/buscardocente.php',{buscar_docente:buscar_docente},function(result){
+        $('.table-search-doc').html(result);
+    });
+  });
+
+  });
+</script>
 <div class="box box-primary" id="divldocente" style="display:none">
                 <div class="box-header">
                     <h3 class="box-title">Listar docente</h3>
+                    <br/><form id="searchdoc"><input name="buscar-doc"/><button>Buscar</button></form>
                 </div>
                 <form role="form">
-                  <div class="box-body">                    
+                  <div class="box-body table-search-doc">                    
                     <table border="1" class="box box-primary">
                     
                     <th class="box-body">IdTrabajador</th>
@@ -15,9 +29,9 @@
                     <th class="box-body">Apellido</th>
                     <th class="box-body">Codigo</th>
                     <th class="box-body">Estado</th>
-                    <th class="box-body">Accion - En Proceso</th>
+                    <th class="box-body">Accion</th>
                     <?php 
-                    $consulta = mysql_query('call reporte_docente()');
+                    $consulta = mysql_query("call reporte_docente('')");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idtrabajador']?> </td>
@@ -25,8 +39,10 @@
                     <td class="box-body"> <?php echo $rol['apellido']?> </td>
                     <td class="box-body"> <?php echo $rol['codigo']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
-                    <td class="box-body"> <a href="#" class="inline" data-toggle="modal" data-target="#Modaledocente">
-                      <button class="btn btn-default btn-flat"> Editar </button> </a> </td>
+                    <td class="box-body"> <button class="btn btn-default btn-flat btn-e-docente"
+                                data-id="<?php echo $rol['idtrabajador']?>"
+                                data-idpersona="<?php echo $rol['idpersona'];?>" >Editar</button>
+                                </td>
                 </tr>
                     <?php } mysql_close(); ?>
                     </table>
@@ -42,37 +58,14 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Editar Docente</h4>
                   </div>
-                  <div class="modal-body">
-                      EN PROCESO
-<!--                  <table  class="box box-primary">
-                    <thead>
-                      <th>Numero</th>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th></th>
-                    </thead>
-                    <tbody>
-                   <?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_persona()');
-                    while ($rol = mysql_fetch_array($consulta)){ ?>
-                   <tr bgcolor=#F0FFFF>
-                    <td class="box-body"><?php echo $rol['idpersona']?> </td>
-                    <td class="box-body"> <?php echo $rol['nombre']?> </td>
-                    <td class="box-body"> <?php echo $rol['apellido']?> </td>
-                    <td class="box-body"> <?php ?><button class="btn-persona"
-                                                          data-id="<?php echo $rol['idpersona']?>"
-                                                          data-persona="<?php echo $rol['nombre'].' '. $rol['apellido'];?>">Seleccionar</button> </td>
-                   
-                </tr>
-                    <?php } mysql_close();?>                   
-                    </tbody>
-                  </table>-->
+                  <form role="form" action="../negocio/actualizartrabajador.php" method="POST">
+                  <div class="modal-body body-docente">
+                 
 
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                   </div>
                 </div>  
               </div>  
