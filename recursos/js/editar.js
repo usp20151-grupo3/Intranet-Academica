@@ -8,14 +8,19 @@ $(document).ready(function(){
 		$('#Modalepersona').modal('show');
 	});	
         
-        $('.btn-e-curso').click(function(e) {
+        $(document).off('click','.btn-e-curso');
+        $(document).on('click','.btn-e-curso',function(event){
+        
 		var id_curso = $(this).attr('data-id');
 		$.post('../negocio/editarcurso.php',{id_curso:id_curso},function(result){
 			$('.body-curso').html(result);
 		});
 		$('#Modalecurso').modal('show');
 	});
-        $('.btn-e-rol').click(function(e) {
+        $(document).off('click','.btn-e-rol');
+        $(document).on('click','.btn-e-rol',function(event){
+       
+            
 		var id_rol = $(this).attr('data-id');
 		$.post('../negocio/editarrol.php',{id_rol:id_rol},function(result){
 			$('.body-rol').html(result);
