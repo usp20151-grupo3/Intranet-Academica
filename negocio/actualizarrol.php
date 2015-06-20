@@ -9,7 +9,7 @@ $con 	= 	new Conexion();
 $objE	= 	new UsuarioE("","","","","");
 $objB	= 	new UsuarioD();
 
-
+if(  strtotime($_POST['date']) > strtotime("now")){
                         $objE->setidrol($_POST['id_rol']);
                         $objE->setdescripcion($_POST['descripcion']);                        
 			$objE->setfechavigencia($_POST['date']);
@@ -21,5 +21,20 @@ $objB	= 	new UsuarioD();
 }
                         $objB->actualizar_rol($objE);
                         
-                        header('Location:../presentacion/framework.php?#');
+            $message = "Registrado Correctamente";
+            echo "<script type='text/javascript'>alert('$message');
+            document.location=('../presentacion/framework.php?#');
+            </script>";
+}
+else {
+    
+    $message = "La fecha ingresada debe ser mayor a la fecha de hoy";
+            echo "<script type='text/javascript'>alert('$message');
+            document.location=('../presentacion/framework.php?#');
+            document.show()
+            </script>";
+            
+}
+
+                        
 ?>
