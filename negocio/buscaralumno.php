@@ -32,5 +32,5 @@ where persona.apellido like '%".$_POST['buscar_al']."%'");
                                 data-idpersona="<?php echo $rol['idpersona'];?>" >Editar</button>
                                 </td>
                 </tr>
-                    <?php } ?>
+                    <?php } $pdo=null; ?>
                     </table>

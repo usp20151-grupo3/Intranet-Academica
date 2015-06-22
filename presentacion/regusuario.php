@@ -1,5 +1,5 @@
-<?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
+<?php require_once '../conexion/conpdo.php';
+$pdo=conpdo();
 
 ?>
 
@@ -20,13 +20,17 @@
                           <label for="exampleInputRol">Rol</label>
                       <br><select name='roles'>
                         
-                        <?php $consulta = mysql_query('call reporte_rol()');
-            $combobit="";
- while ($row = mysql_fetch_array($consulta)){ 
-        $combobit .=" <option value='".$row['idrol']."'>".$row['descripcion']."</option>";
-    } 
-    echo $combobit; 
-    mysql_close();?>
+                        <?php 
+                        $combobit="";
+                        $consulta = $pdo->prepare("call reporte_rol()");
+                        $consulta->execute();
+                        $result_ = $consulta -> fetchAll(PDO::FETCH_ASSOC);
+                        foreach($result_ as $row){ 
+                        $combobit .=" <option value='".$row['idrol']."'>".$row['descripcion']."</option>";
+                        } 
+                        echo $combobit; 
+                        $pdo=null;
+                        ?>
                       </select>
                     </div> 
                       <div class="form-group">
@@ -78,10 +82,13 @@
                       <th></th>
                     </thead>
                     <tbody>
-                   <?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_persona()');
-                    while ($rol = mysql_fetch_array($consulta)){ ?>
+                   <?php 
+                   require_once '../conexion/conpdo.php';
+                    $pdo=conpdo();
+                   $listarpersona = $pdo->prepare("call reporte_persona()");
+                    $listarpersona->execute();
+                    $result_persona = $listarpersona -> fetchAll(PDO::FETCH_ASSOC);
+                    foreach($result_persona as $rol){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idpersona']?> </td>
                     <td class="box-body"> <?php echo $rol['nombre']?> </td>
@@ -91,7 +98,7 @@
                                                           data-persona="<?php echo $rol['nombre'].' '. $rol['apellido'];?>">Seleccionar</button> </td>
                    
                 </tr>
-                    <?php } mysql_close();?>                   
+                    <?php } $pdo=null; ?>                   
                     </tbody>
                   </table>
 

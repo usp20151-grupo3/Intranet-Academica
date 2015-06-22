@@ -1,5 +1,5 @@
-<?php require_once '../conexion/conpdo.php';
-$pdo=conpdo();
+<?php mysql_connect('localhost', 'root', '');
+ mysql_select_db('intranet');
 ?>
 <script>
   $(document).ready(function(){
@@ -31,14 +31,14 @@ $pdo=conpdo();
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
                     <?php 
-                    $listaralumno = $pdo->prepare("select alumno.idalumno, persona.idpersona,persona.nombre,persona.apellido, alumno.codigo, 
+                    $res = $objCn->query("select alumno.idalumno, persona.idpersona,persona.nombre,persona.apellido, alumno.codigo, 
 case alumno.estado when '1' then 'Activo' when '0' then 'Inactivo' end as estado from alumno 
 inner join persona 
 on persona.idpersona = alumno.idpersona
 where persona.apellido like '%%'");
-                    $listaralumno->execute();
-                    $result_alumno = $listaralumno -> fetchAll(PDO::FETCH_ASSOC);
-                    foreach($result_alumno as $rol){ ?>
+                    $res->execute();
+                    
+                    while($rol = $res->fetch_assoc()){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idalumno']?> </td>
                     <td class="box-body"> <?php echo $rol['nombre']?> </td>
@@ -50,7 +50,7 @@ where persona.apellido like '%%'");
                                 data-idpersona="<?php echo $rol['idpersona'];?>" >Editar</button>
                                 </td>
                 </tr>
-                    <?php } ?>
+                    <?php }  ?>
                     </table>
                   </div>
                 </form>

@@ -37,7 +37,7 @@ $pdo=conpdo();
                     <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
                     
                 </tr>
-                    <?php } ?>
+                    <?php } $pdo=null; ?>
 </table>
                        </div>
                 </form>

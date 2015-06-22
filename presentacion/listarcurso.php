@@ -32,7 +32,7 @@ $pdo=conpdo();
                                 data-id="<?php echo $rol['idcurso']?>"> Editar </button>
                     </td>
                 </tr>
-                    <?php } ?>
+                    <?php } $pdo=null; ?>
                     </table>
                   </div>
                 </form>

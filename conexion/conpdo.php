@@ -6,5 +6,6 @@ function conpdo(){
         echo $e->getMessage();
     }
     return $pdo;
+    $pdo=null;
 }
 ?>

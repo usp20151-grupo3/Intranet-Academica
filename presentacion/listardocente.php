@@ -46,7 +46,7 @@ $pdo=conpdo();
                                 data-idpersona="<?php echo $rol['idpersona'];?>" >Editar</button>
                                 </td>
                 </tr>
-                    <?php } ?>
+                    <?php } $pdo=null; ?>
                     </table>
                   </div>
                 </form>
