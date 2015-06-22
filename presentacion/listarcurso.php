@@ -1,5 +1,5 @@
-<?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
+<?php require_once '../conexion/conpdo.php';
+$pdo=conpdo();
 ?>
 
 <div class="box box-primary" id="divlcurso" style="display:none">
@@ -17,8 +17,10 @@
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
                     <?php 
-                    $consulta = mysql_query('call reporte_curso()');
-                    while ($rol = mysql_fetch_array($consulta)){ ?>
+                    $listarcurso = $pdo->prepare("call reporte_curso()");
+                    $listarcurso->execute();
+                    $result_curso = $listarcurso -> fetchAll(PDO::FETCH_ASSOC);
+                    foreach($result_curso as $rol){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idcurso']?> </td>
                     <td class="box-body"> <?php echo $rol['descripcion']?> </td>
@@ -30,7 +32,7 @@
                                 data-id="<?php echo $rol['idcurso']?>"> Editar </button>
                     </td>
                 </tr>
-                    <?php } mysql_close(); ?>
+                    <?php } ?>
                     </table>
                   </div>
                 </form>

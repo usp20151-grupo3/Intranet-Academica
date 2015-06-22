@@ -291,6 +291,7 @@ session_start();
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
+    <script src="../recursos/js/validar.js"></script>       
     <script src="../recursos/js/editar.js"></script>    
     <script src='../recursos/js/modalseleccionar.js'></script>    
     <script src="../recursos/js/jQuery-2.1.4.min.js"></script>

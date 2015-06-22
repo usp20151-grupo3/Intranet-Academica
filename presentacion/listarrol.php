@@ -1,7 +1,5 @@
-
-
-<?php mysql_connect('localhost', 'root', '');
- mysql_select_db('intranet');
+<?php require_once '../conexion/conpdo.php';
+$pdo=conpdo();
 ?>
 
 <div class="box box-primary" id="divlgrupo" style="display:none">
@@ -20,19 +18,22 @@
                     <th class="box-body">Accion</th>
                     
                     <?php 
-                    $consulta = mysql_query('call reporte_rol()');
-                    while ($rol = mysql_fetch_array($consulta)){ ?>
+                    $listarrol = $pdo->prepare("call reporte_rol()");
+                    $listarrol->execute();
+                    $result_rol = $listarrol -> fetchAll(PDO::FETCH_ASSOC);
+                    foreach($result_rol as $rol){
+                    ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idrol']?> </td>
                     <td class="box-body"> <?php echo $rol['descripcion']?> </td>
                     <td class="box-body"> <?php echo $rol['fechaalta']?> </td>
                     <td class="box-body"> <?php echo $rol['fechavigencia']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
-                    <td class="box-body"> <button class="btn btn-default btn-flat btn-e-rol"
+                    <td class="box-body"> <button type="button" class="btn btn-default btn-flat btn-e-rol"
                                 data-id="<?php echo $rol['idrol']?>"> Editar </button>
                     </td>
                 </tr>
-                    <?php } mysql_close();?>
+                    <?php } ?>
 </table>
                   </div>
                 </form>
