@@ -1,7 +1,5 @@
-<?php 
-require_once '../conexion/conpdo.php';
-$pdo=conpdo();
-
+<?php mysql_connect('localhost', 'root', '');
+ mysql_select_db('intranet');
 ?>
 
 <div class="box box-primary" id="divlusuario" style="display:none">
@@ -21,10 +19,8 @@ $pdo=conpdo();
      
                     
                     <?php 
-                    $listarusuario = $pdo->prepare("call reporte_usuario()");
-                    $listarusuario->execute();
-                    $result_usuario = $listarusuario -> fetchAll(PDO::FETCH_ASSOC);
-                    foreach($result_usuario as $rol){ ?>
+                    $consulta = mysql_query('call reporte_usuario()');
+                    while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
    
                     <td class="box-body"><?php echo $rol['usuario']?> </td>
@@ -37,7 +33,7 @@ $pdo=conpdo();
                     <td class="box-body"><?php echo $rol['fechavigencia']?> </td>
                     
                 </tr>
-                    <?php } $pdo=null; ?>
+                    <?php } mysql_close(); ?>
 </table>
                        </div>
                 </form>

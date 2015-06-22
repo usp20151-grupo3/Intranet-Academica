@@ -1,7 +1,3 @@
-<?php 
-require_once '../conexion/conpdo.php';
-$pdo=conpdo();
-?>
 <div class="box box-primary" id="regalumno" style="display:none">
                 <div class="box-header">
                   <h3 class="box-title">Registro Alumno</h3>
@@ -48,10 +44,10 @@ $pdo=conpdo();
                       <th></th>
                     </thead>
                     <tbody>
-                   <?php $listarpersona = $pdo->prepare("call reporte_persona()");
-                    $listarpersona->execute();
-                    $result_persona = $listarpersona -> fetchAll(PDO::FETCH_ASSOC);
-                    foreach($result_persona as $rol){ ?>
+                   <?php mysql_connect('localhost', 'root', '');
+                    mysql_select_db('intranet');
+                    $consulta = mysql_query('call reporte_persona()');
+                    while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idpersona']?> </td>
                     <td class="box-body"> <?php echo $rol['nombre']?> </td>
@@ -63,7 +59,7 @@ $pdo=conpdo();
                     </td>
                    
                 </tr>
-                    <?php } $pdo=null;?>                   
+                    <?php } mysql_close();?>                   
                     </tbody>
                   </table>
 
