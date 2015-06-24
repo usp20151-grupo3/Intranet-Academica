@@ -28,7 +28,7 @@
                     <td class="box-body"> <?php echo $rol['fechaalta']?> </td>
                     <td class="box-body"> <?php echo $rol['fechavigencia']?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
-                    <td class="box-body"> <button class="btn btn-default btn-flat btn-e-rol"
+                    <td class="box-body"> <button type="button" class="btn btn-default btn-flat btn-e-rol"
                                 data-id="<?php echo $rol['idrol']?>"> Editar </button>
                     </td>
                 </tr>

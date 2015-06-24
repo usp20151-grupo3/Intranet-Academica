@@ -18,7 +18,7 @@
 <div class="box box-primary" id="divldocente" style="display:none">
                 <div class="box-header">
                     <h3 class="box-title">Listar docente</h3>
-                    <br/><form id="searchdoc"><input name="buscar-doc"/><button>Buscar</button></form>
+                    <br/><form id="searchdoc"><input maxlength="30" onkeypress="return validLetter(event);" name="buscar-doc"/><button>Buscar</button></form>
                 </div>
                 <form role="form">
                   <div class="box-body table-search-doc">                    

@@ -35,7 +35,9 @@
                       <th></th>
                     </thead>
                     <tbody>
-                   <?php mysql_connect('localhost', 'root', '');
+                   <?php
+                   
+                   mysql_connect('localhost', 'root', '');
                     mysql_select_db('intranet');
                     $consulta = mysql_query('call reporte_persona()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
