@@ -49,4 +49,13 @@ $(document).ready(function(){
 		});
 		$('#Modalealumno').modal('show');
 	});
+        $(document).off('click','.btn-e-grupo');
+        $(document).on('click','.btn-e-grupo',function(event){
+        
+		var id_grupo = $(this).attr('data-id');
+		$.post('../negocio/editargrupo.php',{id_grupo:id_grupo},function(result){
+			$('.body-grupo').html(result);
+		});
+		$('#Modalegrupo').modal('show');
+	});
 });

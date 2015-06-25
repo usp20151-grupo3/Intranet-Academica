@@ -32,6 +32,11 @@ class UsuarioD{
 			$sql = "call registro_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
 			return $objCn->ejecutar($sql);	
 		}
+                function registro_grupo_estudio($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_grupo_estudio('".$obj->getnivel()."','".$obj->getgrado()."','".$obj->getseccion()."','".$obj->getestado()."')";
+			return $objCn->ejecutar($sql);	
+		}
                 function registro_persona($obj){
 			$objCn = new Conexion();
 			$sql = "call registro_persona('".$obj->getnombre()."','".$obj->getapellido()."','".$obj->getdni()."','".$obj->getsexo()."','".$obj->getdireccion()."','".$obj->gettelefono()."','".$obj->getemail()."','".$obj->getestado()."')";                        
@@ -125,6 +130,11 @@ class UsuarioD{
                         function buscar_rol($obj){
 			$objCn = new Conexion();
 			$sql = "call buscar_rol('".$obj->getidrol()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+                        function buscar_grupo($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_grupo('".$obj->getidgrupo()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 		                function buscar_trabajador($obj){

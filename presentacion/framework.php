@@ -188,7 +188,14 @@ session_start();
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Matricula -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Grupo de Estudio</span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#" name="reggrupo">Registrar Grupo</a></li>
+                <li><a href="#" name="listgrupo">Visualizar Grupo</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Matricula -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Registrar Matricula</a></li>
                 <li><a href="#">Visualizar Matricula</a></li>
@@ -204,10 +211,10 @@ session_start();
                 <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
               </ul>
             </li>
-            </li>  
+             
             <?php if ($rol == 'Director') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Regularizar Asistencia</a></li>
               </ul>
@@ -215,26 +222,26 @@ session_start();
             <?php } ?>
             <?php } if ($rol == 'Docente') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Grupo de Estudio</a></li>                
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Calificación -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Calificación -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Grupo de Estudio</a></li>                
               </ul>
             </li>
 		<?php } if ($rol == 'Alumno') { ?>
             <li class="treeview">
-            <a href="#"><i class='fa fa-link'></i> <span>Calificación -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class='fa fa-link'></i> <span>Calificación -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Calificación</a></li>                
               </ul>
             </li>
             <li class="treeview">
-            <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small>En Construccion</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Visualizar Asistencia</a></li>                
               </ul>
@@ -263,7 +270,8 @@ session_start();
           </ol>
         </section>
         <section class="content">
-          
+            
+        <?php include 'reggrupo.php' ?>
         <?php include 'regrol.php' ?>    
         <?php include 'regusuario.php' ?>
         <?php include 'regpersona.php' ?>   
@@ -283,6 +291,7 @@ session_start();
         <?php include 'listarrol.php' ?>
         <?php include 'listarusuario.php' ?>
         <?php include 'listarpersona.php' ?>
+        <?php include 'listargrupo.php' ?>
         
         </section>
       </div>
@@ -292,6 +301,8 @@ session_start();
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
+        <script src="../recursos/js/mnivel.js"></script>
+    <script src="../recursos/js/nivel.js"></script>
     <script src="../recursos/js/validar.js"></script>       
     <script src="../recursos/js/editar.js"></script>    
     <script src='../recursos/js/modalseleccionar.js'></script>    
