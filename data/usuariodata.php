@@ -62,9 +62,19 @@ class UsuarioD{
 			$sql = "call registro_curso('".$obj->getdescripcion()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+				function registro_matricula($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_matricula('".$obj->getidalumno()."','".$obj->getidpersona()."','".$obj->getidgrupo()."','".$obj->getparentesco()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
                 function reporte_perfil($obj){
 			$objCn = new Conexion();
 			$sql = "call reporte_perfil('".$obj->getusuario()."')";                    
+			return $objCn->ejecutar($sql);	
+		}
+		function actualizar_matricula($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_matricula('".$obj->getidmatricula()."','".$obj->getidalumno()."','".$obj->getidpersona()."','".$obj->getidgrupo()."','".$obj->getparentesco()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
                 function actualizar_telefono($obj){
@@ -111,6 +121,11 @@ class UsuarioD{
 			$objCn = new Conexion();
 			$sql = "call actualizar_rol('".$obj->getidrol()."','".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
+		}
+                        function actualizar_grupo($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_grupo('".$obj->getidgrupo()."','".$obj->getnivel()."','".$obj->getgrado()."','".$obj->getseccion()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
 		} 
                         function actualizar_trabajador($obj){
 			$objCn = new Conexion();
@@ -145,6 +160,11 @@ class UsuarioD{
 		                function buscar_alumno($obj){
 			$objCn = new Conexion();
 			$sql = "call buscar_alumno('".$obj->getidalumno()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		                function buscar_matricula($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_matricula('".$obj->getidmatricula()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 }

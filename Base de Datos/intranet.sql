@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2015 a las 13:34:25
+-- Tiempo de generación: 26-06-2015 a las 14:36:26
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -62,6 +62,27 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_direccion`(IN `idper` IN
 update persona 
 set direccion = dir 
 where idpersona = idper$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_grupo`(IN `idg` INT(11), IN `niv` CHAR(1), IN `gra` CHAR(1), IN `sec` CHAR(1), IN `est` CHAR(1))
+    NO SQL
+    SQL SECURITY INVOKER
+update grupo 
+set nivel = niv,
+grado = gra,
+seccion = sec,
+estado = est 
+where idgrupo = idg$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_matricula`(IN `idm` INT(11), IN `ida` INT(11), IN `idp` INT(11), IN `idg` INT(11), IN `par` CHAR(1), IN `est` CHAR(1))
+    NO SQL
+    SQL SECURITY INVOKER
+update matricula 
+set idalumno = ida,
+idpersona = idp,
+idgrupo = idg,
+parentesco = par,
+estado = est
+where idmatricula = idm$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_persona`(IN `idp` INT(11), IN `nom` VARCHAR(30), IN `ape` VARCHAR(30), IN `dni` CHAR(8), IN `sex` CHAR(1), IN `dir` VARCHAR(100), IN `tel` CHAR(15), IN `cor` VARCHAR(50), IN `est` CHAR(1))
     NO SQL
@@ -142,6 +163,44 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_curso`(IN `idc` INT(11))
     NO SQL
     SQL SECURITY INVOKER
 select * from curso where idcurso = idc$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_grupo`(IN `idg` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+Select idgrupo,case nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel, 
+case grado 
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado
+, seccion, fecharegistro, case estado when '1' then 'Activo' when '2' then 'Inactivo' end as estado from grupo 
+where idgrupo = idg$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_matricula`(IN `idm` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+select matricula.idmatricula, alumno.idalumno,p1.idpersona,grupo.idgrupo,concat(p2.nombre,' ',p2.apellido) as anombre, concat(p1.nombre,' ' ,p1.apellido)as pnombre, case grupo.grado
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado, grupo.seccion, case grupo.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel, 
+case matricula.parentesco when 'M' then 'Madre' when 'P' then 'Padre' when 'T' then 'Tia' when 'O' then 'Tio' when 'A' then 'Abuela' when 'B' then 'Abuelo' end as parentesco, matricula.fecharegistro, 
+case matricula.estado when '1' then 'Activo' when '2' then 'Inactivo' end as estado from matricula 
+inner join alumno on 
+matricula.idalumno = alumno.idalumno 
+inner join persona p1 on 
+matricula.idpersona = p1.idpersona
+inner join persona p2 on 
+alumno.idpersona = p2.idpersona
+inner join grupo on 
+grupo.idgrupo = matricula.idgrupo
+where matricula.idmatricula = idm$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_persona`(IN `idp` INT(11))
     NO SQL
@@ -331,17 +390,23 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_docente`(IN `idp` INT(11),
 insert into trabajador (idpersona, codigo, idrol, estado) 
 values (idp, cod, idr, est)$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_grupo_estudio`(IN `niv` CHAR(1), IN `gra` CHAR(1), IN `sec` CHAR(1), IN `est` CHAR(1))
+    NO SQL
+    SQL SECURITY INVOKER
+insert into grupo (nivel,grado,seccion,estado)
+values (niv,gra,sec,est)$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_grupo_usuario`(IN `des` CHAR(30), IN `fecvig` DATE, IN `est` CHAR(1))
     NO SQL
     SQL SECURITY INVOKER
 insert into rol (descripcion, fechaalta, fechavigencia, estado)
 values (`des`, now(), fecvig, est)$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_matricula`(IN `ida` INT(11), IN `idp` INT(11), IN `idg` INT(11), IN `niv` CHAR(1), IN `gra` CHAR(1), IN `est` CHAR(1))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_matricula`(IN `ida` INT(11), IN `idp` INT(11), IN `idg` INT(11), IN `par` CHAR(1), IN `est` CHAR(1))
     NO SQL
     SQL SECURITY INVOKER
-insert into matricula 
-values (null,ida,idp,idg,niv,gra,getdate(),est)$$
+insert into matricula (idalumno,idpersona,idgrupo,parentesco,estado) 
+values (ida,idp,idg,par,est)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_persona`(IN `nom` VARCHAR(30), IN `ape` VARCHAR(30), IN `doc` CHAR(8), IN `sex` CHAR(1), IN `dir` VARCHAR(100), IN `tel` CHAR(15), IN `cor` VARCHAR(50), IN `est` CHAR(1))
     NO SQL
@@ -402,10 +467,46 @@ ON docentepersona.idtrabajador = trabajador.idtrabajador
 INNER JOIN persona
 ON trabajador.idpersona = persona.idpersona$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_grupo_estudio`()
+    NO SQL
+    SQL SECURITY INVOKER
+Select idgrupo,case nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel, 
+case grado 
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado
+, seccion, fecharegistro, case estado when '1' then 'Activo' when '2' then 'Inactivo' end as estado from grupo$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_grupo_usuario`(IN `idr` INT(11))
     NO SQL
     SQL SECURITY INVOKER
 select * from rol where idrol = idr$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_matricula`()
+    NO SQL
+    SQL SECURITY INVOKER
+select matricula.idmatricula, concat(p2.nombre,' ',p2.apellido) as anombre, concat(p1.nombre,' ' ,p1.apellido)as pnombre, case grupo.grado
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado, grupo.seccion, case grupo.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel, 
+case matricula.parentesco when 'M' then 'Madre' when 'P' then 'Padre' when 'T' then 'Tia' when 'O' then 'Tio' when 'A' then 'Abuela' when 'B' then 'Abuelo' end as parentesco, matricula.fecharegistro, 
+case matricula.estado when '1' then 'Activo' when '2' then 'Inactivo' end as estado from matricula 
+inner join alumno on 
+matricula.idalumno = alumno.idalumno 
+inner join persona p1 on 
+matricula.idpersona = p1.idpersona
+inner join persona p2 on 
+alumno.idpersona = p2.idpersona
+inner join grupo on 
+grupo.idgrupo = matricula.idgrupo$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_nota_x_grado`(IN `gra` INT(11))
     NO SQL
@@ -551,7 +652,7 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `idpersona` int(11) NOT NULL COMMENT 'Llave foránea que identifica a la persona.',
   `codigo` char(10) NOT NULL COMMENT 'Código del alumno.',
   `estado` char(1) NOT NULL COMMENT 'Estado de alumno. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `alumno`
@@ -564,29 +665,9 @@ INSERT INTO `alumno` (`idalumno`, `idpersona`, `codigo`, `estado`) VALUES
 (5, 12, '111145', '1'),
 (6, 10, '11146', '1'),
 (7, 14, '222009', '1'),
-(8, 6, '111010', '1');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `apoderado`
---
-
-CREATE TABLE IF NOT EXISTS `apoderado` (
-  `idpersona` int(11) NOT NULL COMMENT 'Llave foránea que identifica a la persona y a la vez sera el identificador del apoderado',
-  `idalumno` int(11) NOT NULL COMMENT 'Llave foránea que identifica al alumno.',
-  `parentesco` char(1) NOT NULL COMMENT 'Descripción del apoderado. (Padre, Madre, etc.)',
-  `estado` char(1) NOT NULL COMMENT 'Estado del apoderado. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `apoderado`
---
-
-INSERT INTO `apoderado` (`idpersona`, `idalumno`, `parentesco`, `estado`) VALUES
-(3, 1, '1', '1'),
-(6, 2, '1', '1'),
-(9, 3, '2', '1');
+(8, 6, '111010', '1'),
+(9, 16, '123151', '1'),
+(10, 17, '534531', '0');
 
 -- --------------------------------------------------------
 
@@ -602,13 +683,6 @@ CREATE TABLE IF NOT EXISTS `asistencia` (
   `comentario` varchar(100) NOT NULL COMMENT 'Comentario sobre la asistencia.'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `asistencia`
---
-
-INSERT INTO `asistencia` (`fecharegistro`, `idmatricula`, `estado`, `justificacion`, `comentario`) VALUES
-('2015-05-02 01:13:23', 1, 'A', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -621,7 +695,7 @@ CREATE TABLE IF NOT EXISTS `curso` (
   `codigo` varchar(16) NOT NULL,
   `fecharegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora de registro del curso.',
   `estado` char(1) NOT NULL COMMENT 'Estado del curso. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `curso`
@@ -630,7 +704,10 @@ CREATE TABLE IF NOT EXISTS `curso` (
 INSERT INTO `curso` (`idcurso`, `descripcion`, `codigo`, `fecharegistro`, `estado`) VALUES
 (1, 'Electivo II', '111000', '2015-06-13 05:00:08', '0'),
 (2, 'Electivo I', '119999', '2015-06-13 05:06:03', '1'),
-(3, 'Practicas Pre-Profesionales II', '222222', '2015-06-20 00:54:35', '0');
+(3, 'Practicas Pre-Profesionales II', '222222', '2015-06-20 00:54:35', '1'),
+(4, 'Pre II', '125234', '2015-06-20 07:44:55', '1'),
+(5, 'curso test_', '63123', '2015-06-20 08:01:56', '0'),
+(6, 'asdasd    ', '123123', '2015-06-21 15:01:54', '0');
 
 -- --------------------------------------------------------
 
@@ -659,16 +736,27 @@ CREATE TABLE IF NOT EXISTS `grupo` (
   `seccion` char(1) NOT NULL COMMENT 'Sección del grupo. Valores permitidos: A, B, C o D.',
   `fecharegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora de registro del grupo.',
   `estado` char(1) NOT NULL COMMENT 'Estado del grupo. Valores permitidos: Activo, Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `grupo`
 --
 
 INSERT INTO `grupo` (`idgrupo`, `nivel`, `grado`, `seccion`, `fecharegistro`, `estado`) VALUES
-(1, '1', '3', '1', '2015-04-07 20:56:03', '1'),
-(2, '1', '1', '1', '2015-04-07 21:18:04', '1'),
-(3, '2', '2', '2', '2015-04-07 21:18:29', '1');
+(1, '1', '1', 'A', '2015-06-24 22:03:55', '1'),
+(2, '1', '1', 'B', '2015-06-24 22:04:08', '1'),
+(3, '1', '1', 'C', '2015-06-24 22:04:42', '1'),
+(4, '1', '1', 'D', '2015-06-24 22:22:36', '1'),
+(5, '1', '2', 'A', '2015-06-24 22:28:00', '1'),
+(6, '1', '2', 'B', '2015-06-24 22:28:10', '1'),
+(7, '1', '2', 'C', '2015-06-24 22:28:15', '1'),
+(8, '1', '2', 'D', '2015-06-24 22:28:27', '1'),
+(9, '1', '3', 'A', '2015-06-24 22:38:15', '1'),
+(10, '1', '3', 'B', '2015-06-24 22:42:47', '1'),
+(11, '1', '3', 'C', '2015-06-24 22:42:59', '1'),
+(12, '1', '3', 'D', '2015-06-24 22:43:07', '1'),
+(13, '1', '4', 'A', '2015-06-24 23:35:17', '1'),
+(14, '1', '4', 'B', '2015-06-26 00:43:50', '1');
 
 -- --------------------------------------------------------
 
@@ -737,19 +825,20 @@ CREATE TABLE IF NOT EXISTS `matricula` (
 `idmatricula` int(11) NOT NULL COMMENT 'Identificador de matrícula.',
   `idalumno` int(11) NOT NULL COMMENT 'Llave foránea que identifica al alumno.',
   `idpersona` int(11) NOT NULL COMMENT 'Llave foránea que identifica a la persona y a la vez sera el identificador del apoderado.',
+  `parentesco` char(1) NOT NULL,
   `idgrupo` int(11) NOT NULL COMMENT 'Llave foránea que identifica a que grupo será matriculado el alumno',
-  `nivel` char(1) NOT NULL COMMENT 'Nivel al que será matriculado el alumno. Valores permitidos: Primaria o Secundaria.',
-  `grado` char(1) NOT NULL COMMENT 'Grado al que será matriculado el alumno. Valores permitidos: 1, 2 ,3 ,4 ,5 o 6. ',
   `fecharegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora de registro de matrícula.',
   `estado` char(1) NOT NULL COMMENT 'Estado de la matrícula. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `matricula`
 --
 
-INSERT INTO `matricula` (`idmatricula`, `idalumno`, `idpersona`, `idgrupo`, `nivel`, `grado`, `fecharegistro`, `estado`) VALUES
-(1, 1, 3, 1, '1', '3', '2015-04-07 21:20:53', '1');
+INSERT INTO `matricula` (`idmatricula`, `idalumno`, `idpersona`, `parentesco`, `idgrupo`, `fecharegistro`, `estado`) VALUES
+(1, 1, 3, 'M', 1, '2015-06-26 04:00:53', '1'),
+(2, 2, 6, 'M', 1, '2015-06-26 04:30:44', '1'),
+(3, 5, 11, 'M', 2, '2015-06-26 05:08:05', '1');
 
 -- --------------------------------------------------------
 
@@ -847,7 +936,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `email` varchar(50) NOT NULL COMMENT 'Email de la persona',
   `fecharegistro` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora del registro de la persona',
   `estado` char(1) NOT NULL COMMENT 'Estado de la persona'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `persona`
@@ -868,7 +957,9 @@ INSERT INTO `persona` (`idpersona`, `nombre`, `apellido`, `dni`, `sexo`, `direcc
 (12, 'Luis', 'Renteria Valera', '45782345', '1', 'Av Pardo', '32134571', 'luis@hotmail.com', '2015-06-08 21:47:49', '1'),
 (13, 'Heber', 'Gomez Hurtado', '45231234', '1', 'Los Pinos', '123456', 'hgh@hotmail.com', '2015-06-13 04:00:09', '1'),
 (14, 'Orlando', 'Sojos', '30134521', '1', 'Nvo Chimbote', '94832312', 'orlando3001@hotmail.com', '2015-06-13 13:14:44', '1'),
-(15, 'Bryan', 'Aguilar', '98532312', '1', 'Bellamar Nuevo Chimbote', '3412356', 'bryan@hotmail.com', '2015-06-13 15:15:20', '1');
+(15, 'Bryan', 'Aguilar', '98532312', '1', 'Bellamar Nuevo Chimbote', '3412356', 'bryan@hotmail.com', '2015-06-13 15:15:20', '1'),
+(16, 'Nombre2', 'Apellido1', '66312312', '1', 'asdasd', 'asdas', 'asdasdfa@hotmail.com', '2015-06-20 07:44:11', '0'),
+(17, 'Nombre1', 'Huertas Herrera', '76331356', '1', 'Direccion1', '320581', 'briggite222002@hotmail.com', '2015-06-20 08:00:48', '0');
 
 -- --------------------------------------------------------
 
@@ -882,7 +973,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `fechaalta` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechavigencia` date DEFAULT NULL,
   `estado` char(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -893,7 +984,9 @@ INSERT INTO `rol` (`idrol`, `descripcion`, `fechaalta`, `fechavigencia`, `estado
 (2, 'Administrador', '2015-05-29 00:48:53', '2015-07-24', '1'),
 (3, 'Docente', '2015-05-29 00:49:02', '2015-08-19', '1'),
 (4, 'Alumno', '2015-05-29 00:49:19', '2015-08-06', '1'),
-(5, 'Rol Test_', '2015-06-14 14:01:12', '2015-09-30', '0');
+(5, 'Rol editado', '2015-06-14 14:01:12', '2015-09-30', '1'),
+(6, 'TEST2p', '2015-06-20 07:43:43', '2015-07-25', '0'),
+(7, 'Test3', '2015-06-20 08:00:34', '2015-07-08', '1');
 
 -- --------------------------------------------------------
 
@@ -907,7 +1000,7 @@ CREATE TABLE IF NOT EXISTS `trabajador` (
   `codigo` char(10) NOT NULL COMMENT 'Codigo del trabajador',
   `idrol` int(11) NOT NULL,
   `estado` char(1) NOT NULL COMMENT 'Estado del trabajador. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `trabajador`
@@ -915,10 +1008,12 @@ CREATE TABLE IF NOT EXISTS `trabajador` (
 
 INSERT INTO `trabajador` (`idtrabajador`, `idpersona`, `codigo`, `idrol`, `estado`) VALUES
 (1, 1, '111001', 1, '1'),
-(2, 1, '111002', 3, '1'),
 (3, 6, '111003', 3, '1'),
 (8, 13, '123666', 3, '0'),
-(10, 14, '110012', 3, '1');
+(10, 10, '110012', 3, '0'),
+(11, 16, '342123', 3, '0'),
+(12, 17, '34534', 3, '0'),
+(14, 8, '5252', 3, '0');
 
 -- --------------------------------------------------------
 
@@ -937,7 +1032,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `fechaalta` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechavigencia` date NOT NULL,
   `estado` char(1) NOT NULL COMMENT 'Estado del usuario.'
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -955,7 +1050,9 @@ INSERT INTO `usuario` (`idusuario`, `idpersona`, `idrol`, `usuario`, `password`,
 (14, 14, 4, 'orlando', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-13 13:15:57', '2015-06-27', '1'),
 (15, 13, 3, 'heber', '202cb962ac59075b964b07152d234b70', 'universidad', 'usp', '2015-06-13 13:57:22', '2015-06-19', '1'),
 (16, 15, 4, 'bryan', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-13 15:16:23', '2015-08-12', '1'),
-(17, 6, 3, 'hilda', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-20 00:39:04', '2015-07-16', '1');
+(17, 6, 3, 'hilda', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-20 00:39:04', '2015-07-16', '1'),
+(18, 17, 1, 'nmb', '202cb962ac59075b964b07152d234b70', 'asf', 'asda', '2015-06-20 08:02:24', '2015-07-05', '1'),
+(19, 16, 4, 'ghfgs', 'f7e1f0b2b8f47afb36d0cda68cc2b3f2', 'asddfg324', 'hfghfsd234', '2015-06-22 16:42:50', '2015-06-12', '1');
 
 --
 -- Índices para tablas volcadas
@@ -965,13 +1062,7 @@ INSERT INTO `usuario` (`idusuario`, `idpersona`, `idrol`, `usuario`, `password`,
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
- ADD PRIMARY KEY (`idalumno`), ADD UNIQUE KEY `codigo` (`codigo`), ADD KEY `idpersona` (`idpersona`);
-
---
--- Indices de la tabla `apoderado`
---
-ALTER TABLE `apoderado`
- ADD PRIMARY KEY (`idpersona`,`idalumno`), ADD UNIQUE KEY `idpersona` (`idpersona`,`idalumno`), ADD KEY `idalumno` (`idalumno`);
+ ADD PRIMARY KEY (`idalumno`), ADD UNIQUE KEY `codigo` (`codigo`), ADD UNIQUE KEY `idpersona_2` (`idpersona`,`codigo`), ADD KEY `idpersona` (`idpersona`);
 
 --
 -- Indices de la tabla `asistencia`
@@ -995,7 +1086,7 @@ ALTER TABLE `docentecurso`
 -- Indices de la tabla `grupo`
 --
 ALTER TABLE `grupo`
- ADD PRIMARY KEY (`idgrupo`);
+ ADD PRIMARY KEY (`idgrupo`), ADD UNIQUE KEY `idgrupo` (`idgrupo`,`nivel`,`grado`), ADD UNIQUE KEY `nivel` (`nivel`,`grado`,`seccion`);
 
 --
 -- Indices de la tabla `historial`
@@ -1055,7 +1146,7 @@ ALTER TABLE `rol`
 -- Indices de la tabla `trabajador`
 --
 ALTER TABLE `trabajador`
- ADD PRIMARY KEY (`idtrabajador`), ADD UNIQUE KEY `codigo` (`codigo`), ADD KEY `idpersona` (`idpersona`), ADD KEY `idrol` (`idrol`);
+ ADD PRIMARY KEY (`idtrabajador`), ADD UNIQUE KEY `codigo` (`codigo`), ADD UNIQUE KEY `idpersona_2` (`idpersona`), ADD KEY `idpersona` (`idpersona`), ADD KEY `idrol` (`idrol`);
 
 --
 -- Indices de la tabla `usuario`
@@ -1071,17 +1162,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del alumno.',AUTO_INCREMENT=9;
+MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del alumno.',AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `curso`
 --
 ALTER TABLE `curso`
-MODIFY `idcurso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del curso.',AUTO_INCREMENT=4;
+MODIFY `idcurso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del curso.',AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del grupo.',AUTO_INCREMENT=4;
+MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del grupo.',AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `logro`
 --
@@ -1091,7 +1182,7 @@ MODIFY `idlogro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del logr
 -- AUTO_INCREMENT de la tabla `matricula`
 --
 ALTER TABLE `matricula`
-MODIFY `idmatricula` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de matrícula.',AUTO_INCREMENT=2;
+MODIFY `idmatricula` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de matrícula.',AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `nota`
 --
@@ -1101,22 +1192,22 @@ MODIFY `idnota` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la not
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificador de la persona',AUTO_INCREMENT=16;
+MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificador de la persona',AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `trabajador`
 --
 ALTER TABLE `trabajador`
-MODIFY `idtrabajador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del trabajador',AUTO_INCREMENT=11;
+MODIFY `idtrabajador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del trabajador',AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario.',AUTO_INCREMENT=18;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario.',AUTO_INCREMENT=20;
 --
 -- Restricciones para tablas volcadas
 --
@@ -1126,13 +1217,6 @@ MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del us
 --
 ALTER TABLE `alumno`
 ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `persona` (`idpersona`);
-
---
--- Filtros para la tabla `apoderado`
---
-ALTER TABLE `apoderado`
-ADD CONSTRAINT `apoderado_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `persona` (`idpersona`),
-ADD CONSTRAINT `apoderado_ibfk_2` FOREIGN KEY (`idalumno`) REFERENCES `alumno` (`idalumno`);
 
 --
 -- Filtros para la tabla `asistencia`
@@ -1166,8 +1250,8 @@ ADD CONSTRAINT `logrocurso_ibfk_2` FOREIGN KEY (`idlogro`) REFERENCES `logro` (`
 --
 ALTER TABLE `matricula`
 ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`idalumno`) REFERENCES `alumno` (`idalumno`),
-ADD CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`idpersona`) REFERENCES `apoderado` (`idpersona`),
-ADD CONSTRAINT `matricula_ibfk_3` FOREIGN KEY (`idgrupo`) REFERENCES `grupo` (`idgrupo`);
+ADD CONSTRAINT `matricula_ibfk_3` FOREIGN KEY (`idgrupo`) REFERENCES `grupo` (`idgrupo`),
+ADD CONSTRAINT `matricula_ibfk_4` FOREIGN KEY (`idpersona`) REFERENCES `persona` (`idpersona`);
 
 --
 -- Filtros para la tabla `nota`

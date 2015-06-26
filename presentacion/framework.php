@@ -195,10 +195,10 @@ session_start();
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Matricula -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Registrar Matricula</a></li>
-                <li><a href="#">Visualizar Matricula</a></li>
+                <li><a href="#" name="regmatricula">Registrar Matricula</a></li>
+                <li><a href="#" name="listmatricula">Visualizar Matricula</a></li>
               </ul>
             </li>
             <?php } ?>
@@ -277,7 +277,8 @@ session_start();
         <?php include 'regpersona.php' ?>   
         <?php include 'regalumno.php' ?>
         <?php include 'regdocente.php' ?>
-        <?php include 'regcurso.php' ?>    
+        <?php include 'regcurso.php' ?>
+        <?php include 'regmatricula.php' ?>     
         <?php include 'perfil.php' ?> 
         <?php include 'cambiarpassword.php' ?>
         <?php include 'cambiardireccion.php' ?>
@@ -286,6 +287,7 @@ session_start();
         <?php include 'cambiarpregunta.php'?>
         <?php include 'cambiarrespuesta.php'?>
         <?php include 'listaralumno.php' ?>
+        <?php include 'listarmatricula.php' ?>
         <?php include 'listarcurso.php' ?>
         <?php include 'listardocente.php' ?>
         <?php include 'listarrol.php' ?>

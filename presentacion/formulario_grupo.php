@@ -17,8 +17,8 @@
                      </select>
  
                     </div>
-                    <div class="form-group" id="gp2">
-                       <label for="exampleInputDate">Grado - Primaria</label>
+                    <div class="form-group" id="gp2" <?php echo $rol_primaria_mostrar; ?>>
+                       <label for="exampleInputDate">Grado</label>
                           
                           <select name="gradopri" class="form-control">
                       <?php if ($rol->grado == 'Primero') {
@@ -70,8 +70,8 @@
                     </div>
                       
                       
-                      <div class="form-group" id="gs2" style="display:none">
-                       <label>Grado - Secundaria</label>
+                      <div class="form-group" id="gs2" <?php echo $rol_secundaria_mostrar; ?>>
+                       <label>Grado</label>
                           
                           <select name="gradosec" class="form-control">
                       <?php if ($rol->grado == 'Primero') {

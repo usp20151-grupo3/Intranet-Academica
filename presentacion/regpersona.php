@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group">
                      <label>Sexo</label><br>
-                     <select name="sexo">
+                     <select name="sexo" class="form-control">
                      <option value="1">Masculino</option>
                      <option value="2">Femenino</option>
                      </select>

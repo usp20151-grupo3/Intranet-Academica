@@ -58,4 +58,13 @@ $(document).ready(function(){
 		});
 		$('#Modalegrupo').modal('show');
 	});
+                $(document).off('click','.btn-e-mat');
+        $(document).on('click','.btn-e-mat',function(event){
+        
+		var id_matricula = $(this).attr('data-id');
+		$.post('../negocio/editarmatricula.php',{id_matricula:id_matricula},function(result){
+			$('.body-matricula').html(result);
+		});
+		$('#Modalematricula').modal('show');
+	});
 });
