@@ -62,6 +62,11 @@ class UsuarioD{
 			$sql = "call registro_curso('".$obj->getdescripcion()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+				function registro_cad($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_cad('".$obj->getidcurso()."','".$obj->getidtrabajador()."','".$obj->getidgrupo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
 				function registro_matricula($obj){
 			$objCn = new Conexion();
 			$sql = "call registro_matricula('".$obj->getidalumno()."','".$obj->getidpersona()."','".$obj->getidgrupo()."','".$obj->getparentesco()."','".$obj->getestado()."')";                        
@@ -112,6 +117,11 @@ class UsuarioD{
 			$sql = "call buscar_persona('".$obj->getidpersona()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+				function buscar_cad($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_cad('".$obj->getidcad()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
                         function actualizar_curso($obj){
 			$objCn = new Conexion();
 			$sql = "call actualizar_curso('".$obj->getidcurso()."','".$obj->getdescripcion()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
@@ -127,6 +137,11 @@ class UsuarioD{
 			$sql = "call actualizar_grupo('".$obj->getidgrupo()."','".$obj->getnivel()."','".$obj->getgrado()."','".$obj->getseccion()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		} 
+					function actualizar_cad($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_cad('".$obj->getidcad()."','".$obj->getidtrabajador()."','".$obj->getidcurso()."','".$obj->getidgrupo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
                         function actualizar_trabajador($obj){
 			$objCn = new Conexion();
 			$sql = "call actualizar_trabajador('".$obj->getidtrabajador()."','".$obj->getidpersona()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        

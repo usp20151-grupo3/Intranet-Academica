@@ -18,7 +18,7 @@
 <div class="box box-primary" id="divlalumno" style="display:none">
                 <div class="box-header">
                     <h3 class="box-title">Listar Alumno</h3>
-                    <br/><form id="searchal"><input maxlength="30" onkeypress="return validLetter(event);" name="buscar-al"/><button>Buscar</button></form>
+                    <br/><form id="searchal"><input maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-al"/><button>Buscar</button></form>
                 </div>
                 <form role="form">
                   <div class="box-body table-search">                    

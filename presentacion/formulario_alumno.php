@@ -9,11 +9,11 @@
                     </div>
                       <div class="form-group">
                       <label>Codigo</label>
-                      <input type="text" class="form-control" name="codigo" value="<?php echo $alumno->codigo; ?>" required />                     
+                      <input type="text" class="form-control" name="codigo" value="<?php echo $alumno->codigo; ?>" maxlength="10" ondrop="return false;" onpaste="return false;" onkeypress="return validNumber(event);"  required />                     
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox"> Habilitar
+                        <input type="checkbox" name="checkbox" checked="true"> Habilitar
                       </label>
                     </div>
                   </div>

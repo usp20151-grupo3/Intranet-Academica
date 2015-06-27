@@ -12,7 +12,7 @@
                     <div class="form-group">
                       <div class="form-group">
                       <label for="exampleInputUsuario">Nuevo Telefono</label>
-                      <input type="text" class="form-control" id="nuevotelefono" name="nuevotelefono" placeholder="Nuevo Telefono">
+                      <input type="text" class="form-control" id="nuevotelefono" name="nuevotelefono" placeholder="Nuevo Telefono" maxlength="15" ondrop="return false;" onpaste="return false;" onkeypress="return validNumber(event);" required/>
                     </div>
                   </div>
                   <div class="modal-footer">

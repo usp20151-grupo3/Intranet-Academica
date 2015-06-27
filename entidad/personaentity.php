@@ -6,7 +6,7 @@
         private	$nombre;
         private $apellido;
         private $dni;
-	private $sexo;
+		private $sexo;
         private $direccion;
         private $telefono;
         private $email;

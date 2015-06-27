@@ -108,4 +108,65 @@ $(document).ready(function(e) {
 		document.getElementById('nselgrupo').value =nombre_grupo;
 		$('#Modalselgrupo').modal('hide');
 	});
+		$(document).on('click','.btn-cad-curso',function(event){
+		event.preventDefault();
+		var id_grupo = $(this).attr('data-idcadcurso');
+		var nombre_grupo = $(this).attr('data-descadcurso');
+		document.getElementById('idcadcurso').value =id_grupo;
+		document.getElementById('descadcurso').value =nombre_grupo;
+		$('#Modalcadcurso').modal('hide');
+	});
+		$(document).on('click','.btn-cad-grupo',function(event){
+		event.preventDefault();
+		var id_grupo = $(this).attr('data-idcadgrupo');
+		var nombre_grupo = $(this).attr('data-cadgrupo');
+		document.getElementById('idcadgrupo').value =id_grupo;
+		document.getElementById('descadgrupo').value =nombre_grupo;
+		$('#Modalcadgrupo').modal('hide');
+	});
+		$(document).on('click','.btn-cad-docente',function(event){
+		event.preventDefault();
+		var id_docente = $(this).attr('data-idcaddocente');
+		var nombre_docente = $(this).attr('data-caddocente');
+		document.getElementById('idcaddocente').value =id_docente;
+		document.getElementById('descaddocente').value =nombre_docente;
+		$('#Modalcaddocente').modal('hide');
+	});
+		
+		$(document).on('click','.cadseldocente',function(event){
+		event.preventDefault();
+		var id_docente = $(this).attr('data-idcad');
+		var nombre_docente = $(this).attr('data-cadpersona');
+		document.getElementById('idselcaddocente').value =id_docente;
+		document.getElementById('desselcaddocente').value =nombre_docente;
+		$('#Modalseldoc').modal('hide');
+	});
+		$(document).on('click','.btn-modal-close-cad',function(event){
+
+		$('#Modalseldoc').modal('hide');
+	});	
+		$(document).on('click','.cadseleccioncurso',function(event){
+		event.preventDefault();
+		var id_curso = $(this).attr('data-idcadseleccioncurso');
+		var nombre_curso = $(this).attr('data-cadseleccioncurso');
+		document.getElementById('idcadselcurso').value =id_curso;
+		document.getElementById('descadselcurso').value =nombre_curso;
+		$('#Modalselcur').modal('hide');
+	});
+		$(document).on('click','.btn-modal-close-cadcur',function(event){
+
+		$('#Modalselcur').modal('hide');
+	});	
+		$(document).on('click','.cadgrupo',function(event){
+		event.preventDefault();
+		var id_grupo = $(this).attr('data-idcadgrupo');
+		var nombre_grupo = $(this).attr('data-cadgrupo');
+		document.getElementById('idselcadgrupo').value =id_grupo;
+		document.getElementById('desselcadgrupo').value =nombre_grupo;
+		$('#Modalselgru').modal('hide');
+	});
+		$(document).on('click','.btn-modal-close-grup',function(event){
+
+		$('#Modalselgru').modal('hide');
+	});	
 });

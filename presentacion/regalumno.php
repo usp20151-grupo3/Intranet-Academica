@@ -13,11 +13,11 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsuario">Codigo</label>
-                      <input type="text" class="form-control" name="codigo" placeholder="Nombres" onkeypress="return validNumber(event);" maxlength="10" required>
+                      <input type="text" class="form-control" name="codigo" placeholder="Nombres" maxlength="10" ondrop="return false;" onpaste="return false;" onkeypress="return validNumber(event);"  required>
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox"> Habilitar
+                        <input type="checkbox" name="checkbox" checked="true"> Habilitar
                       </label>
                     </div>
                   </div>

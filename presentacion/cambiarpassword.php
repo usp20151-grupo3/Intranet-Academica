@@ -11,15 +11,15 @@
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Antigua Password</label>
-                      <input type="password" class="form-control" name="oldpassword" placeholder="Antigua Contraseña">
+                      <input type="password" class="form-control" name="oldpassword" placeholder="Antigua Contraseña" maxlength="20" required/>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPersona">Nueva Password</label>
-                      <input type="password" class="form-control" name="newpassword" placeholder="Nueva Contraseña">
+                      <input type="password" class="form-control" name="newpassword" placeholder="Nueva Contraseña" maxlength="20" required/>
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputPassword1">Confirme Nueva Password</label>
-                      <input type="password" class="form-control" name="confirmnewpassword" placeholder="Confirme Nueva Contraseña">
+                      <input type="password" class="form-control" name="confirmnewpassword" placeholder="Confirme Nueva Contraseña" maxlength="20" required/>
                     </div>
                   </div>
                   <div class="modal-footer">

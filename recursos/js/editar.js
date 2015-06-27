@@ -58,7 +58,7 @@ $(document).ready(function(){
 		});
 		$('#Modalegrupo').modal('show');
 	});
-                $(document).off('click','.btn-e-mat');
+        $(document).off('click','.btn-e-mat');
         $(document).on('click','.btn-e-mat',function(event){
         
 		var id_matricula = $(this).attr('data-id');
@@ -67,4 +67,14 @@ $(document).ready(function(){
 		});
 		$('#Modalematricula').modal('show');
 	});
+        $(document).off('click','.btn-e-cad');
+        $(document).on('click','.btn-e-cad',function(event){
+        
+		var id_cad = $(this).attr('data-idcad');
+		$.post('../negocio/editarcad.php',{id_cad:id_cad},function(result){
+			$('.body-cad').html(result);
+		});
+		$('#Modalecad').modal('show');
+	});
+        
 });

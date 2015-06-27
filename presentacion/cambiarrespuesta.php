@@ -12,7 +12,7 @@
                     <div class="form-group">
                       <div class="form-group">
                       <label for="exampleInputUsuario">Nueva Respuesta Secreta</label>
-                      <input type="text" class="form-control" name="nuevarespuesta" placeholder="Nueva Respuesta Secreta">
+                      <input type="text" class="form-control" name="nuevarespuesta" placeholder="Nueva Respuesta Secreta" maxlength="20" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  required />
                     </div>
                   </div>
                   <div class="modal-footer">

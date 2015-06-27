@@ -167,38 +167,45 @@ session_start();
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Docente</span> <small>- NEW</small>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Docente</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="regdocente">Registrar Docente</a></li>
                 <li><a href="#" name="divldocente">Visualizar Docente</a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Alumno</span> <small>- NEW</small>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Alumno</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="regalumno">Registrar Alumno</a></li>
                 <li><a href="#" name="divlalumno">Visualizar Alumno</a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Curso</span>  <small>- NEW</small> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Curso</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="regcurso">Registrar Curso</a></li>
                 <li><a href="#" name="divlcurso">Visualizar Curso</a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Grupo de Estudio</span>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Grupo de Estudio</span> <small>- NEW</small> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="reggrupo">Registrar Grupo</a></li>
                 <li><a href="#" name="listgrupo">Visualizar Grupo</a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Matricula</span>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Matricula</span> <small>- NEW</small> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="regmatricula">Registrar Matricula</a></li>
                 <li><a href="#" name="listmatricula">Visualizar Matricula</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Docente-Curso-Alumno</span><small>-NEW</small>  <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#" name="regcad">Asignar Curso-Alumno a Docente</a></li>
+                <li><a href="#" name="listcad">Visualizar Curso-Alumno-Docente </a></li>
               </ul>
             </li>
             <?php } ?>
@@ -278,6 +285,7 @@ session_start();
         <?php include 'regalumno.php' ?>
         <?php include 'regdocente.php' ?>
         <?php include 'regcurso.php' ?>
+        <?php include 'regcad.php' ?>
         <?php include 'regmatricula.php' ?>     
         <?php include 'perfil.php' ?> 
         <?php include 'cambiarpassword.php' ?>
@@ -291,6 +299,7 @@ session_start();
         <?php include 'listarcurso.php' ?>
         <?php include 'listardocente.php' ?>
         <?php include 'listarrol.php' ?>
+        <?php include 'listarcad.php' ?>
         <?php include 'listarusuario.php' ?>
         <?php include 'listarpersona.php' ?>
         <?php include 'listargrupo.php' ?>

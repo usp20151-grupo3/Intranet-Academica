@@ -17,7 +17,7 @@
                     </div>
                       <div class="form-group">
                           <label for="exampleInputRol">Rol</label>
-                      <br><select name='roles'>
+                      <br><select name='roles' class="form-control">
                         
                         <?php $consulta = mysql_query('call reporte_rol()');
                         $combobit="";
@@ -30,19 +30,19 @@
                     </div> 
                       <div class="form-group">
                       <label for="exampleInputUsuario">Usuario</label>
-                      <input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
+                      <input type="text" class="form-control" name="usuario" placeholder="Usuario" maxlength="20" ondrop="return false;" onpaste="return false;" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Password" required>
+                      <input type="password" class="form-control" name="password" placeholder="Password" maxlength="50" ondrop="return false;" onpaste="return false;" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
-                      <input type="text" class="form-control" name="pregunta" placeholder="Pregunta Secreta" required>  
+                      <input type="text" class="form-control" name="pregunta" placeholder="Pregunta Secreta" maxlength="20" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);" required>  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputRespuesta">Respuesta Secreta</label>
-                      <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta" required>  
+                      <input type="text" class="form-control" name="respuesta" placeholder="Respuesta Secreta" maxlength="20" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);" required>  
                     </div>
                       <div class="form-group">
                       <label for="exampleInputDate">Fecha Vigencia</label>
@@ -50,7 +50,7 @@
                     </div>  
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox"> Habilitar
+                        <input type="checkbox" name="checkbox" checked="true"> Habilitar
                       </label>
                     </div>
                   </div>

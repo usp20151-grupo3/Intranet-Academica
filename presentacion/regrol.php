@@ -6,14 +6,14 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Grupo - Rol</label>
-                      <input type="text" class="form-control" name="grupo" placeholder="Grupo - Rol" required>
+                      <input type="text" class="form-control" name="grupo" placeholder="Grupo - Rol" maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);" required>
                       <div class="form-group">
                           <label for="exampleInputDate">Fecha Vigencia</label>
                       <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia" required>
                       </div>                                    
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox"> Habilitar
+                        <input type="checkbox" name="checkbox" checked="true"> Habilitar
                       </label>
                     </div>
                   </div>

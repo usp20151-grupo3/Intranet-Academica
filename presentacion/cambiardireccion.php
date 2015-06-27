@@ -11,7 +11,7 @@
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="exampleInputUsuario">Nueva Dirección</label>
-                      <input type="text" class="form-control" name="nuevadireccion" placeholder="Nueva Dirección">
+                      <input type="text" class="form-control" name="nuevadireccion" placeholder="Nueva Dirección" maxlength="50" ondrop="return false;" onpaste="return false;" required />
                     </div>
                   </div>
                   <div class="modal-footer">
