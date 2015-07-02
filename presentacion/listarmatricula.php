@@ -16,6 +16,7 @@
                     <th class="box-body">Grupo de Estudio</th>
                     <th class="box-body">Parentesco</th>
                     <th class="box-body">Fecha Registro</th>
+                    <th class="box-body">Año Académico</th>
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
                     
@@ -29,6 +30,7 @@
                     <td class="box-body"> <?php echo $rol['grado'].' '.$rol['seccion'].' de '.$rol['nivel']?> </td>
                     <td class="box-body"> <?php echo $rol['parentesco']?> </td>
                     <td class="box-body"> <?php echo $rol['fecharegistro']?> </td>
+                    <td class="box-body"> <?php echo date("Y", strtotime($rol['fecharegistro']))?> </td>
                     <td class="box-body"> <?php echo $rol['estado']?> </td>
                     <td class="box-body"> <button type="button" class="btn btn-default btn-flat btn-e-mat"
                                 data-id="<?php echo $rol['idmatricula']?>"> Editar </button>

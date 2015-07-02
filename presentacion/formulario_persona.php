@@ -42,7 +42,12 @@
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox" checked="true"> Habilitar
+                        <?php if ($persona->estado == '1') {
+                       echo "<input type='checkbox' name='checkbox' checked='true'> Habilitar";
+                     } else {
+                       echo "<input type='checkbox' name='checkbox'> Habilitar";
+                     }
+                      ?>
                       </label>
                     </div>
                   </div>

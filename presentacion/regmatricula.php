@@ -69,7 +69,7 @@
                     <tbody>
                    <?php mysql_connect('localhost', 'root', '');
                     mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_alumno()');
+                    $consulta = mysql_query('call reporte_alumno_matricula()');
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idalumno']?> </td>
@@ -116,7 +116,7 @@
                     <tbody>
                    <?php mysql_connect('localhost', 'root', '');
                     mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_persona()');
+                    $consulta = mysql_query("call reporte_persona_activo()");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idpersona']?> </td>
@@ -163,7 +163,7 @@
                     <tbody>
                    <?php mysql_connect('localhost', 'root', '');
                     mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_grupo_estudio()');
+                    $consulta = mysql_query("call reporte_grupo_estudio_activo()");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idgrupo']?> </td>

@@ -26,7 +26,11 @@ class UsuarioD{
 			$sql = "call nombre_persona_usuario('".$obj->getusuario()."')";
 			return $objCn->ejecutar($sql);	
 		}
-                
+                function registro_usuario_historial($obj){
+			$objCn = new Conexion();
+			$sql = "call registro_usuario_historial('".$obj->getidusuario()."','".$obj->getipacceso()."')";
+			return $objCn->ejecutar($sql);	
+		}
                 function registro_grupo_usuario($obj){
 			$objCn = new Conexion();
 			$sql = "call registro_grupo_usuario('".$obj->getdescripcion()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";
@@ -117,6 +121,11 @@ class UsuarioD{
 			$sql = "call buscar_persona('".$obj->getidpersona()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
+				function buscar_usuario($obj){
+			$objCn = new Conexion();
+			$sql = "call buscar_usuario('".$obj->getidusuario()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
 				function buscar_cad($obj){
 			$objCn = new Conexion();
 			$sql = "call buscar_cad('".$obj->getidcad()."')";                        
@@ -150,6 +159,11 @@ class UsuarioD{
 		                function actualizar_alumno($obj){
 			$objCn = new Conexion();
 			$sql = "call actualizar_alumno('".$obj->getidalumno()."','".$obj->getidpersona()."','".$obj->getcodigo()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+		               function actualizar_usuario($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_usuario('".$obj->getidusuario()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}                 
                 	function buscar_curso($obj){

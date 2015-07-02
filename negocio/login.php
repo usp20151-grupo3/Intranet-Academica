@@ -3,37 +3,64 @@ session_start();
 require('../conexion/conexion.php');
 require('../entidad/usuarioentity.php');
 require('../data/usuariodata.php');
+require('../entidad/historialentity.php');
 
 
-$con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","","","","","","","");
-$objB	= 	new UsuarioD();
-			$objE->setusuario($_POST['user']);
-			$objE->setpassword(md5($_POST['password']));
-			$res_usuario	=	$objB-> verificar_usuario($objE);
-                        $dato_usuario = $objB-> mostrar_nombre_apellido_usuario($objE);
-                        $dato_perfil = $objB->reporte_perfil($objE);
-			if (count($res_usuario)>0) {				
-				$datos = $res_usuario->fetch_object(); // -> AQUI EXTRAES LOS DATOS.
-                                $datonombre = $dato_usuario->fetch_object();
-                                $datoperfil = $dato_perfil->fetch_object();
+
+$con    =   new Conexion();
+$objE   =   new UsuarioE("","","","","","","","","","");
+$objH   =   new UsuarioH("","","");
+$objB   =   new UsuarioD();
+$est = "";
+$rest = "";
+            $objE->setusuario($_POST['user']);
+            $objE->setpassword(md5($_POST['password']));           
+            $res_usuario    =   $objB-> verificar_usuario($objE);
+            $dato_usuario   =   $objB-> mostrar_nombre_apellido_usuario($objE);
+         
+            if (count($res_usuario)>0) {    
+                error_reporting(0);            
+                $datos = $res_usuario->fetch_object(); 
+                $datonombre = $dato_usuario->fetch_object();
                                 
-				$_SESSION['usuario']        = $datos->usuario;				
-                                $_SESSION['idusuario']      = $datos->idusuario;
-				$_SESSION['rol']            = $datos->idrol;
-                                $_SESSION['fechaalta']      = $datos->fechaalta;
+                $ip = $_SERVER["REMOTE_ADDR"];      
+
+                $_SESSION['usuario']        = $datos->usuario;              
+                $_SESSION['idusuario']      = $datos->idusuario;
+                $_SESSION['rol']            = $datos->idrol;
+                $_SESSION['estado']            = $datos->estado;
+                $_SESSION['restado']            = $datos->restado;
+                $est = $_SESSION['estado'];
+                $rest = $_SESSION['restado'];
+                                $_SESSION['anho']      = $datos->anho;
+                                $_SESSION['dia']      = $datos->dia;
+                                $_SESSION['mes']      = $datos->mes;
                                 $_SESSION['idpersona']      = $datos ->idpersona;
-                                $_SESSION['respuesta']      = $datos ->respuesta;
-                                $_SESSION['pregunta']      = $datos ->pregunta;
                                 $_SESSION['nombrelog']         = $datonombre->nombre;
                                 $_SESSION['apellidolog']       = $datonombre->apellido;
-                                $_SESSION['direccion']       = $datoperfil->direccion;
-                                $_SESSION['email']       = $datoperfil->email;
-                                $_SESSION['telefono']       = $datoperfil->telefono;
-				if ($_SESSION['idusuario']>0 && $_SESSION['rol']>0) {					
-					header('Location:../presentacion/framework.php?#');					
-					}
-                                        else {
-                                        header('Location:../');}										
-                                                    }			
+
+
+                if ($_SESSION['idusuario']>0 && $_SESSION['estado']>0 && $_SESSION['restado']>0) { 
+
+                $objH->setidusuario($_SESSION['idusuario']);
+                $objH->setipacceso($ip);
+                $res_user_hist = $objB-> registro_usuario_historial($objH);                  
+                    header('Location:../presentacion/framework.php?#');                 
+                    }
+                                        if($est=="0") {
+                                        echo '<script language="javascript">alert("Cuenta Bloqueada");
+                                        window.location.href="../";    
+                                        </script>';
+                                        }elseif($rest=="0"){
+                                        echo '<script language="javascript">alert("El grupo al que perteneces fue dado de baja");
+                                        window.location.href="../";    
+                                        </script>';
+                                        }                                   
+                                        else{
+                                          echo '<script language="javascript">alert("Clave Incorrecta");
+                                        window.location.href="../";    
+                                        </script>';  
+                                        }  
+    }   
+                                                     
 ?>

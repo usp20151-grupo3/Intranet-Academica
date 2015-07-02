@@ -19,7 +19,7 @@
                           <label for="exampleInputRol">Rol</label>
                       <br><select name='roles' class="form-control">
                         
-                        <?php $consulta = mysql_query('call reporte_rol()');
+                        <?php $consulta = mysql_query("call reporte_rol_activo()");
                         $combobit="";
                         while ($row = mysql_fetch_array($consulta)){ 
                          $combobit .=" <option value='".$row['idrol']."'>".$row['descripcion']."</option>";
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Password" maxlength="50" ondrop="return false;" onpaste="return false;" required>
+                      <input type="password" class="form-control" name="password" placeholder="Password" maxlength="20" ondrop="return false;" onpaste="return false;" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPregunta">Pregunta Secreta</label>
@@ -79,7 +79,7 @@
                     <tbody>
                    <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_persona()');
+                    $consulta = mysql_query("call reporte_persona_activo()");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idpersona']?> </td>

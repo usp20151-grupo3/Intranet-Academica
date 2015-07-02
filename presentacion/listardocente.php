@@ -17,8 +17,9 @@
 </script>
 <div class="box box-primary" id="divldocente" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar docente</h3>
-                    <br/><form id="searchdoc"><input maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-doc"/><button>Buscar</button></form>
+                    <h3 class="box-title">Listar docente <small>- Busqueda por apellido </small></h3>
+                    <br/><form id="searchdoc"><input maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-doc"/><button>Buscar</button>
+                    </form>
                 </div>
                 <form role="form">
                   <div class="box-body table-search-doc">                    

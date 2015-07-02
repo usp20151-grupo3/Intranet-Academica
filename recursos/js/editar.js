@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-	$('.btn-editar').click(function(e) {
+		$(document).off('click','.btn-editar');
+        $(document).on('click','.btn-editar',function(event){
 		var id_persona = $(this).attr('data-id');
 		$.post('../negocio/editarpersona.php',{id_persona:id_persona},function(result){
 			$('.body-persona').html(result);
@@ -75,6 +76,15 @@ $(document).ready(function(){
 			$('.body-cad').html(result);
 		});
 		$('#Modalecad').modal('show');
+	});
+        $(document).off('click','.btn-darbaja');
+        $(document).on('click','.btn-darbaja',function(event){
+        
+		var id_usuario = $(this).attr('data-idb');
+		$.post('../negocio/editarusuario.php',{id_usuario:id_usuario},function(result){
+			$('.body-darbaja').html(result);
+		});
+		$('#Modaldarbaja').modal('show');
 	});
         
 });

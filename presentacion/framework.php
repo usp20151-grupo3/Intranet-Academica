@@ -4,15 +4,19 @@ session_start();
 	$usuario = '';	
 	$usuarionombre = '';
         $usuarioapellido = '';
-        $idrol = '';
-        $fechaalta ='';
+        $idrol = '';     
+        $anho="";
+        $mes="";
+        $dia="";
 
 	if (isset ($_SESSION['idusuario'])){ 
                 $usuarioid = $_SESSION['idusuario'];
 		$usuario = $_SESSION['usuario'];
                 $usuarionombre = $_SESSION['nombrelog'];
                 $usuarioapellido = $_SESSION['apellidolog'];
-                $fechaalta = $_SESSION['fechaalta'];
+                $dia = $_SESSION['dia'];
+                $mes = $_SESSION['mes'];
+                $anho = $_SESSION['anho'];
                 $rol = $_SESSION['rol'];
                 if ($rol=='1'){
                     $rol = 'Director';
@@ -35,7 +39,8 @@ session_start();
   <head>
     
     <meta charset="UTF-8">
-    <title>Intranet - Academica</title>
+    <title>Intranet - Académica</title>
+
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     
     <link href="../recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -53,7 +58,7 @@ session_start();
       <header class="main-header">
         <a href="#" class="logo">
           <span class="logo-mini">I-A</span>
-          <span class="logo-lg">Intranet - Academica</span>
+          <span class="logo-lg">Intranet - Académica</span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -89,7 +94,7 @@ session_start();
                     <p>
                       <?php echo $usuarionombre.' '.$usuarioapellido;?>
                         <small><?php echo $rol; ?></small>
-                      <small>Miembro desde <?php echo $fechaalta; ?> </small>
+                      <small>Miembro desde <?php echo $dia.' de '.$mes.' del '. $anho; ?> </small>
                     </p>
                   </li>
                   <!--<li class="user-body">
@@ -188,21 +193,21 @@ session_start();
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Grupo de Estudio</span> <small>- NEW</small> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Grupo de Estudio *</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="reggrupo">Registrar Grupo</a></li>
                 <li><a href="#" name="listgrupo">Visualizar Grupo</a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Matricula</span> <small>- NEW</small> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Matricula *</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="regmatricula">Registrar Matricula</a></li>
                 <li><a href="#" name="listmatricula">Visualizar Matricula</a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Docente-Curso-Alumno</span><small>-NEW</small>  <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Docente-Curso-Alumno *</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#" name="regcad">Asignar Curso-Alumno a Docente</a></li>
                 <li><a href="#" name="listcad">Visualizar Curso-Alumno-Docente </a></li>
@@ -277,6 +282,7 @@ session_start();
           </ol>
         </section>
         <section class="content">
+
             
         <?php include 'reggrupo.php' ?>
         <?php include 'regrol.php' ?>    
@@ -292,8 +298,8 @@ session_start();
         <?php include 'cambiardireccion.php' ?>
         <?php include 'cambiaremail.php' ?>
         <?php include 'cambiartelefono.php' ?>
-        <?php include 'cambiarpregunta.php'?>
-        <?php include 'cambiarrespuesta.php'?>
+        <?php include 'cambiarpregunta.php' ?>
+        <?php include 'cambiarrespuesta.php' ?>
         <?php include 'listaralumno.php' ?>
         <?php include 'listarmatricula.php' ?>
         <?php include 'listarcurso.php' ?>
@@ -312,7 +318,8 @@ session_start();
         </div>
         <strong>Copyright &copy; 2015 <a href="#">Intranet - Académica</a>.</strong> All rights reserved.
       </footer>
-        <script src="../recursos/js/mnivel.js"></script>
+        
+    
     <script src="../recursos/js/nivel.js"></script>
     <script src="../recursos/js/validar.js"></script>       
     <script src="../recursos/js/editar.js"></script>    

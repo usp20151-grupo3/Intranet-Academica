@@ -28,7 +28,14 @@
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="checkbox" checked="true"> Habilitar
+                        <?php if ($cad->estado == 'Activo') {
+                       echo "<input type='checkbox' name='checkbox' checked='true'> Habilitar";
+                       
+
+                     } else {
+                       echo "<input type='checkbox' name='checkbox'> Habilitar";
+                     }
+                      ?>
                       </label>
                     </div>
                   </div>

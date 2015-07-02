@@ -1,10 +1,28 @@
+<?php mysql_connect('localhost', 'root', '');
+                    mysql_select_db('intranet');
+?>
+<script>
+  $(document).ready(function(){
+
+  $(document).off('submit','#searchcad');
+  $(document).on('submit','#searchcad',function(event){
+    event.preventDefault();
+    var buscar_cad = $(this).find("input[name=buscar-cad]").val();
+    $.post('../negocio/buscarcad.php',{buscar_cad:buscar_cad},function(result){
+        $('.table-search-cad').html(result);
+    });
+  });
+
+  });
+</script>
 <div class="box box-primary" id="listcad" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar Curso - Grupo de Estudio asignado a Docente</h3>
-                    
+                    <h3 class="box-title">Listar Curso - Grupo de Estudio asignado a Docente <small>- Busqueda por apellido </small></h3> 
+                <br/><form id="searchcad">
+                    <input maxlength="50" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-cad"/><button>Buscar</button></form>
                 </div>
                 <form role="form">
-                  <div class="box-body table-search-doc">                    
+                  <div class="box-body table-search-cad">                    
                     <table border="1" class="box box-primary">
                     
                     <th class="box-body">Id</th>
@@ -13,9 +31,8 @@
                     <th class="box-body">Grado</th>
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
-                    <?php mysql_connect('localhost', 'root', '');
-                    mysql_select_db('intranet');
-                    $consulta = mysql_query("call reporte_cad()");
+                    <?php 
+                    $consulta = mysql_query("call reporte_cad('')");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idcad'];?> </td>

@@ -46,7 +46,7 @@
                     <tbody>
                    <?php mysql_connect('localhost', 'root', '');
                     mysql_select_db('intranet');
-                    $consulta = mysql_query('call reporte_persona()');
+                    $consulta = mysql_query("call reporte_persona('')");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"><?php echo $rol['idpersona']?> </td>

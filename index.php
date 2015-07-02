@@ -19,7 +19,7 @@
 </form>
 <div id="option"> 
 
-	<a href="#">Recuperar Clave</a>
+	<a href="#">Recuperar Cuenta</a>
 </div>
             </body>
 </html>

@@ -1,13 +1,28 @@
 <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
 ?>
+<script>
+  $(document).ready(function(){
 
+    $(document).off('submit','#searchcurso');
+  $(document).on('submit','#searchcurso',function(event){
+    event.preventDefault();
+    var buscar_curso = $(this).find("input[name=buscar-curso]").val();
+    $.post('../negocio/buscarcurso.php',{buscar_curso:buscar_curso},function(result){
+        $('.table-search-cur').html(result);
+    });
+  });
+
+  });
+</script>
 <div class="box box-primary" id="divlcurso" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar curso</h3>
+                    <h3 class="box-title">Listar curso <small>- Busqueda por descripción Curso </small></h3>
+                <br/><form id="searchcurso">
+                    <input maxlength="50" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-curso"/><button>Buscar</button></form>
                 </div>
                 <form role="form">
-                  <div class="box-body">                    
+                  <div class="box-body table-search-cur">                    
                     <table border="1" class="box box-primary">
                     
                     <th class="box-body">Id</th>
@@ -17,7 +32,7 @@
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
                     <?php 
-                    $consulta = mysql_query('call reporte_curso()');
+                    $consulta = mysql_query("call reporte_curso('')");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idcurso']?> </td>

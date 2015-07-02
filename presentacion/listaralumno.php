@@ -9,7 +9,7 @@
     event.preventDefault();
     var buscar_al = $(this).find("input[name=buscar-al]").val();
     $.post('../negocio/buscaralumno.php',{buscar_al:buscar_al},function(result){
-        $('.table-search').html(result);
+        $('.table-search-al').html(result);
     });
   });
 
@@ -17,11 +17,12 @@
 </script>
 <div class="box box-primary" id="divlalumno" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar Alumno</h3>
-                    <br/><form id="searchal"><input maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-al"/><button>Buscar</button></form>
+                    <h3 class="box-title">Listar Alumno <small>- Busqueda por Código </small></h3>
+                    <br/><form id="searchal"><input maxlength="10" ondrop="return false;" onpaste="return false;" onkeypress="return validNumber(event);"  name="buscar-al"/><button>Buscar</button>
+                    </form>
                 </div>
                 <form role="form">
-                  <div class="box-body table-search">                    
+                  <div class="box-body table-search-al">                    
                     <table border="1" class="box box-primary">
                     
                     <th class="box-body">Id</th>
@@ -31,11 +32,7 @@
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
                     <?php 
-                    $consulta = mysql_query("select alumno.idalumno, persona.idpersona,persona.nombre,persona.apellido, alumno.codigo, 
-case alumno.estado when '1' then 'Activo' when '0' then 'Inactivo' end as estado from alumno 
-inner join persona 
-on persona.idpersona = alumno.idpersona
-where persona.apellido like '%%'");
+                    $consulta = mysql_query("call reporte_alumno('')");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idalumno']?> </td>

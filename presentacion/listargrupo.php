@@ -1,15 +1,42 @@
-
-
 <?php mysql_connect('localhost', 'root', '');
  mysql_select_db('intranet');
 ?>
 
+<script>
+  $(document).ready(function(){
+
+    $(document).off('submit','#searchgrupo');
+  $(document).on('submit','#searchgrupo',function(event){
+    event.preventDefault();
+    var buscar_grupo = $(this).find("select[name=buscar-grupo]").val();
+    $.post('../negocio/buscargrupo.php',{buscar_grupo:buscar_grupo},function(result){
+        $('.table-search-grupo').html(result);
+    });
+  });
+
+  });
+</script>
+
 <div class="box box-primary" id="listgrupo" style="display:none">
                 <div class="box-header">
-                    <h3 class="box-title">Listar Grupo</h3>
-                </div>
+                    <h3 class="box-title">Listar Grupo <small>- Busqueda por grado </small></h3>
+                <br/>
+                <form id="searchgrupo">
+                    
+                    <select name="buscar-grupo">
+                     <option value="">Listar Todo</option>
+                     <option value="1">Primero</option>
+                     <option value="2">Segundo</option>
+                     <option value="3">Tercero</option>
+                     <option value="4">Cuarto</option>
+                     <option value="5">Quinto</option>
+                     <option value="6">Sexto</option>
+                     </select>
+                    <button>Buscar</button></form>
+
+                    </div>
                 <form role="form">
-                  <div class="box-body">                    
+                  <div class="box-body table-search-grupo">                    
                     <table border="1" class="box box-primary">
                         
                     <th class="box-body">Id</th>
@@ -21,7 +48,17 @@
                     <th class="box-body">Accion</th>
                     
                     <?php 
-                    $consulta = mysql_query('call reporte_grupo_estudio()');
+                    $consulta = mysql_query("Select idgrupo,case nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel, 
+case grado 
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado
+, seccion, fecharegistro, case estado when '1' then 'Activo' when '0' then 'Inactivo' end as estado from grupo 
+where grado like '%'");
                     while ($rol = mysql_fetch_array($consulta)){ ?>
                    <tr bgcolor=#F0FFFF>
                     <td class="box-body"> <?php echo $rol['idgrupo']?> </td>
