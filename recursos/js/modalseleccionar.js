@@ -169,4 +169,8 @@ $(document).ready(function(e) {
 
 		$('#Modalselgru').modal('hide');
 	});	
+		$(document).on('click','.btn-modal-edit-al',function(event){
+
+		$('#Modalselalumno').modal('hide');
+	});	
 });

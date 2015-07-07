@@ -6,7 +6,7 @@ require('../entidad/cadentity.php');
 
 
 $con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","","");
+$objE	= 	new UsuarioE("","","","","","");
 $objB	= 	new UsuarioD();
 
 
@@ -15,6 +15,7 @@ $objB	= 	new UsuarioD();
                   $objE->setidcurso($_POST['idcadcurso']);
 			$objE->setidtrabajador($_POST['idcaddocente']);
 			$objE->setidgrupo($_POST['idcadgrupo']);
+			$objE->setfechavigencia($_POST['date']);
                       
                         if (isset($_POST['checkbox'])) {
                         $objE->setestado(1);

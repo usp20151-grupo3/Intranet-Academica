@@ -6,7 +6,7 @@ require('../entidad/cadentity.php');
 
 
 $con 	= 	new Conexion();
-$objE	= 	new UsuarioE("","","","","");
+$objE	= 	new UsuarioE("","","","","","");
 $objB	= 	new UsuarioD();
 
 
@@ -15,6 +15,7 @@ $objB	= 	new UsuarioD();
        $idtrabajador="";
        $idgrupo="";
        $idcruso="";
+
 
             $objE->setidcad($_POST['id_cad']);
 
@@ -26,6 +27,7 @@ $objB	= 	new UsuarioD();
             $idtrabajador = $cad->idtrabajador;
             $idgrupo = $cad->idgrupo;
             $idcurso = $cad->idcurso;
+
 
             require'../presentacion/formulario_cad.php';
 

@@ -26,6 +26,10 @@
                       <a href="#" class="inline" data-toggle="modal" data-target="#Modalselgru">
                       <button type="button" class="btn btn-default btn-flat"> Buscar</button> </a>
                     </div>
+                    <div class="form-group">
+                          <label>Fecha Vigencia</label>
+                      <input type="date" class="form-control" name="date" value="<?php echo $cad->fechavigencia ?>" required/>
+                      </div> 
                     <div class="checkbox">
                       <label>
                         <?php if ($cad->estado == 'Activo') {

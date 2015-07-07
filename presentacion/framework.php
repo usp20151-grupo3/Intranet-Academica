@@ -283,6 +283,10 @@ session_start();
         </section>
         <section class="content">
 
+          <?php //Ejemplo curso PHP aprenderaprogramar.com
+          $time = time();
+          echo date("Y-m-d", $time);
+          ?>
             
         <?php include 'reggrupo.php' ?>
         <?php include 'regrol.php' ?>    

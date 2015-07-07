@@ -29,6 +29,7 @@
                     <th class="box-body">Curso</th>
                     <th class="box-body">Docente</th>
                     <th class="box-body">Grado</th>
+                    <th class="box-body">Fecha Vigencia</th>
                     <th class="box-body">Estado</th>
                     <th class="box-body">Accion</th>
                     <?php 
@@ -39,6 +40,7 @@
                     <td class="box-body"> <?php echo $rol['descripcion'];?> </td>
                     <td class="box-body"> <?php echo $rol['nombre'].' '.$rol['apellido'];?> </td>
                     <td class="box-body"> <?php echo $rol['grado'].' '.$rol['seccion'].' de '.$rol['nivel'];?> </td>
+                    <td class="box-body"> <?php echo $rol['fechavigencia'];?> </td>
                     <td class="box-body"> <?php echo $rol['estado'];?> </td>
                     <td class="box-body"> <button class="btn btn-default btn-flat btn-e-cad"
                                 data-idcad="<?php echo $rol['idcad']?>"

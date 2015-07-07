@@ -26,6 +26,10 @@
                       <a href="#" class="inline" data-toggle="modal" data-target="#Modalcadgrupo">
                       <button class="btn btn-default btn-flat"> Buscar</button> </a>
                     </div>
+                    <div class="form-group">
+                          <label>Fecha Vigencia</label>
+                      <input type="date" class="form-control" name="date" placeholder="Fecha Vigencia" required/>
+                      </div>  
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="checkbox" checked="true"> Habilitar

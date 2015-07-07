@@ -68,7 +68,7 @@ class UsuarioD{
 		}
 				function registro_cad($obj){
 			$objCn = new Conexion();
-			$sql = "call registro_cad('".$obj->getidcurso()."','".$obj->getidtrabajador()."','".$obj->getidgrupo()."','".$obj->getestado()."')";                        
+			$sql = "call registro_cad('".$obj->getidcurso()."','".$obj->getidtrabajador()."','".$obj->getidgrupo()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
 				function registro_matricula($obj){
@@ -148,7 +148,7 @@ class UsuarioD{
 		} 
 					function actualizar_cad($obj){
 			$objCn = new Conexion();
-			$sql = "call actualizar_cad('".$obj->getidcad()."','".$obj->getidtrabajador()."','".$obj->getidcurso()."','".$obj->getidgrupo()."','".$obj->getestado()."')";                        
+			$sql = "call actualizar_cad('".$obj->getidcad()."','".$obj->getidtrabajador()."','".$obj->getidcurso()."','".$obj->getidgrupo()."','".$obj->getfechavigencia()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
                         function actualizar_trabajador($obj){
