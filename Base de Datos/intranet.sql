@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2015 a las 05:54:57
+-- Tiempo de generación: 09-07-2015 a las 21:46:40
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -66,6 +66,14 @@ set descripcion = des,
 codigo = cod,
 estado = est 
 where idcurso = idc$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_dasistencia`(IN `ida` INT(11), IN `fec` DATE, IN `est` CHAR(1))
+    NO SQL
+    SQL SECURITY INVOKER
+update asistencia 
+set fecharegistro = fec, 
+estado = est 
+where idasistencia = ida$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_direccion`(IN `idper` INT(11), IN `dir` VARCHAR(100))
     NO SQL
@@ -203,6 +211,31 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_curso`(IN `idc` INT(11))
     SQL SECURITY INVOKER
 select * from curso where idcurso = idc$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_dasistencia`(IN `ida` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+select a.idasistencia,a.idcad, a.idmatricula,p.nombre, p.apellido,a.fecharegistro, c.descripcion, case g.grado
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado, g.seccion, case g.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel,case a.estado when 'A' then 'Asistio' when 'F' then 'Falto' when 'J' then 'Justificacion' end as estado from matricula m
+inner join alumno al
+on m.idalumno = al.idalumno 
+inner join persona p 
+on al.idpersona = p.idpersona 
+inner join asistencia a
+on m.idmatricula = a.idmatricula
+inner join docentecurso dc
+on a.idcad = dc.idcad 
+inner join grupo g
+on dc.idgrupo = g.idgrupo 
+inner join curso c 
+on dc.idcurso = c.idcurso
+where a.idasistencia = ida$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_grupo`(IN `idg` INT(11))
     NO SQL
     SQL SECURITY INVOKER
@@ -217,6 +250,11 @@ when '6' then 'Sexo'
 end as grado
 , seccion, fecharegistro, case estado when '1' then 'Activo' when '2' then 'Inactivo' end as estado from grupo 
 where idgrupo = idg$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_lasistencia_matricula`(IN `idg` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+select m.idmatricula,m.idalumno, p.nombre, p.apellido, al.codigo from matricula m inner join alumno al on m.idalumno = al.idalumno inner join persona p on al.idpersona = p.idpersona where m.idgrupo = idg and m.estado <> 0$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_matricula`(IN `idm` INT(11))
     NO SQL
@@ -385,14 +423,36 @@ rol = rol,
 estado = est 
 where idtrabajador = idt$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `nombre_persona_usuario`(IN `user` VARCHAR(20))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ifalumno`(IN `usr` VARCHAR(20))
+    NO SQL
+    SQL SECURITY INVOKER
+select alumno.idalumno 
+from usuario 
+inner join persona 
+on usuario.idpersona = persona.idpersona 
+inner join alumno 
+on persona.idpersona = alumno.idpersona
+where usuario.usuario = usr$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `iftrabajador`(IN `usr` VARCHAR(20))
+    NO SQL
+    SQL SECURITY INVOKER
+select trabajador.idtrabajador 
+from usuario 
+inner join persona 
+on usuario.idpersona = persona.idpersona 
+inner join trabajador 
+on persona.idpersona = trabajador.idpersona
+where usuario.usuario = usr$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `nombre_persona_usuario`(IN `usr` VARCHAR(20))
     NO SQL
     SQL SECURITY INVOKER
 select persona.nombre, persona.apellido 
 from usuario 
 inner join persona 
 on usuario.idpersona = persona.idpersona
-where usuario.usuario = user$$
+where usuario.usuario = usr$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_acceso`(IN `idusu` INT(11), IN `ip` VARCHAR(15))
     NO SQL
@@ -411,11 +471,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_apoderado`(IN `idp` INT(11
 insert into apoderado 
 values (idp,ida,par,est)$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_asistencia`(IN `idm` INT(11), IN `est` CHAR(1), IN `jus` VARCHAR(100), IN `com` VARCHAR(100))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_asistencia`(IN `fec` DATE, IN `idm` INT(11), IN `idc` INT(11), IN `est` CHAR(1), IN `com` VARCHAR(50))
     NO SQL
     SQL SECURITY INVOKER
-insert into asistencia 
-values (getdate(),idm,est,just,com)$$
+insert into asistencia(fecharegistro,idmatricula,idcad,estado,comentario)
+values(fec,idm,idc,est,com)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_cad`(IN `idc` INT(11), IN `idt` INT(11), IN `idg` INT(11), IN `fec` DATE, IN `est` CHAR(1))
     NO SQL
@@ -507,6 +567,61 @@ inner join persona
 on persona.idpersona = alumno.idpersona
 where alumno.estado = 1$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_asistencia`(IN `ap` VARCHAR(20))
+    NO SQL
+    SQL SECURITY INVOKER
+select a.idasistencia, a.idcad, a.idmatricula,p.nombre, p.apellido,a.fecharegistro, c.descripcion, case g.grado
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado, g.seccion, case g.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel,case a.estado when 'A' then 'Asistio' when 'F' then 'Falto' when 'J' then 'Justificacion' end as estado from matricula m
+inner join alumno al
+on m.idalumno = al.idalumno 
+inner join persona p 
+on al.idpersona = p.idpersona 
+inner join asistencia a
+on m.idmatricula = a.idmatricula
+inner join docentecurso dc
+on a.idcad = dc.idcad 
+inner join grupo g
+on dc.idgrupo = g.idgrupo 
+inner join curso c 
+on dc.idcurso = c.idcurso 
+where p.apellido like concat(ap,'%')$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_asistencia_alumno_v_docente`(IN `idd` INT(11), IN `ap` VARCHAR(20))
+    NO SQL
+    SQL SECURITY INVOKER
+select a.idasistencia,a.idcad, a.idmatricula,p.nombre, p.apellido,a.fecharegistro, c.descripcion, case g.grado
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado, g.seccion, case g.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel,case a.estado when 'A' then 'Asistio' when 'F' then 'Falto' when 'J' then 'Justificacion' end as estado from matricula m
+inner join alumno al
+on m.idalumno = al.idalumno 
+inner join persona p 
+on al.idpersona = p.idpersona 
+inner join asistencia a
+on m.idmatricula = a.idmatricula
+inner join docentecurso dc
+on a.idcad = dc.idcad 
+inner join grupo g
+on dc.idgrupo = g.idgrupo 
+inner join curso c 
+on dc.idcurso = c.idcurso
+where dc.idtrabajador = idd and p.apellido like concat(ap,'%')$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_asistencia_v_alumno`(IN `idm` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+select a.idasistencia, a.idcad, a.idmatricula,p.nombre, p.apellido,a.fecharegistro, c.descripcion, case g.grado when '1' then 'Primero' when '2' then 'Segundo' when '3' then 'Tercero' when '4' then 'Cuarto' when '5' then 'Quinto' when '6' then 'Sexo' end as grado, g.seccion, case g.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel,case a.estado when 'A' then 'Asistio' when 'F' then 'Falto' when 'J' then 'Justificacion' end as estado from matricula m inner join alumno al on m.idalumno = al.idalumno inner join persona p on al.idpersona = p.idpersona inner join asistencia a on m.idmatricula = a.idmatricula inner join docentecurso dc on a.idcad = dc.idcad inner join grupo g on dc.idgrupo = g.idgrupo inner join curso c on dc.idcurso = c.idcurso where m.idalumno = idm$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_cad`(IN `ap` VARCHAR(30))
     NO SQL
     SQL SECURITY INVOKER
@@ -527,6 +642,27 @@ on p.idpersona = t.idpersona
 inner join grupo g 
 on g.idgrupo = dc.idgrupo 
 where p.apellido like concat(ap,'%')$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_cad_trabajador`(IN `idt` INT(11))
+    NO SQL
+    SQL SECURITY INVOKER
+SELECT dc.idgrupo,dc.idcad,c.descripcion, case g.grado
+when '1' then 'Primero'
+when '2' then 'Segundo'
+when '3' then 'Tercero'
+when '4' then 'Cuarto'
+when '5' then 'Quinto'
+when '6' then 'Sexo' 
+end as grado, g.seccion, case g.nivel when '1' then 'Primaria' when '2' then 'Secundaria' end as nivel, case dc.estado when '1' then 'Activo' when '0' then 'Inactivo' end as estado, dc.fechavigencia FROM docentecurso dc
+inner join curso c
+on dc.idcurso = c.idcurso 
+inner join trabajador t
+on t.idtrabajador = dc.idtrabajador 
+inner join persona p 
+on p.idpersona = t.idpersona 
+inner join grupo g 
+on g.idgrupo = dc.idgrupo  
+where dc.idtrabajador = idt$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `reporte_curso`(IN `ap` VARCHAR(50))
     NO SQL
@@ -817,12 +953,12 @@ INSERT INTO `alumno` (`idalumno`, `idpersona`, `codigo`, `estado`) VALUES
 (1, 4, '222001', '1'),
 (2, 5, '222002', '1'),
 (3, 8, '222003', '1'),
-(5, 12, '111145', '1'),
-(6, 10, '11146', '1'),
-(7, 14, '222009', '1'),
-(8, 17, '111010', '1'),
-(9, 16, '123151', '1'),
-(10, 15, '534531', '0');
+(5, 12, '222004', '1'),
+(6, 10, '222005', '1'),
+(7, 14, '222006', '1'),
+(8, 17, '222007', '1'),
+(9, 16, '222008', '1'),
+(10, 15, '222009', '1');
 
 -- --------------------------------------------------------
 
@@ -831,12 +967,38 @@ INSERT INTO `alumno` (`idalumno`, `idpersona`, `codigo`, `estado`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `asistencia` (
-  `fecharegistro` date NOT NULL COMMENT 'Fecha y hora de registro de asistencia.',
-  `idalumno` int(11) NOT NULL COMMENT 'Llave foránea que identifica al alumno.',
+`idasistencia` int(11) NOT NULL,
+  `fecharegistro` date NOT NULL,
+  `idcad` int(11) NOT NULL,
+  `idmatricula` int(11) NOT NULL,
   `estado` char(1) NOT NULL COMMENT 'Estado de la asistencia. Valores permitidos: Asistió, Faltó o Tardanza.',
-  `justificacion` varchar(100) DEFAULT ' ' COMMENT 'Justificación de la asistencia (por si el alumno faltó o llegó tarde) ',
-  `comentario` varchar(100) NOT NULL COMMENT 'Comentario sobre la asistencia.'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `comentario` varchar(50) DEFAULT ' ' COMMENT 'Comentario sobre la asistencia.'
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `asistencia`
+--
+
+INSERT INTO `asistencia` (`idasistencia`, `fecharegistro`, `idcad`, `idmatricula`, `estado`, `comentario`) VALUES
+(1, '2015-07-01', 9, 1, 'A', ''),
+(2, '2015-07-01', 9, 2, 'A', ''),
+(3, '2015-07-01', 9, 3, 'A', ''),
+(4, '2015-07-01', 9, 6, 'J', ''),
+(5, '2015-07-01', 16, 1, 'F', ''),
+(6, '2015-07-01', 16, 2, 'F', ''),
+(7, '2015-07-01', 16, 3, 'A', ''),
+(8, '2015-07-01', 16, 6, 'A', ''),
+(9, '2015-07-01', 1, 1, 'A', ''),
+(10, '2015-07-01', 1, 2, 'F', ''),
+(11, '2015-07-01', 1, 3, 'F', ''),
+(12, '2015-07-01', 1, 6, 'F', ''),
+(13, '2015-07-01', 2, 4, 'A', ''),
+(14, '2015-07-01', 2, 5, 'J', ''),
+(15, '2015-07-09', 9, 1, 'A', ''),
+(16, '2015-07-09', 9, 2, 'A', ''),
+(17, '2015-07-09', 9, 3, 'F', ''),
+(18, '2015-07-09', 9, 6, 'J', ''),
+(19, '2015-07-09', 11, 7, 'A', '');
 
 -- --------------------------------------------------------
 
@@ -892,28 +1054,29 @@ CREATE TABLE IF NOT EXISTS `docentecurso` (
   `fecharegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'fecha y hora de registro',
   `fechavigencia` date DEFAULT NULL,
   `estado` char(1) NOT NULL COMMENT 'Estado de la asignación docente-curso: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `docentecurso`
 --
 
 INSERT INTO `docentecurso` (`idcad`, `idcurso`, `idtrabajador`, `idgrupo`, `fecharegistro`, `fechavigencia`, `estado`) VALUES
-(1, 2, 3, 1, '2015-06-26 11:44:41', '2015-12-31', '1'),
-(2, 2, 3, 2, '2015-06-26 11:44:55', '2015-12-31', '1'),
-(3, 2, 3, 3, '2015-06-26 11:45:38', '2015-12-31', '1'),
-(4, 2, 3, 4, '2015-06-26 11:51:06', '2015-12-31', '1'),
-(5, 7, 11, 1, '2015-06-26 12:04:43', '2015-12-31', '1'),
-(6, 7, 11, 2, '2015-06-26 12:05:31', '2015-12-31', '1'),
-(7, 7, 11, 3, '2015-06-26 12:05:50', '2015-12-31', '1'),
-(8, 7, 11, 4, '2015-07-02 14:18:31', '2015-12-31', '1'),
-(9, 17, 15, 1, '2015-07-05 16:42:19', '2015-12-31', '1'),
-(10, 17, 15, 2, '2015-07-05 16:42:34', '2015-12-31', '1'),
-(11, 17, 15, 3, '2015-07-05 16:42:48', '2015-12-31', '1'),
-(12, 17, 15, 4, '2015-07-05 16:43:06', '2015-12-31', '1'),
-(13, 5, 12, 1, '2015-07-05 17:24:03', '2015-07-06', '1'),
-(14, 5, 12, 2, '2015-07-05 17:27:50', '2015-12-31', '1'),
-(15, 5, 12, 3, '2015-07-05 17:29:16', '2015-12-31', '1');
+(1, 2, 3, 17, '2015-06-26 11:44:41', '2015-12-31', '1'),
+(2, 2, 3, 18, '2015-06-26 11:44:55', '2015-12-31', '1'),
+(3, 2, 3, 19, '2015-06-26 11:45:38', '2015-12-31', '1'),
+(4, 2, 3, 20, '2015-06-26 11:51:06', '2015-12-31', '1'),
+(5, 7, 11, 17, '2015-06-26 12:04:43', '2015-12-31', '1'),
+(6, 7, 11, 18, '2015-06-26 12:05:31', '2015-12-31', '1'),
+(7, 7, 11, 19, '2015-06-26 12:05:50', '2015-12-31', '1'),
+(8, 7, 11, 20, '2015-07-02 14:18:31', '2015-12-31', '1'),
+(9, 17, 8, 17, '2015-07-05 16:42:19', '2015-12-31', '1'),
+(10, 17, 8, 18, '2015-07-05 16:42:34', '2015-12-31', '1'),
+(11, 17, 8, 19, '2015-07-05 16:42:48', '2015-12-31', '1'),
+(12, 17, 8, 20, '2015-07-05 16:43:06', '2015-12-31', '1'),
+(13, 5, 12, 17, '2015-07-05 17:24:03', '2015-07-06', '1'),
+(14, 5, 12, 18, '2015-07-05 17:27:50', '2015-12-31', '1'),
+(15, 5, 12, 19, '2015-07-05 17:29:16', '2015-12-31', '1'),
+(16, 13, 8, 17, '2015-07-07 16:37:43', '2015-12-31', '1');
 
 -- --------------------------------------------------------
 
@@ -928,7 +1091,7 @@ CREATE TABLE IF NOT EXISTS `grupo` (
   `seccion` char(1) NOT NULL COMMENT 'Sección del grupo. Valores permitidos: A, B, C o D.',
   `fecharegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora de registro del grupo.',
   `estado` char(1) NOT NULL COMMENT 'Estado del grupo. Valores permitidos: Activo, Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `grupo`
@@ -950,7 +1113,11 @@ INSERT INTO `grupo` (`idgrupo`, `nivel`, `grado`, `seccion`, `fecharegistro`, `e
 (13, '1', '4', 'A', '2015-06-24 23:35:17', '1'),
 (14, '1', '4', 'B', '2015-06-26 00:43:50', '0'),
 (15, '1', '4', 'C', '2015-06-26 14:12:43', '1'),
-(16, '2', '1', 'A', '2015-07-02 14:16:57', '1');
+(16, '1', '4', 'D', '2015-07-02 14:16:57', '1'),
+(17, '2', '1', 'A', '2015-07-07 00:34:08', '1'),
+(18, '2', '1', 'B', '2015-07-07 00:34:14', '1'),
+(19, '2', '1', 'C', '2015-07-07 00:34:20', '1'),
+(20, '2', '1', 'D', '2015-07-07 00:34:26', '1');
 
 -- --------------------------------------------------------
 
@@ -974,12 +1141,31 @@ INSERT INTO `historial` (`idusuario`, `ipacceso`, `fechaacceso`) VALUES
 (1, '::1', '2015-06-04 19:46:37'),
 (1, '::1', '2015-06-08 22:10:31'),
 (1, '::1', '2015-07-01 03:37:05'),
+(1, '::1', '2015-07-07 01:37:26'),
+(1, '::1', '2015-07-08 23:22:14'),
+(1, '::1', '2015-07-08 23:28:46'),
+(1, '::1', '2015-07-09 00:06:39'),
+(1, '::1', '2015-07-09 00:14:02'),
+(1, '::1', '2015-07-09 00:23:57'),
+(1, '::1', '2015-07-09 00:28:41'),
+(1, '::1', '2015-07-09 14:13:36'),
+(1, '::1', '2015-07-09 14:15:25'),
 (2, '::1', '2015-06-04 19:44:32'),
 (2, '::1', '2015-06-04 19:44:47'),
 (2, '::1', '2015-07-01 02:39:47'),
 (2, '::1', '2015-07-02 14:09:29'),
+(2, '::1', '2015-07-07 01:31:24'),
+(2, '::1', '2015-07-07 21:51:37'),
+(2, '::1', '2015-07-07 21:52:54'),
+(2, '::1', '2015-07-09 00:23:28'),
+(2, '::1', '2015-07-09 00:54:00'),
+(2, '::1', '2015-07-09 01:10:20'),
+(2, '::1', '2015-07-09 01:20:47'),
+(2, '::1', '2015-07-09 01:25:00'),
+(2, '::1', '2015-07-09 14:14:10'),
 (3, '::1', '2015-06-04 19:44:35'),
 (3, '::1', '2015-06-04 19:44:50'),
+(3, '::1', '2015-07-07 01:36:58'),
 (4, '::1', '2015-06-04 19:44:38'),
 (4, '::1', '2015-06-04 19:44:53'),
 (4, '::1', '2015-06-30 23:15:11'),
@@ -1013,6 +1199,50 @@ INSERT INTO `historial` (`idusuario`, `ipacceso`, `fechaacceso`) VALUES
 (4, '::1', '2015-07-02 14:09:36'),
 (4, '::1', '2015-07-02 14:10:15'),
 (4, '::1', '2015-07-05 16:02:33'),
+(4, '::1', '2015-07-07 00:23:54'),
+(4, '::1', '2015-07-07 00:41:37'),
+(4, '::1', '2015-07-07 01:11:39'),
+(4, '::1', '2015-07-07 01:12:30'),
+(4, '::1', '2015-07-07 01:22:47'),
+(4, '::1', '2015-07-07 01:31:29'),
+(4, '::1', '2015-07-07 01:35:36'),
+(4, '::1', '2015-07-07 01:36:19'),
+(4, '::1', '2015-07-07 01:36:46'),
+(4, '::1', '2015-07-07 01:39:03'),
+(4, '::1', '2015-07-07 01:39:56'),
+(4, '::1', '2015-07-07 02:03:52'),
+(4, '::1', '2015-07-07 02:10:06'),
+(4, '::1', '2015-07-07 02:21:31'),
+(4, '::1', '2015-07-07 02:54:57'),
+(4, '::1', '2015-07-07 03:28:11'),
+(4, '::1', '2015-07-07 05:21:36'),
+(4, '::1', '2015-07-07 05:34:42'),
+(4, '::1', '2015-07-07 05:50:03'),
+(4, '::1', '2015-07-07 07:36:17'),
+(4, '::1', '2015-07-07 16:37:08'),
+(4, '::1', '2015-07-07 16:54:46'),
+(4, '::1', '2015-07-07 21:49:58'),
+(4, '::1', '2015-07-07 21:52:28'),
+(4, '::1', '2015-07-07 21:52:48'),
+(4, '::1', '2015-07-07 21:53:04'),
+(4, '::1', '2015-07-08 08:53:53'),
+(4, '::1', '2015-07-08 09:25:11'),
+(4, '::1', '2015-07-08 11:37:40'),
+(4, '::1', '2015-07-08 11:53:00'),
+(4, '::1', '2015-07-08 23:21:45'),
+(4, '::1', '2015-07-08 23:23:03'),
+(4, '::1', '2015-07-09 00:13:44'),
+(4, '::1', '2015-07-09 00:23:21'),
+(4, '::1', '2015-07-09 00:23:51'),
+(4, '::1', '2015-07-09 00:25:16'),
+(4, '::1', '2015-07-09 00:25:43'),
+(4, '::1', '2015-07-09 01:10:37'),
+(4, '::1', '2015-07-09 01:13:34'),
+(4, '::1', '2015-07-09 01:21:29'),
+(4, '::1', '2015-07-09 01:28:11'),
+(4, '::1', '2015-07-09 13:55:21'),
+(4, '::1', '2015-07-09 14:14:48'),
+(4, '::1', '2015-07-09 14:16:24'),
 (5, '::1', '2015-06-04 19:44:41'),
 (5, '::1', '2015-06-04 19:44:56'),
 (5, '::1', '2015-06-30 23:38:03'),
@@ -1021,10 +1251,45 @@ INSERT INTO `historial` (`idusuario`, `ipacceso`, `fechaacceso`) VALUES
 (5, '::1', '2015-07-01 01:15:31'),
 (5, '::1', '2015-07-01 01:15:46'),
 (8, '::1', '2015-07-01 00:00:17'),
+(8, '::1', '2015-07-09 01:10:30'),
+(8, '::1', '2015-07-09 01:11:34'),
+(8, '::1', '2015-07-09 01:20:53'),
+(13, '::1', '2015-07-09 01:20:57'),
 (15, '::1', '2015-06-30 23:20:48'),
+(15, '::1', '2015-07-07 00:41:25'),
+(15, '::1', '2015-07-07 00:54:57'),
+(15, '::1', '2015-07-07 01:35:17'),
+(15, '::1', '2015-07-07 01:36:52'),
+(15, '::1', '2015-07-07 01:37:33'),
+(15, '::1', '2015-07-07 01:40:30'),
+(15, '::1', '2015-07-07 02:04:43'),
+(15, '::1', '2015-07-07 02:15:33'),
+(15, '::1', '2015-07-07 02:21:44'),
+(15, '::1', '2015-07-07 02:55:45'),
+(15, '::1', '2015-07-07 03:28:53'),
+(15, '::1', '2015-07-07 05:22:01'),
+(15, '::1', '2015-07-07 07:36:37'),
+(15, '::1', '2015-07-07 16:49:13'),
+(15, '::1', '2015-07-07 16:53:38'),
+(15, '::1', '2015-07-07 16:55:54'),
+(15, '::1', '2015-07-07 21:53:41'),
+(15, '::1', '2015-07-08 08:55:06'),
+(15, '::1', '2015-07-08 10:52:18'),
+(15, '::1', '2015-07-08 23:23:14'),
+(15, '::1', '2015-07-09 00:13:53'),
+(15, '::1', '2015-07-09 00:26:54'),
+(15, '::1', '2015-07-09 00:53:04'),
+(15, '::1', '2015-07-09 01:28:57'),
+(15, '::1', '2015-07-09 14:10:22'),
+(15, '::1', '2015-07-09 14:16:51'),
 (17, '::1', '2015-07-01 01:15:26'),
 (17, '::1', '2015-07-01 02:09:15'),
-(17, '::1', '2015-07-01 02:20:32');
+(17, '::1', '2015-07-01 02:20:32'),
+(17, '::1', '2015-07-08 09:27:00'),
+(17, '::1', '2015-07-08 11:36:54'),
+(20, '::1', '2015-07-07 05:36:25'),
+(21, '::1', '2015-07-09 01:28:48'),
+(21, '::1', '2015-07-09 01:29:22');
 
 -- --------------------------------------------------------
 
@@ -1040,16 +1305,20 @@ CREATE TABLE IF NOT EXISTS `matricula` (
   `idgrupo` int(11) NOT NULL COMMENT 'Llave foránea que identifica a que grupo será matriculado el alumno',
   `fecharegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora de registro de matrícula.',
   `estado` char(1) NOT NULL COMMENT 'Estado de la matrícula. Valores permitidos: Activo o Inactivo.'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `matricula`
 --
 
 INSERT INTO `matricula` (`idmatricula`, `idalumno`, `idpersona`, `parentesco`, `idgrupo`, `fecharegistro`, `estado`) VALUES
-(1, 1, 3, 'M', 1, '2015-06-26 04:00:53', '1'),
-(2, 2, 6, 'M', 1, '2015-06-26 04:30:44', '1'),
-(3, 3, 9, 'B', 13, '2015-06-26 05:08:05', '0');
+(1, 1, 3, 'M', 17, '2015-06-26 04:00:53', '1'),
+(2, 2, 6, 'M', 17, '2015-06-26 04:30:44', '1'),
+(3, 3, 9, 'B', 17, '2015-06-26 05:08:05', '1'),
+(4, 5, 2, 'O', 18, '2015-07-07 02:11:16', '1'),
+(5, 7, 7, 'O', 18, '2015-07-07 02:11:57', '1'),
+(6, 6, 19, 'O', 17, '2015-07-07 16:57:13', '1'),
+(7, 9, 13, 'O', 19, '2015-07-09 14:16:45', '1');
 
 -- --------------------------------------------------------
 
@@ -1212,7 +1481,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `fechaalta` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechavigencia` date NOT NULL,
   `estado` char(1) NOT NULL COMMENT 'Estado del usuario.'
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -1228,11 +1497,13 @@ INSERT INTO `usuario` (`idusuario`, `idpersona`, `idrol`, `usuario`, `password`,
 (9, 9, 3, 'david', '81dc9bdb52d04dc20036dbd8313ed055', 'hola', 'hola', '2015-06-01 15:13:26', '2015-09-16', '1'),
 (13, 12, 4, 'luis', '202cb962ac59075b964b07152d234b70', '123', '123', '2015-06-13 01:52:43', '2015-06-13', '1'),
 (14, 14, 4, 'orlando', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-13 13:15:57', '2015-06-27', '1'),
-(15, 13, 3, 'heber', '202cb962ac59075b964b07152d234b70', 'universidad', 'usp', '2015-06-13 13:57:22', '2015-06-19', '1'),
+(15, 13, 3, 'heber', '202cb962ac59075b964b07152d234b70', 'universidad', 'USP', '2015-06-13 13:57:22', '2015-06-19', '1'),
 (16, 15, 4, 'bryan', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-13 15:16:23', '2015-08-12', '1'),
-(17, 6, 3, 'hilda', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-20 00:39:04', '2015-07-16', '0'),
+(17, 6, 3, 'hilda', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-20 00:39:04', '2015-07-16', '1'),
 (18, 17, 3, 'brigg', '202cb962ac59075b964b07152d234b70', 'hola', 'hola', '2015-06-20 08:02:24', '2015-07-05', '0'),
-(19, 16, 4, 'juandd', 'f7e1f0b2b8f47afb36d0cda68cc2b3f2', 'hola', 'hola', '2015-06-22 16:42:50', '2015-06-12', '0');
+(19, 16, 4, 'juandd', 'f7e1f0b2b8f47afb36d0cda68cc2b3f2', 'hola', 'hola', '2015-06-22 16:42:50', '2015-06-12', '0'),
+(20, 2, 3, 'jose', '202cb962ac59075b964b07152d234b70', 'Centro Estudios', 'Newton College', '2015-07-07 05:36:09', '0000-00-00', '1'),
+(21, 5, 4, 'kel', '202cb962ac59075b964b07152d234b70', 'Lugar de Nacimiento', 'Lima', '2015-07-09 01:28:37', '2015-12-31', '1');
 
 --
 -- Índices para tablas volcadas
@@ -1248,7 +1519,7 @@ ALTER TABLE `alumno`
 -- Indices de la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
- ADD PRIMARY KEY (`fecharegistro`,`idalumno`), ADD UNIQUE KEY `fecha` (`fecharegistro`,`idalumno`), ADD KEY `idalumno` (`idalumno`);
+ ADD PRIMARY KEY (`idasistencia`), ADD KEY `idcad` (`idcad`,`idmatricula`), ADD KEY `idmatricula` (`idmatricula`);
 
 --
 -- Indices de la tabla `curso`
@@ -1326,6 +1597,11 @@ ALTER TABLE `usuario`
 ALTER TABLE `alumno`
 MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del alumno.',AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT de la tabla `asistencia`
+--
+ALTER TABLE `asistencia`
+MODIFY `idasistencia` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
 -- AUTO_INCREMENT de la tabla `curso`
 --
 ALTER TABLE `curso`
@@ -1334,17 +1610,17 @@ MODIFY `idcurso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del curs
 -- AUTO_INCREMENT de la tabla `docentecurso`
 --
 ALTER TABLE `docentecurso`
-MODIFY `idcad` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `idcad` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del grupo.',AUTO_INCREMENT=17;
+MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del grupo.',AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `matricula`
 --
 ALTER TABLE `matricula`
-MODIFY `idmatricula` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de matrícula.',AUTO_INCREMENT=4;
+MODIFY `idmatricula` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de matrícula.',AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `nota`
 --
@@ -1369,7 +1645,7 @@ MODIFY `idtrabajador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario.',AUTO_INCREMENT=20;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario.',AUTO_INCREMENT=22;
 --
 -- Restricciones para tablas volcadas
 --
@@ -1384,7 +1660,8 @@ ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `persona` (`
 -- Filtros para la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
-ADD CONSTRAINT `asistencia_ibfk_1` FOREIGN KEY (`idalumno`) REFERENCES `alumno` (`idalumno`);
+ADD CONSTRAINT `asistencia_ibfk_1` FOREIGN KEY (`idcad`) REFERENCES `docentecurso` (`idcad`),
+ADD CONSTRAINT `asistencia_ibfk_2` FOREIGN KEY (`idmatricula`) REFERENCES `matricula` (`idmatricula`);
 
 --
 -- Filtros para la tabla `docentecurso`

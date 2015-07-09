@@ -1,8 +1,8 @@
 <?php 
 session_start();
         $idusuario = 0;
-	$usuario = '';	
-	$usuarionombre = '';
+	      $usuario = '';	
+	      $usuarionombre = '';
         $usuarioapellido = '';
         $idrol = '';     
         $anho="";
@@ -214,29 +214,30 @@ session_start();
               </ul>
             </li>
             <?php } ?>
+            <?php if ($rol=='Administrador') { ?>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Usuario</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <?php if ($rol=='Administrador') { ?>
-                <li><a href="#" name="div2">Registrar Usuario</a></li>
-                <?php } ?>
+                
+                <li><a href="#" name="div2">Registrar Usuario</a></li>                
                 <li><a href="#" name="divlusuario">Visualizar Usuario</a></li>                                
               </ul>
             </li>
-             
+             <?php } ?>
             <?php if ($rol == 'Director') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Regularizar Asistencia</a></li>
+                <li><a href="#" name="divdirasistencia">Regularizar Asistencia</a></li>
               </ul>
             </li>
             <?php } ?>
             <?php } if ($rol == 'Docente') { ?>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Grupo de Estudio</a></li>                
+                <li><a href="#" name="divgrupoestudio">Registrar Asistencias</a></li>                          
+                <li><a href="#" name="divdocasistencia">Visualizar Asistencias</a></li>                
               </ul>
             </li>
             <li class="treeview">
@@ -253,9 +254,9 @@ session_start();
               </ul>
             </li>
             <li class="treeview">
-            <a href="#"><i class='fa fa-link'></i> <span>Asistencia -<small> En Desarrollo</small></span>  <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class='fa fa-link'></i> <span>Asistencia</span>  <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Visualizar Asistencia</a></li>                
+                <li><a href="#" name="divasistenciaalumno">Visualizar Asistencia</a></li>                
               </ul>
             </li>
             <?php }  ?>            
@@ -283,9 +284,10 @@ session_start();
         </section>
         <section class="content">
 
-          <?php //Ejemplo curso PHP aprenderaprogramar.com
-          $time = time();
-          echo date("Y-m-d", $time);
+          <?php 
+          //$time = time();
+          //echo date("Y-m-d", $time);
+          
           ?>
             
         <?php include 'reggrupo.php' ?>
@@ -313,6 +315,10 @@ session_start();
         <?php include 'listarusuario.php' ?>
         <?php include 'listarpersona.php' ?>
         <?php include 'listargrupo.php' ?>
+        <?php include 'listargrupoestudio.php' ?>
+        <?php include 'listarasistenciavistadocente.php' ?>
+        <?php include 'listarasistenciavistadirector.php' ?>
+        <?php include 'listarasistenciaalumno.php' ?>
         
         </section>
       </div>

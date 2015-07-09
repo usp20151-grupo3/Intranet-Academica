@@ -6,6 +6,31 @@ class UsuarioD{
 			$sql = "call verificar_usuario('".$obj->getusuario()."','".$obj->getpassword()."')";
 			return $objCn->ejecutar($sql);	
 		}
+		function iftrabajador($obj){
+			$objCn = new conexion();
+			$sql = "call iftrabajador('".$obj->getusuario()."')";
+			return $objCn->ejecutar($sql);	
+		}
+		function ifalumno($obj){
+			$objCn = new conexion();
+			$sql = "call ifalumno('".$obj->getusuario()."')";
+			return $objCn->ejecutar($sql);	
+		}
+		function buscar_lasistencia_matricula($obj){
+			$objCn = new conexion();
+			$sql = "call buscar_lasistencia_matricula('".$obj->getidgrupo()."')";
+			return $objCn->ejecutar($sql);		
+		}
+		function buscar_dasistencia($obj){
+			$objCn = new conexion();
+			$sql = "call buscar_dasistencia('".$obj->getidasistencia()."')";
+			return $objCn->ejecutar($sql);		
+		}
+		function registro_asistencia($obj){
+			$objCn = new conexion();
+			$sql = "call registro_asistencia('".$obj->getfecharegistro()."','".$obj->getidmatricula()."','".$obj->getidcad()."','".$obj->getestado()."','".$obj->getcomentario()."')";
+			return $objCn->ejecutar($sql);	
+		}
 		function listar_usuario(){
 			$objCn = new conexion();
 			$sql = "call reporte_usuario()";
@@ -84,6 +109,11 @@ class UsuarioD{
 		function actualizar_matricula($obj){
 			$objCn = new Conexion();
 			$sql = "call actualizar_matricula('".$obj->getidmatricula()."','".$obj->getidalumno()."','".$obj->getidpersona()."','".$obj->getidgrupo()."','".$obj->getparentesco()."','".$obj->getestado()."')";                        
+			return $objCn->ejecutar($sql);	
+		}
+			function actualizar_dasistencia($obj){
+			$objCn = new Conexion();
+			$sql = "call actualizar_dasistencia('".$obj->getidasistencia()."','".$obj->getfecharegistro()."','".$obj->getestado()."')";                        
 			return $objCn->ejecutar($sql);	
 		}
                 function actualizar_telefono($obj){

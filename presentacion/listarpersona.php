@@ -20,7 +20,8 @@
                     <h3 class="box-title">Listar Persona <small>- Busqueda por apellido </small></h3>
                 <br/>
                 <form id="searchpersona">
-                    <input maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-persona"/><button>Buscar</button></form>
+                    <input maxlength="30" ondrop="return false;" onpaste="return false;" onkeypress="return validLetter(event);"  name="buscar-persona"/>
+                    <button>Buscar</button></form>
                     </div>
                 <form role="form">
                   <div class="box-body table-search">                    

@@ -17,17 +17,28 @@ $rest = "";
             $objE->setpassword(md5($_POST['password']));           
             $res_usuario    =   $objB-> verificar_usuario($objE);
             $dato_usuario   =   $objB-> mostrar_nombre_apellido_usuario($objE);
-         
+            $res_iftrabajador   =   $objB-> iftrabajador($objE);
+            $res_ifalumno   =   $objB-> ifalumno($objE);
+            
             if (count($res_usuario)>0) {    
                 error_reporting(0);            
                 $datos = $res_usuario->fetch_object(); 
                 $datonombre = $dato_usuario->fetch_object();
+                $datoidtrab = $res_iftrabajador->fetch_object();
+                $datoidalumno = $res_ifalumno->fetch_object();
                                 
                 $ip = $_SERVER["REMOTE_ADDR"];      
 
                 $_SESSION['usuario']        = $datos->usuario;              
                 $_SESSION['idusuario']      = $datos->idusuario;
                 $_SESSION['rol']            = $datos->idrol;
+                if ($_SESSION['rol']==3) {
+                $_SESSION['idtrabajador']            = $datoidtrab->idtrabajador;                   
+                }
+                if ($_SESSION['rol']==4) {
+                $_SESSION['idalumno']            = $datoidalumno->idalumno;                   
+                }
+                
                 $_SESSION['estado']            = $datos->estado;
                 $_SESSION['restado']            = $datos->restado;
                 $est = $_SESSION['estado'];

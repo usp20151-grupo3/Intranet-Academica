@@ -86,5 +86,50 @@ $(document).ready(function(){
 		});
 		$('#Modaldarbaja').modal('show');
 	});
+        $('#formasistencia').off('click','.btn-asistencia');
+        $('#formasistencia').on('click','.btn-asistencia',function(event){
+        event.preventDefault();
+        var idc=$(this).attr('data-idcadas');
+        var idg=$(this).attr('data-idgruas');
+
+		$.post('../negocio/editarasistencia.php',{idg:idg,idc:idc},function(result){
+			$('#formulario-ver').html(result);
+		});
+	});
+        
+        $(document).off('click','.btn-a,.btn-f,.btn-j');
+        $(document).on('click','.btn-a,.btn-f,.btn-j',function(event){
+        event.preventDefault();
+        var idc=$(this).attr('data-idcadasi');
+        var idm=$(this).attr('data-idmatasi');
+        var fec= $('input[name=fecha]').val();
+        var est=$(this).attr('data-idestasi');
+        var obs=$('input[name=observacion]').val();
+        if (fec=='') {alert('Seleccionar Fecha de la Asistencia');}else{
+        $.post('../negocio/regasistencia.php',{idc:idc,idm:idm,fec:fec,est:est,obs:obs},function(result){
+				alert('Se Registro Correctamente');
+		});}
+		
+		
+	});
+
+        $(document).off('click','.btn-e-dasistencia');
+        $(document).on('click','.btn-e-dasistencia',function(event){
+        
+		var id_asistencia = $(this).attr('data-id');
+		$.post('../negocio/editardasistencia.php',{id_asistencia:id_asistencia},function(result){
+			$('.body-dasistencia').html(result);
+		});
+		$('#Modaleasistencia').modal('show');
+	});
+        $(document).off('click','.btn-e-dirasistencia');
+        $(document).on('click','.btn-e-dirasistencia',function(event){
+        
+		var id_asistencia = $(this).attr('data-id');
+		$.post('../negocio/editardirasistencia.php',{id_asistencia:id_asistencia},function(result){
+			$('.body-dirasistencia').html(result);
+		});
+		$('#Modaldirasistencia').modal('show');
+	});
         
 });
